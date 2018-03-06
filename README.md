@@ -15,16 +15,6 @@ BeesAndroid项目于2018年3月6日正式成立啦，该项目的前身是[andro
 - [Blog](https://juejin.im/user/5a9e5b95518825558b3d6e22/posts)
 - [GitBook](https://www.gitbook.com/book/beesandroid/beesandroid/welcome)
 
-> 欢迎关注我们的微信公众号，新文章会第一时间发布到掘金博客与微信公众平台，我们也有自己的交流群，下方是QQ交流群，微信群已满，可以加我微信 allenwells 邀请入群。
-
-微信公众平台
-
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="300"/>
-
-QQ交流群
-
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq.png" width="300"/>
-
 第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 - [Git repositories on android](https://android.googlesource.com/)
@@ -162,4 +152,13 @@ Android系统架构图
 
 - [01Android系统软件设计篇：软件设计原则](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统软件设计篇/01Android系统软件设计篇：软件设计原则.md)
 - [02Android系统软件设计篇：设计模式](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统软件设计篇/02Android系统软件设计篇：设计模式.md)
-。
+
+> 欢迎关注我们的微信公众号，新文章会第一时间发布到掘金博客与微信公众平台，我们也有自己的交流群，下方是QQ交流群，微信群已满，可以加我微信 allenwells 邀请入群。
+
+微信公众平台
+
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="300"/>
+
+QQ交流群
+
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq.png" width="300"/>
