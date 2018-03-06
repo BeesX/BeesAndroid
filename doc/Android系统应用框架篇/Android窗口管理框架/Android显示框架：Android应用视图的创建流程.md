@@ -4,7 +4,7 @@
 
 >郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 **文章目录**
 
@@ -19,7 +19,7 @@ Android应用在运行的过程中需要访问一些特定的资源和类，这�
 
 因此，每个Activity组件关联的是ContextImpl对象，它们的类图关系如下：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/Context_class.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/Context_class.png" height="500"/>
 
 Context家族相关类采用装饰模式设计而成，ContextWrapper与ContextThemeWrapper继承于Context，是它的包装类，用于完成更多的功能。ContextWrapper与ContextThemeWrapper背部都通过
 成员变量mBasae引用了一个ContextImpl对象，Activity正是通过这个ContextImpl对象执行一些具体的操作，例如：启动Activity、启动Service等。
@@ -48,7 +48,7 @@ ContextImpl() {
 
 ContexImpl的创建流程如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/Context_sequence.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/Context_sequence.png" height="500"/>
 
 主要角色：
 
@@ -276,11 +276,11 @@ mBase指向的是一个ContextImpl对象。
 从上面的Activity.attach()方法的分析我们得知了ContextImpl的创建流程，我们发现它不仅创建了上下文环境Context，它还创建了Window对象，用来描述一个具体的应用窗口，可以看出
 Activity只不过是一个高度抽象的UI组件，它的具体UI实现是由它的一系列对象来完成的，它们的类图关系如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/Window_class.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/Window_class.png" height="500"/>
 
 从上文的描述我们可以知道，Windows是在Activity的attach()方法中开始创建的，我们来看下它的创建流程。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/Window_sequence.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/Window_sequence.png" height="500"/>
 
 主要角色：
 
@@ -416,11 +416,11 @@ Activity组件的UI的
 从上文分析可知，每个Activity组件关联一个Window对象（PhoneWindow），而每个Window内部又包含一个View对象（DecorView），用来描述应用视图。
 它们的类图关系如下：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/View_class.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/View_class.png" height="500"/>
 
 我们来看下View的创建流程
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/View_class.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/View_class.png" height="500"/>
 
 **关键点1：ActivityThread.handleLaunchActivity(ActivityClientRecord r, Intent customIntent)**
 
@@ -976,7 +976,7 @@ public final class ViewRoot extends Handler implements ViewParent,
 
 它们的关系如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/WindowManagerService_structure.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/WindowManagerService_structure.png" height="500"/>
 
 **主要角色**
 
@@ -989,7 +989,7 @@ WindowState对象的成员变量IWindow mClient来要求运行在应用进程这
 
 它们的类图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/WindowManagerService_class.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/WindowManagerService_class.png" height="500"/>
 
 理解了一些基本的概念，我们来分析WindowState对象的创建流程。
 
@@ -1001,7 +1001,7 @@ WindowState对象的创建可以细分为三步：
 
 整个流程序列图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/WindowManagerService_sequence.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/WindowManagerService_sequence.png" height="500"/>
 
 Activity组件在创建过程中，会调用ActivityStack.startActivityLocked()方法，该函数会请求WindowManagerService为正在启动的Activity组件创建一个AppWindowToken对象。
 
@@ -1463,7 +1463,7 @@ private final class WindowState implements WindowManagerPolicy.WindowState {
 
 Java层实现的应用窗口的绘图表面通过两个Surface对象来描述，一个在应用进程这一侧创建的，一个在WindowManagerService侧创建的，它们对应了SurfaceFlinger这一侧同一个Layer对象，如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/Surface_structure.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/Surface_structure.png" height="500"/>
 
 - 在应用进程这一侧，每一个Activity组件都要一个关联的Surface对象，这个Surface对象保存在一个关联的ViewRoot对象的成员变量mSurface中。它负责绘制应用窗口的UI，即
 往应用窗口的图形缓冲区填充UI数据，
@@ -1473,7 +1473,7 @@ Java层实现的应用窗口的绘图表面通过两个Surface对象来描述，
 
 从上面的创建View对象的分析我们可以知道，当一个应用窗口被激活且它的视图对象View创建之后就会调用View.requestLayout()方法对UI进行布局以及显示，整个流程如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/Surface_sequence.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/Surface_sequence.png" height="500"/>
 
 **主要角色**
 

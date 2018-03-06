@@ -4,7 +4,7 @@
 
 >郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 **文章目录**
 
@@ -40,7 +40,7 @@ Activity的复杂性主要体现在两个方面：
 
 Activity的启动流程图（放大可查看）如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/activity_start_flow.png" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/activity_start_flow.png" />
 
 整个流程涉及的主要角色有：
 
@@ -76,7 +76,7 @@ Activity的启动流程图（放大可查看）如下所示：
 
 要理解Activity回退栈，我们就要先理解Activity回退栈的功能结构，它的结构图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/activity_stack_structure.png" width="600" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/activity_stack_structure.png" width="600" />
 
 主要角色有：
 
@@ -210,7 +210,7 @@ Activity的生命周期也是个老生常谈的问题，今天我们从源码的
 
 这里贴一张[android-lifecycle](https://github.com/xxv/android-lifecycle)项目关于Activity与Fragment生命周期图
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/complete_android_fragment_lifecycle.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/complete_android_fragment_lifecycle.png"/>
 
 读者可以从上图看出，Activity有很多种状态，状态之间的变化也比较复杂，在众多状态中，只有三种是常驻状态：
 
@@ -222,7 +222,7 @@ Activity的生命周期也是个老生常谈的问题，今天我们从源码的
 
 我们再来看看生命周期变化时的整个调度流程，生命周期调度流程图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/activity_lifecycle_structure.png" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/activity_lifecycle_structure.png" />
 
 所以你可以看到，整个流程是这样的：
 

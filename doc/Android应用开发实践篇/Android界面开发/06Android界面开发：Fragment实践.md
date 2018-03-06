@@ -34,35 +34,35 @@ Fragment有七种基本操作。
 
 add: add操作添加一个Fragment，会依次调用 onAttach, onCreate, onCreateView, onStart and onResume 等方法。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/fragment_lifecycle_add.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/fragment_lifecycle_add.png"/>
 
 remove: remove操作移除一个Fragment，会依次调用nPause, onStop, onDestroyView, onDestroy and onDetach 等方法。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/fragment_lifecycle_remove.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/fragment_lifecycle_remove.png"/>
 
 replace: replace操作相当于remove+add，它同样会导致视图的重建。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/fragment_lifecycle_replace.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/fragment_lifecycle_replace.png"/>
 
 show：show操作会显示一个的视图，它只会触发onHiddenChange()方法。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/fragment_lifecycle_show.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/fragment_lifecycle_show.png"/>
 
 hide：hide操作会隐藏一个的视图，它只会触发onHiddenChange()方法。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/fragment_lifecycle_hide.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/fragment_lifecycle_hide.png"/>
 
 attach: attach操作关联一个Fragment，会依次调用onCreateView, onStart and onResume 。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/fragment_lifecycle_attach.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/fragment_lifecycle_attach.png"/>
 
 detach: detach操作分离一个Fragment，会依次调用onPause, onStop and onDestroyView  等方法。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/fragment_lifecycle_detach.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/fragment_lifecycle_detach.png"/>
 
 popBackStack
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/fragment_lifecycle_pop_back.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/fragment_lifecycle_pop_back.png"/>
 
 
 关于使用Fragment操作的使用建议
@@ -83,4 +83,4 @@ Fragment的复杂性或者不方便的地方，就是操作方法的调用和回
 
 当配置发生改变、系统内存紧张等原因导致Activity重建。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/fragment_lifecycle_recreate.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/fragment_lifecycle_recreate.png"/>

@@ -59,7 +59,7 @@ Android Camera 相关API也是Android生态碎片化最为严重的一块，首�
 
 官方的开源库[cameraview](https://github.com/google/cameraview)给出了方案：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/media/cameraview_overview.png" width="400"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/cameraview_overview.png" width="400"/>
 
 既然要两套并用，就要定义统一的接口，针对不同场景提供不同的实现，使用的时候也是根据不同的场景来创建不同的实例。
 
@@ -81,7 +81,7 @@ UI（当然我们也需要提供默认的实现），这样就可以让功能和
 
 相机SDK框架图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/media/camera_sdk_structure.png" width="400"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/camera_sdk_structure.png" width="400"/>
 
 - CameraActivity：相机界面，主要用来实现UI的定制，实际功能（点击事件）交由CameraFragment完成。
 - CameraFragment：向CameraActivity提供功能接口，完成CameraActivity里的点击事件，例如：拍照、录像等。
@@ -92,8 +92,8 @@ UI（当然我们也需要提供默认的实现），这样就可以让功能和
 [phoenix](https://github.com/guoxiaoxing/phoenix)项目最新版本[![Download](https://api.bintray.com/packages/guoxiaoxing/maven/phoenix/allList/download.svg)](https://bintray.com/guoxiaoxing/maven/phoenix/_latestVersion)已经实现了这套方案，效果图如下所示：
 
 <p align="center">
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/media/function_4.png" width="400"/>
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/media/play_3.gif" width="400"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/function_4.png" width="400"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/play_3.gif" width="400"/>
 </p>
 
 理解了整体的架构，我们接着就来分析针对这套架构，Camera/Camera2分别该如何实现。
@@ -451,7 +451,7 @@ Camera2 API中主要涉及以下几个关键类：
 
 Camera2拍照流程如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/media/camera2_structure.png" width="400"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/camera2_structure.png" width="400"/>
 
 开发者通过创建CaptureRequest向摄像头发起Capture请求，这些请求会排成一个队列供摄像头处理，摄像头将结果包装在CaptureMetadata中返回给开发者。整个流程建立在一个CameraCaptureSession的会话中。
 

@@ -4,7 +4,7 @@
 
 >郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 **文章目录**
 
@@ -26,7 +26,7 @@ layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLAT
 LayoutInflater是一个抽象类，它的实现类是PhoneLayoutInflater。LayoutInflater会采用深度优先遍历自顶向下遍历View树，根据View的全路径名利用反射获取构造器
 从而构建View的实例。整个逻辑还是很清晰的，我们来具体看一看。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/LayoutInflater_inflate_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/LayoutInflater_inflate_sequence.png"/>
 
 我们先来看看总的调度方法inflate()，这个也是我们最常用的
 
@@ -718,11 +718,11 @@ public abstract class LayoutInflater {
 
 关于Android显示框架主要包括五篇文章：
 
-- [01Android显示框架：Android显示框架概述](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android显示框架/01Android显示框架：Android显示框架概述.md)
-- [02Android显示框架：Android应用视图的载体View](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android显示框架/02Android显示框架：Android应用视图载体View.md)
-- [03Android显示框架：Android应用视图的管理者Window](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android显示框架/03Android显示框架：Android应用视图管理者Window.md)
-- [04Android显示框架：Android应用窗口管理者WindowManager](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android显示框架/04Android显示框架：Android应用窗口管理者WindowManager.md)
-- [05Android显示框架：Android布局解析者LayoutInflater](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android显示框架/05Android显示框架：Android布局解析者LayoutInflater.md)
+- [01Android显示框架：Android显示框架概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android显示框架/01Android显示框架：Android显示框架概述.md)
+- [02Android显示框架：Android应用视图的载体View](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android显示框架/02Android显示框架：Android应用视图载体View.md)
+- [03Android显示框架：Android应用视图的管理者Window](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android显示框架/03Android显示框架：Android应用视图管理者Window.md)
+- [04Android显示框架：Android应用窗口管理者WindowManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android显示框架/04Android显示框架：Android应用窗口管理者WindowManager.md)
+- [05Android显示框架：Android布局解析者LayoutInflater](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android显示框架/05Android显示框架：Android布局解析者LayoutInflater.md)
 
 后续我们会接着进行
 
@@ -731,4 +731,4 @@ public abstract class LayoutInflater {
 - Android通信框架
 - Android多媒体框架
 
-等Android子系统的分析，后续的内容可以关注[Android open source project analysis](https://github.com/guoxiaoxing/android-open-source-project-analysis)项目。
+等Android子系统的分析，后续的内容可以关注[Android open source project analysis](https://github.com/BeesAndroid/BeesAndroid)项目。

@@ -1,4 +1,4 @@
-# <img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/logo.png" alt="Android open source project analysis" width="80" height="80" align="bottom"/> Android open source project analysis
+# <img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/logo.png" alt="BeesAndroid analysis" width="80" height="80" align="bottom"/> Android open source project analysis
 
 ## 功能介绍
 
@@ -9,7 +9,7 @@
 
 - [点击进入GitBook阅读](https://www.gitbook.com/book/BeesAndroid/BeesAndroid/details)
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/QQ.JPG" width="300"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq.JPG" width="300"/>
 
 第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 

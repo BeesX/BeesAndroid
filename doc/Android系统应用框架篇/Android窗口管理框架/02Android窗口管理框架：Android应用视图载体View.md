@@ -4,7 +4,7 @@
 
 >郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 **文章目录**
 
@@ -180,23 +180,23 @@ Activity与View的生命周期变化一目了然。
 
 Activity create
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/view_lifecycle_create.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/view_lifecycle_create.png"/>
 
 Activity pause
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/view_lifecycle_pause.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/view_lifecycle_pause.png"/>
 
 Activity resume
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/view_lifecycle_resume.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/view_lifecycle_resume.png"/>
 
 Activity destory
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/view_lifecycle_destory.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/view_lifecycle_destory.png"/>
 
 我们来总结一下View的声明周期随着Activity生命周期变化的情况。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/view_lifecycle.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/view_lifecycle.png"/>
 
 我们了解这些生命周期方法有什么作用呢？🤔
 
@@ -282,7 +282,7 @@ View外边距
 
 理解了上面这些概念，我们接下来来看看详细的测量流程。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/measure_sequence.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/measure_sequence.png" height="500"/>
 
 View的测量流程看似复杂，实际遵循着简单的逻辑。
 
@@ -607,7 +607,7 @@ mForegroundPaddingLeft ，mForegroundPaddingRight，mForegroundPaddingTop ，mFo
 
 ## 三 View的布局流程
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/layout_sequence.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/layout_sequence.png" height="500"/>
 
 在进行布局的时候，layout()方法被父View调用，在layout()中它会保存父View传进来的自己的位置和尺寸，并且调用onLayout()来进行实际的内部布局。对于onLayout()，View和ViewGroup有所区别：
 
@@ -782,7 +782,7 @@ public class FrameLayout extends ViewGroup {
 
 >Draw过程最终将View绘制在屏幕上。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/draw_sequence.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/draw_sequence.png" height="500"/>
 
 绘制从ViewRoot.draw()开始，它首先会创建一块画布，接着再在画布上绘制Android上的UI，再把画布的内容交给SurfaceFlinger服务来渲染。
 

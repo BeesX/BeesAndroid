@@ -1,6 +1,6 @@
 # Android系统应用框架篇：Service启动流程
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 本篇文章分析Service组件在新进程内的启动流程。
 
@@ -16,7 +16,7 @@
 
 新进程中启动Service组件序列图
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/service_start_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/service_start_sequence.png"/>
 
 
 #### 1 Activity.startService(Intent service)

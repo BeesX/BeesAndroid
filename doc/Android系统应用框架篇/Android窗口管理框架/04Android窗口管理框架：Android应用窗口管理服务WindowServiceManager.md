@@ -4,7 +4,7 @@
 
 >郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 **文章目录**
 
@@ -12,12 +12,12 @@
 - 二 Window的删除流程
 - 三 Window的更新流程
 
-WindowManagerService是位于Framework层的窗口管理服务，它的职责是管理系统中的所有窗口，也就是Window，关于Window的介绍，我们在文章[03Android显示框架：Android应用视图的管理者Window](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android显示框架/03Android显示框架：Android应用视图管理者Window.md)已经
+WindowManagerService是位于Framework层的窗口管理服务，它的职责是管理系统中的所有窗口，也就是Window，关于Window的介绍，我们在文章[03Android显示框架：Android应用视图的管理者Window](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android显示框架/03Android显示框架：Android应用视图管理者Window.md)已经
 详细分析过，通俗来说，Window就是手机上一块显示区域，也就是Android中的绘制画布Surface，添加一个Window的过程，也就是申请分配一块Surface的过程。而整个流程的管理者正是WindowManagerService。
 
 Window在WindowManagerService的管理下，有序的显示在屏幕上，构成了多姿多彩的用户界面，关于Android的整个窗口系统，可以用下图来表示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/window_mansger_service_class.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/window_mansger_service_class.png"/>
 
 Android窗口管理框架从窗口的创建到UI的绘制主要涉及以下角色：
 
@@ -35,7 +35,7 @@ Android窗口管理框架从窗口的创建到UI的绘制主要涉及以下角�
 
 前面说到窗口的管理服务WindowManagerService运行在System Server进程，所以应用进程与WindowManagerService的交互是一个IPC的过程，具体流程如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/window_mansger_service_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/window_mansger_service_structure.png"/>
 
 如上图所示，Activity持有一个Window，负责UI的展示与用户交互，里保存了很多重要的信息，如下所示：
 
@@ -228,12 +228,12 @@ public final class ViewRootImpl implements ViewParent,
 这个方法主要做了两件事：
 
 1. 调用requestLayout()完成界面异步绘制的请求, requestLayout()会去调用scheduleTraversals()来完成View的绘制，scheduleTraversals()方法将一个TraversalRunnable提交到工作队列中执行View的绘制。而
-TraversalRunnable最终调用了performTraversals()方法来完成实际的绘制操作。提到performTraversals()方法我们已经很熟悉了，在文章[02Android显示框架：Android应用视图的载体View](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android显示框架/02Android显示框架：Android应用视图载体View.md)中
+TraversalRunnable最终调用了performTraversals()方法来完成实际的绘制操作。提到performTraversals()方法我们已经很熟悉了，在文章[02Android显示框架：Android应用视图的载体View](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android显示框架/02Android显示框架：Android应用视图载体View.md)中
 我们已经详细的分析过它的实现。
 2. 创建WindowSession并通过WindowSession请求WindowManagerService来完成Window添加的过程这是一个IPC的过程，WindowManagerService作为实际的窗口管理者，窗口的创建、删除和更新都是由它来完成的，它同时还负责了窗口的层叠排序和大小计算
 等工作。
 
-注：在文章[02Android显示框架：Android应用视图的载体View](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android显示框架/02Android显示框架：Android应用视图载体View.md)中
+注：在文章[02Android显示框架：Android应用视图的载体View](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android显示框架/02Android显示框架：Android应用视图载体View.md)中
 我们已经详细的分析过performTraversals()方法的实现，这里我们再简单提一下：
 
 1. 获取Surface对象，用于图形绘制。

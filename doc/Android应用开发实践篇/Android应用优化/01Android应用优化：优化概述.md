@@ -4,7 +4,7 @@
 
 >郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 提笔（好像是键盘，不要在意这些细节🙃）写到性能优化这个专题，我的内心是复杂的，笔者的整个性能优化的经验史就是从Android入门开始一路走来摸爬滚打的过程，在性能优化这个专题上，不管是官方
 还是开发者都给出了很多宝贵的实践经验，这篇文章就是结合前人的经验以及自己这几年工作的总结来写的，笔者尽可能的将原理讲的更通透，内容讲的更充实，方法讲的更有实践性。

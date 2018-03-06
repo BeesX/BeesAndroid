@@ -28,7 +28,7 @@
 
 >线程是比进程更加轻量级的调度单位，线程的引入可以把进程的资源分配和执行调度分开，各个线程既可以共享进程资源，又可以独立调度。
 
-通常大家都会这么去解释进程与线程的区别，在文章[01Android进程框架：进程的启动创建、启动与调度流程](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统底层框架篇/Android进程框架/01Android进程框架：进程的启动创建、启动与调度流程.md)中
+通常大家都会这么去解释进程与线程的区别，在文章[01Android进程框架：进程的启动创建、启动与调度流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统底层框架篇/Android进程框架/01Android进程框架：进程的启动创建、启动与调度流程.md)中
 我们剖析了进程的本质，我们这里再简单回忆一下。
 
 关于进程本质的描述：
@@ -48,7 +48,7 @@
 
 我们接着来看看Java线程的创建序列图，如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/java_thread_start_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/java_thread_start_sequence.png"/>
 
 可以看到，最终调用pthread库的pthread_create()方法创建了新的线程，该线程也使用task_struct结构体来描述，但是它没有自己独立的地址空间，而是与其所在的进程共享地址空间和资源。
 
@@ -60,7 +60,7 @@
 
 线程状态流程图图
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/java_thread_state.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/java_thread_state.png"/>
 
 - NEW：创建状态，线程创建之后，但是还未启动。
 - RUNNABLE：运行状态，处于运行状态的线程，但有可能处于等待状态，例如等待CPU、IO等。
@@ -146,7 +146,7 @@ Vector，那它就不再是线程安全的了。
 
 但是程序却crash了
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/vector_thread_safe.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/vector_thread_safe.png"/>
 
 正确的做法应该是vector对象加上同步锁，如下：
 
@@ -200,7 +200,7 @@ volatile有两条关键的语义：
 
 要理解volatile关键字，我们得先从Java的线程模型开始说起。如图所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/java_memory_model.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/java_memory_model.png"/>
 
 Java内存模型规定了所有字段（这些字段包括实例字段、静态字段等，不包括局部变量、方法参数等，因为这些是线程私有的，并不存在竞争）都存在主内存中，每个线程会
 有自己的工作内存，工作内存里保存了线程所使用到的变量在主内存里的副本拷贝，线程对变量的操作只能在工作内存里进行，而不能直接读写主内存，当然不同内存之间也
@@ -246,7 +246,7 @@ Java内存模型规定了所有字段（这些字段包括实例字段、静态�
 
 ```
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/volatile_thread_safe.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/volatile_thread_safe.png"/>
 
 这段代码启动了10个线程，每次10次自增，按道理最终结果应该是100，但是结果并非如此。
 
@@ -313,7 +313,7 @@ public class Singleton {
 
 它的字节码如下：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/synchronized_bytecode.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/synchronized_bytecode.png"/>
 
 可以看到被synchronized同步的代码块，会在前后分别加上monitorenter和monitorexit，这两个字节码都需要指定加锁和解锁的对象。
 
@@ -349,7 +349,7 @@ java对象，只不过有点特殊而已。由于每个java对象都有1个互�
 
 线程池状态图
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/ThreadPoolExecutor_state.png"  height="400"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/ThreadPoolExecutor_state.png"  height="400"/>
 
 - RUNNING：可以接受新任务，也可以处理等待队列里的任务。
 - SHUTDOWN：不接受新任务，但可以处理等待队列里的任务。
@@ -392,7 +392,7 @@ private static int ctlOf(int rs, int wc) { return rs | wc; }
 
 ThreadPoolExecutor调度流程图
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/ThreadPoolExecutor_flow.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/ThreadPoolExecutor_flow.png"/>
 
 **execute(Runnable command)**
 
@@ -818,7 +818,7 @@ AsyncTask的使用非常的简单，接下来我们去分析AsyncTask的源码�
 
 AsyncTask流程图
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/AsyncTask_flow.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/AsyncTask_flow.png"/>
 
 AsyncTask源码的一开始就是个创建线程池的流程。
 
@@ -1053,7 +1053,7 @@ public final class Dispatcher {
 
 Okhttp请求流程图
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/okhttp_flow.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/okhttp_flow.png"/>
 
 在发起网络请求时，每个请求执行完成后都会调用client.dispatcher().finished(this)。
 

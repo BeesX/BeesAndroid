@@ -11,7 +11,7 @@
 - 三 Service绑定流程
 - 四 Service与IntentService
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 本篇文章开始来分析Service相关原理，Service在开发中使用的相对较少，它主要用来处理后台任务。我们来看看官方对它的定义，如下所示：
 
@@ -65,7 +65,7 @@ nStartCommand()的返回值用来表示系统如何在Service停止的情况下�
 应用通过startService()或者bindService()方法去启动或者绑定Service的过程主要是通过ActivityManagerService来完成，Service启动的过程除了Service组件的创建
 还包括Service所在进程（如果没有创建的话）的创建，具体流程如下图所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/service_create_structure.png" height="400"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/service_create_structure.png" height="400"/>
 
 1. ActivityManagerService通过Socket方式向Zygote进程请求生成（fork）新的进程用来承载Service。
 2. Zygote进程调用fork()方法创建新的进程，并将ActivityThread相关资源加载到新进程。
@@ -74,7 +74,7 @@ nStartCommand()的返回值用来表示系统如何在Service停止的情况下�
 
 Service启动流程序列图如下图所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/service_start_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/service_start_sequence.png"/>
 
 从整个序列图我们还可以看出，Service的启动流程涉及到4个进程，按颜色划分，如下所示：
 
@@ -164,7 +164,7 @@ public final class ActivityThread {
 
 Service绑定流程序列图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/service_bind_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/service_bind_sequence.png"/>
 
 1. ClientActivity组件向ActivityManagerService发送一个绑定ServerService组件的进程间通信请求。
 2. ActivityManagerService发现用来运行ServerService组件与ClientActivity组件运行在同一个进程里，它

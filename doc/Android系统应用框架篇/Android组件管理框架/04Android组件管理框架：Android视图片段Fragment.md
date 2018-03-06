@@ -4,7 +4,7 @@
 
 >郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 **文章目录**
 
@@ -32,7 +32,7 @@ getSupportFragmentManager().beginTransaction()
 Fragment的操作是一种事务操作，什么是事务？🤔简单来说就是一个原子操作，要么被成功执行，否则原来的操作会回滚，各个操作彼此之间互不干扰。我们先整体看下Fragment的操作
 序列图。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/fragment_operation_sequence.png" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/fragment_operation_sequence.png" height="500"/>
 
 嗯，看起来有点长😌，不要方，我们先来看看这里面频繁出现的几个类的作用。
 
@@ -442,7 +442,7 @@ detach后的Fragment可以再attach，而remove后的Fragment却不可以，只�
 
 我们先来看一张完整的Fragment生命周期图。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/fragment_lifecycle_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/fragment_lifecycle_structure.png"/>
 
 我们都知道Fragment的生命周期依赖于它的宿主Activity，但事实的情况却并不这么简单。
 

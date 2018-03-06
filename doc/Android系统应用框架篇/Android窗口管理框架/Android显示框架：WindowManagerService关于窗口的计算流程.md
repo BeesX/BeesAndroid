@@ -4,7 +4,7 @@
 
 >郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 **文章目录**
 
@@ -13,15 +13,15 @@
 
 前面的两篇文章：
 
-- [04Android显示框架：Activity应用视图的创建流程](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android显示框架/04Android显示框架：Activity应用视图的创建流程.md)
-- [05Android显示框架：Activity应用视图的渲染流程](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android显示框架/05Android显示框架：Activity应用视图的渲染流程.md)
+- [04Android显示框架：Activity应用视图的创建流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android显示框架/04Android显示框架：Activity应用视图的创建流程.md)
+- [05Android显示框架：Activity应用视图的渲染流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android显示框架/05Android显示框架：Activity应用视图的渲染流程.md)
 
 我们分析了Activity应用视图的创建与渲染流程，主要针对的是View，下面我们来分析Window。Window是View的直接管理者。Window是一个抽象类，它的实现类是PhoneWindow，Window的管理通过WindowManager，WindowManager
 是外界访问Window的入口，真正完成功能的是WindowManagerService，两者的通信一个IPC过程。
 
 WindowManagerService是窗口的真正管理者，它管理者所有的窗口，如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/window_layer.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/window_layer.png" width="250" height="500"/>
 
 Window其实是一个抽象概念，每一个Window都对应着一个View和ViewRootImpl，View与Window通过ViewRootImpl来建立联系，因此Window并不是实际存在的，它是以View的形式存在的。WindowManagerService
 的主要作用就是计算Window的大小，层级以及创建、切换Window。
@@ -47,7 +47,7 @@ Window其实是一个抽象概念，每一个Window都对应着一个View和View
 
 窗口大小的计算序列图
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/window_size_compute_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/window_size_compute_sequence.png"/>
 
 我们来分析窗口大小（X轴、Y轴）的计算流程，在介绍窗口的计算流程之前，我们先来了解一下窗口的组成。
 
@@ -56,7 +56,7 @@ Window其实是一个抽象概念，每一个Window都对应着一个View和View
 content-left、content-right、content-top、content-bottom分别用来描述内容区域与窗口区域的左右上下边界距离。
 visible-left、visible-right、visible-top、visible-bottom分别用来描述可见区域与窗口区域的左右上下边界距离。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/view/09/window_inset.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/view/09/window_inset.png"/>
 
 ### 关键点1：ViewRoot.performTraversals()
 
@@ -2084,7 +2084,7 @@ int mSubLayer：描述了一个子窗口在其兄弟窗口中的显示位置，�
 - 应用请求WindowManagerService增加一个窗口
 - 应用请求WindowManagerService重新布局一个窗口
 
-在文章[04Android显示框架：Activity应用视图的创建流程](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android显示框架/04Android显示框架：Activity应用视图的创建流程.md)
+在文章[04Android显示框架：Activity应用视图的创建流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android显示框架/04Android显示框架：Activity应用视图的创建流程.md)
 中，我们就提到，应用请求增加一个窗口，最终会调用WindowManagerService.addWindow()方法。
 
 ### 关键点1：WindowManagerService.addWindow()
@@ -2171,11 +2171,11 @@ PhoneWindowManager.windowTypeToLayerLw()与PhoneWindowManager.subWindowTypeToLay
 
 主序
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/layer_type_base.jpg"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/layer_type_base.jpg"/>
 
 次序
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/layer_type_sub.jpg"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/layer_type_sub.jpg"/>
 
 ```java
 public class WindowManagerService extends IWindowManager.Stub    

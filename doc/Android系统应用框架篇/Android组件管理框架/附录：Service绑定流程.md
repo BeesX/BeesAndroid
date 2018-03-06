@@ -1,6 +1,6 @@
 # Android系统应用框架篇：Service启动流程
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 本篇文章我们来分析Service组件在进程内的绑定流程。
 
@@ -82,7 +82,7 @@ ClientActivity组件可以通过这个Binder对象与ServerService组件建立�
 
 **Service组件在进程内绑定序列图**
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/art/app/10/service_bind_sequence.png">
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/app/10/service_bind_sequence.png">
 
 我们来看一看具体的流程。
 
@@ -647,7 +647,7 @@ class ApplicationThreadProxy implements IApplicationThread {
 
 接下来的流程大家就很熟悉了。ApplicationThread.scheduleCreateService()调用ActivityThread.queueOrSendMessage()，ActivityThread
 发出CREATE_SERVICE的Message，最终调用ActivityThreaqd.handleCreateService()来创建Service。这一部分属于Service的创建流程，可以
-参见文章[10Android系统应用框架篇：Service启动流程](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android组件框架/10Android系统应用框架篇：Service启动流程.md)。
+参见文章[10Android系统应用框架篇：Service启动流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android组件框架/10Android系统应用框架篇：Service启动流程.md)。
 
 ### 9 ApplicationThread.scheduleCreateService()
 ### 10 ActivityThread.queueOrSendMessage()
@@ -1130,7 +1130,7 @@ ServerService内部有一个继承Binder的本地Binder对象，该对象会在S
 
 **Service组件在进程内绑定序列图**
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/art/app/10/service_bind_sequence.png">
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/app/10/service_bind_sequence.png">
 
 我们再来梳理一下整个流程：
 

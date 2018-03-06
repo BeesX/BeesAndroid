@@ -13,7 +13,7 @@ Android的包文件APK分为两个部分：代码和资源，所以打包方面�
 
 APK整体的的打包流程如下图所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/vm/apk_package_flow.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/apk_package_flow.png"/>
 
 具体说来：
 
@@ -167,13 +167,13 @@ AssetManger来完成的，这个我们下面会讲。
 
 resources.arsc是一个编译后的二进制文件，在Android Stduio里打开以后是这样的，如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/resource/resources_arsc_file.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/resource/resources_arsc_file.png"/>
 
 可以看到resources.arsc里存放l各类资源的索引参数和配置信息。
 
 resources.arsc的文件格式如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/resource/resources_arsc_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/resource/resources_arsc_structure.png"/>
 
 注：整个文件都是有一系列chuck（块）构成的，chuck是整个文件的划分单位，每个模块都是一个chuck，chuck最前面是一个ResChunk_header的结构体，用来描述整个chunk的信息，如下所示：
 
@@ -207,5 +207,5 @@ resources.arsc索引表从上至下文件格式依次为：
 
 Android打包流程详图
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/vm/apk_package_flow_detail.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/apk_package_flow_detail.png"/>
 

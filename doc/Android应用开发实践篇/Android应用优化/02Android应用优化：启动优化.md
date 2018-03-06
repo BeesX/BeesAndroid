@@ -4,7 +4,7 @@
 
 >郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 - 启动优化官方文档：https://developer.android.com/topic/performance/launch-time.html
 - 启动优化视频教程：https://www.youtube.com/watch?v=Vw1G1s73DsY&index=74&list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE
@@ -20,7 +20,7 @@
 
 我们之前的文章也有分析过，当用户点击一个桌面上的图标，启动一个未经启动过的应用，其冷启动的流程如下图所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/app_start_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/app_start_structure.png"/>
 
 1. 加载和启动应用程序。
 2. 启动后立即显示应用程序的空白开始窗口。
@@ -109,15 +109,15 @@ adb shell screenrecord --bugreport /sdcard/test.mp4
 App开始启动到App启动完成如下所示：
 
 <p>
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/app_start_record_1.png" width="250"/>
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/app_start_record_2.png" width="250"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/app_start_record_1.png" width="250"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/app_start_record_2.png" width="250"/>
 <p/>
 
 我们可以借助播放器的满放功能，利用右上角的时间戳逐帧的去分析整个启动流程，这样我们就可以知道哪个环节出现了性能问题。
 
 另外，在调试冷启动时间的时候，还可以把开发者选项里的不保留后台进程打开，如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/app_start_no_background_process.png" width="250"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/app_start_no_background_process.png" width="250"/>
 
 ## 二 启动时间优化
 

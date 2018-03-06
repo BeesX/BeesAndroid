@@ -6,7 +6,7 @@
 
 **文章目录**
 
-我们前面说过APK可以分为代码与资源两部分，那么在加载APK时也会涉及代码的加载和资源的加载，代码的加载事实上对应的就是Android应用进程的创建流程，关于这一块的内容我们在文章[01Android进程框架：进程的创建、启动与调度流程](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统底层框架篇/Android进程框架/01Android进程框架：进程的创建、启动与调度流程.md)已经分析过，本篇文章
+我们前面说过APK可以分为代码与资源两部分，那么在加载APK时也会涉及代码的加载和资源的加载，代码的加载事实上对应的就是Android应用进程的创建流程，关于这一块的内容我们在文章[01Android进程框架：进程的创建、启动与调度流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统底层框架篇/Android进程框架/01Android进程框架：进程的创建、启动与调度流程.md)已经分析过，本篇文章
 我们着重来分析资源的加载流程。
 
 我们知道在代码中我们通常会通过getResource()去获取Resources对象，Resource对象是应用进程内的一个全局对象，它用来访问应用的资源。除了Resources对象我们还可以通过getAsset()获取
@@ -20,7 +20,7 @@ AssetManger来读取指定文件路径下的文件。Resource与AssetManger这�
 
 AssetManager对象创建序列图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/resource/asset_manager_create_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/resource/asset_manager_create_sequence.png"/>
 
 我们可以发现在整个流程AssetManager在Java和C++层都有一个实现，那么它们俩有什么关系呢？🤔
 
@@ -196,7 +196,7 @@ ResroucesManager的createResroucesImpl()方法会先调用createAssetManager()�
 
 Resources对象的创建序列图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/resource/resource_create_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/resource/resource_create_sequence.png"/>
 
 ResourcesImpl的构造方法如下所示：
 
@@ -281,7 +281,7 @@ public final class AssetManager implements AutoCloseable {
 
 整个流程还是比较简单的，我们以layout.xml文件的查找流程为例来说明一下，具体序列图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/ui/LayoutInflater_inflate_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/LayoutInflater_inflate_sequence.png"/>
 
 我们先来看看总的调度方法inflate()，这个也是我们最常用的
 

@@ -37,7 +37,7 @@
 
 Bitmap是我们应用里使用内存的大户，很多OOM都是由于不当的图像使用造成内存过多占用而造成的，Bitmap在Android虚拟机内存存储的结构图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/media/bitmap_vm_structure.png" width="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/bitmap_vm_structure.png" width="500"/>
 
 从上图可以看出：
 
@@ -308,19 +308,19 @@ quality = 100
 
 1823x1076 1.16m
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/media/timo_compress_quality_100.jpg" width="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/timo_compress_quality_100.jpg" width="500"/>
 
 quality = 50
 
 1823x1076 124.52k
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/media/timo_compress_quality_50.jpg" width="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/timo_compress_quality_50.jpg" width="500"/>
 
 quality = 0
 
 1823x1076 35.80k
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/media/timo_compress_quality_0.jpg" width="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/timo_compress_quality_0.jpg" width="500"/>
 
 可以看到随着quality的降低，图像质量发生了明显的变化，但是图像的尺寸没有发生变化。
 
@@ -493,11 +493,11 @@ ImageUtils.save(bitmap, savePath, Bitmap.CompressFormat.PNG);
 ```
 inSampleSize = 1
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/media/timo_BitmapFactory_1.png" width="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/timo_BitmapFactory_1.png" width="500"/>
 
 inSampleSize = 32
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/media/timo_BitmapFactory_32.png" width="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/timo_BitmapFactory_32.png" width="500"/>
 
 可以看到这种方式的关键在于inSampleSize的选择，它决定了压缩后图像的大小。
 

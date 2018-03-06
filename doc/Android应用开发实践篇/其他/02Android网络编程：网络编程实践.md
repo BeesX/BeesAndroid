@@ -6,7 +6,7 @@
 
 **文章目录**
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 在Android的网络开发过程中，我们通常会使用像Okhttp、Retrofit这种高度封装的网络库，它们完全屏蔽了相关技术细节。但是掌握其中的原理对我们来
 说是很重要的，要知其然，也要知其所以然，只要掌握了这些原理，你才能更好的理解Okhttp等网络库的源码实现。
@@ -36,7 +36,7 @@ TCP协议是HTTP/HTTPS、WebSocket等协议的基础，我们首先来看看它�
 
 IP数据报
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/network/ip_message.jpg"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/network/ip_message.jpg"/>
 
 1. 版本——占 4 bit，指IP协议的版本. 目前的 IP 协议版本号为 4 (即 IPv4)
 2. 首部长度——占 4 bit，可表示的最大数值是 15 个单位(一个单位为 4 字节)因此 IP 的首部长度的最大值是60字节。
@@ -53,7 +53,7 @@ IP数据报
 
 TCP报文
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/network/tcp_message.jpg"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/network/tcp_message.jpg"/>
 
 1. 源端口和目的端口字段——各占 2 字节。端口是传输层与应用层的服务接口。传输层的复用和分用功能都要通过端口才能实现。  
 2. 序号字段——占 4 字节。TCP 连接中传送的数据流中的每一个字节都编上一个序号。序号字段的值则指的是本报文段所发送的数据的第一个字节的序号。 
@@ -78,7 +78,7 @@ TCP用[三次握手](https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E6%8E%A7%E
 
 三次握手与四次分手的流程如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/network/three_way_handshake.jpeg" width="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/network/three_way_handshake.jpeg" width="500"/>
 
 三次握手
 
@@ -126,7 +126,7 @@ HTTP应用程序是通过相互发送报文工作的，报文是HTTP应用程序
 - 请求头部由关键字/值对组成，每行一对，关键字和值用英文冒号“:”分隔。请求头部通知服务器有关于客户端请求的信息。
 - 请求实体不在 GET 方法中使用，而是在POST 方法中使用。POST 方法适用于需要客户填写表单的场合。与请求包体相关的最常使用的是包体类型 Content-Type 和包体长度 Content-Length。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/network/http_request_message.jpg" width="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/network/http_request_message.jpg" width="500"/>
 
 请求报文
 
@@ -151,7 +151,7 @@ Connection: keep-alive
 - 响应首部由关键字/值对组成，每行一对，关键字和值用英文冒号“:”分隔。请求首部部通知客户端有关于服务端响应的信息。
 - 响应实体是服务器返回给客户端的文本信息。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/network/http_response_message.jpg" width="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/network/http_response_message.jpg" width="500"/>
 
 ```
 HTTP/1.1 200 OK
@@ -265,7 +265,7 @@ GET与POST在本质上都是TCP连接，只是GET直接把参数写在请求行�
 
 如下图所示，可以很明显的看出两个的区别：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/network/http_https.png" width="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/network/http_https.png" width="500"/>
 
 注：TLS是SSL的升级替代版，具体发展历史可以参考[传输层安全性协议](https://zh.wikipedia.org/wiki/%E5%82%B3%E8%BC%B8%E5%B1%A4%E5%AE%89%E5%85%A8%E6%80%A7%E5%8D%94%E5%AE%9A)。
 
@@ -295,7 +295,7 @@ SSL/TSL的常见开源实现是OpenSSL，OpenSSL是一个开放源代码的软�
 为什么需要WebSocket，因为 HTTP 协议有一个缺陷：通信只能由客户端发起。而WebSocket可以实现双向通信。一般来说WebSocket是用来实现双工通信的长连接的。HTTP想要达到
 这种效果，一般会通过轮询或者long poll来实现，这样比较占用资源且非常被动。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/network/websocket_connection.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/network/websocket_connection.png"/>
 
 一个典型的WebSocket请求与响应
 

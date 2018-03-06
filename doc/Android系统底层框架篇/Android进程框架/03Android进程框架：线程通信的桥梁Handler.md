@@ -14,13 +14,13 @@
     - 3.1 消息分发
     - 3.2 消息处理
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 Android是一个消息驱动型的系统，消息机制在Android系统中扮演者重要的角色，与之相关的Handler也是我日常中常用的工具。今天我们就来聊一聊这个。
 
 Android消息循环流程图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/android_handler_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/android_handler_structure.png"/>
 
 主要涉及的角色如下所示：
 
@@ -37,7 +37,7 @@ Android消息循环流程图如下所示：
 
 事实上，在整个消息循环的流程中，并不只有Java层参与，很多重要的工作都是在C++层来完成的。我们来看下这些类的调用关系。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/android_handler_class.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/android_handler_class.png"/>
 
 注：虚线表示关联关系，实线表示调用关系。
 
@@ -820,7 +820,7 @@ public class Handler {
 首先，Activity里的Handler直接调用的就是默认的无参构造方法。可以看到在上面的构造方法里调用Looper.myLooper()去获取当前线程的Looper，对于Activity而言当前线程就是主线程（UI线程），那主线程
 的Looper是什么时候创建的呢？🤔
 
-在[03Android组件框架：Android视图容器Activity](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/Android系统应用框架篇/Android组件框架/03Android组件框架：Android视图容器Activity.md)一文
+在[03Android组件框架：Android视图容器Activity](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android组件框架/03Android组件框架：Android视图容器Activity.md)一文
 里我们就分析过，ActivityThread的main()函数作为应用的入口，会去初始化Looper，并开启消息循环。
 
 ```java

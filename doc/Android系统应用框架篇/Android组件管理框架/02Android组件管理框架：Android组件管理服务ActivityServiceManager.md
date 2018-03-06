@@ -4,7 +4,7 @@
 
 >郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 **文章目录**
 
@@ -22,7 +22,7 @@ Activity、Service、BroadcastReceiver的启动、切换、调度都有着相似
 
 Activity的启动流程图（放大可查看）如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/activity_start_flow.png" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/activity_start_flow.png" />
 
 主要角色有：
 
@@ -35,7 +35,7 @@ Activity的启动流程图（放大可查看）如下所示：
 
 Service的启动流程图（放大可查看）如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/service_start_flow.png" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/service_start_flow.png" />
 
 主要角色有：
 
@@ -45,7 +45,7 @@ Service的启动流程图（放大可查看）如下所示：
 
 BroadcastReceiver的启动流程图（放大可查看）如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/broadcast_start_flow.png" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/broadcast_start_flow.png" />
 
 主要角色有：
 
@@ -187,7 +187,7 @@ public UiHandler() {
 
 ActivityManagerService类图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/activity_manager_service_class.png" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/activity_manager_service_class.png" />
 
 - ActivityManager：AMS给客户端调用的接口。
 - ActivityManagerNative：该类是ActivityManagerService的父类，继承与Binder，主要用来负责进程通信，接收ActivityManager传递过来的信息，这么写可以将通信部分分离在ActivityManagerNative，使得
@@ -229,7 +229,7 @@ ActivityManager定义了很多静态内部类来描述这些信息，具体说�
 
 我们知道四大组件的启动依赖于进程，如果该进程没有启动，会先启动该进程，再进行attach，描述进程信息的是ProcessRecord，还有很多其他以Record结尾的类用来描述组件信息，如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/activity_,anager_service_reocrd_class.png" width="600"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/activity_,anager_service_reocrd_class.png" width="600"/>
 
 - ProcessRecord：描述进程信息。
 - ActivityRecord：描述Activity组件信息。
@@ -425,7 +425,7 @@ public final class ActivityThread {
 
 ActivityThread工作流程图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/app/component/activity_thread_structure.png" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/activity_thread_structure.png" />
 
 通过前面的分析，ActivityThread的整个工作流程就非常明朗了。ActivityThread内部有个Binder对象ApplicationThread，AMS可以调用ApplicationThread里的方法，而
 ApplicationThread里的方法利用mH（Handler）发送消息给ActivityThread里的消息队列，ActivityThread再去处理这些消息，进而完成诸如Activity启动等各种操作。

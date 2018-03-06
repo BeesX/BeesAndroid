@@ -34,14 +34,14 @@ Binder是一套相对比较复杂的设计，如何去理解它呢？🤔
 
 **从内核空间与用户空间角度**
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/binder_structure.png" width="600"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/binder_structure.png" width="600"/>
 
 我们知道每一个Android应用都是一个独立的Android进程，它们拥有自己独立的虚拟地址空间，应用进程处于用户空间之中，彼此之间相互独立，不能共享。但是内核空间却是可以共享的，Client
 进程向Server进程通信，就是利用进程间可以共享的内核地址空间来完成底层的通信的工作的。Client进程与Server端进程往往采用ioctl等方法跟内核空间的驱动进行交互。
 
 **从Java与C++分层的角度**
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/binder_detail_structure.png" width="600"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/binder_detail_structure.png" width="600"/>
 
 可以发现，在整个Binder通信机制中，从大的方面分可以分为：
 
@@ -162,11 +162,11 @@ public class ClientActivity extends AppCompatActivity {
 
 RemoteService.Process进程：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/remote_service_log.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/remote_service_log.png"/>
 
 ClientActivity.Process进程：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/native/process/client_activity_log.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/client_activity_log.png"/>
 
 可以发现ClientActivity与RemoteService处于两个不同的进程中，但ClientActivity却获得了RemoteService返回的消息，这就是跨进程通信实现的效果。
 

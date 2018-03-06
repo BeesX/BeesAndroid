@@ -4,7 +4,7 @@
 
 >郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
-第一次阅览本系列文章，请参见[导读](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/guoxiaoxing/android-open-source-project-analysis/blob/master/README.md)。
+第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 ## 一 Android Studio Profiler
 
@@ -15,21 +15,21 @@ Android Studio Profiler 官方文档：https://developer.android.com/studio/prof
 
 它的界面构造图如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/android_studio_profile_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/android_studio_profile_structure.png"/>
 
 CPU、内存和网络数据的展示都是通过Event时间线实时展示的，如果你想查看某个指标的详情，只需点击当前图表即可，如下所示：
 
 CPU分析器
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/android_studio_profile_cpu.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/android_studio_profile_cpu.png"/>
 
 内存分析器
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/android_studio_profile_memory.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/android_studio_profile_memory.png"/>
 
 网络分析器
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/android_studio_profile_network.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/android_studio_profile_network.png"/>
 
 ### 1.1 CPU分析器
 
@@ -38,7 +38,7 @@ CPU分析器
 
 CPU分析器界面如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/android_studio_cpu_prefiler.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/android_studio_cpu_prefiler.png"/>
 
 我们来讲一下上述小红圈数字代表的含义：
 
@@ -54,7 +54,7 @@ CPU分析器界面如下所示：
 
 我们来看看如何去跟踪函数调用栈，当点击跟踪按钮就可以开始跟踪，再次点击结束跟踪，跳出以下界面：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/android_studio_cpu_prefiler.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/android_studio_cpu_prefiler.png"/>
 
 - 红圈1：时间范围，用以选择跟踪的时间范围。
 - 红圈2：时间戳，记录开始跟踪和结束跟踪的时间戳。
@@ -66,19 +66,19 @@ CPU分析器界面如下所示：
 
 Call Chart：提供函数跟踪的图表表示形式，水平轴表示函数调用的时间段和时间，并妍垂直轴显示其被调用者，橙色表示系统API，绿色表示应用API，蓝色表示第三方API（包括Java API）。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/call_chart.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/call_chart.png"/>
 
 Flame Chart：提供了一个倒置的Call Chart，功能和Call Chart相同。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/flame_chart.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/flame_chart.png"/>
 
 Top Down：展示了一个函数调用列表，它是一个树型结构。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/bottom_up.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/bottom_up.png"/>
 
 Bottom Up：展示了一个函数调用列表，它按照CPU消耗时间的最多（或者最少）来排序函数。
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/android_studio_cpu_prefiler.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/android_studio_cpu_prefiler.png"/>
 
 除此之外，我们也可以通过 Recording Configurations 自定义跟踪配置。
 
@@ -88,7 +88,7 @@ Bottom Up：展示了一个函数调用列表，它按照CPU消耗时间的最�
 
 内存分析器界面如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/memory_profiler.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/memory_profiler.png"/>
 
 - 红圈1：强制执行GC。
 - 红圈2：捕获堆转储备。
@@ -111,7 +111,7 @@ Bottom Up：展示了一个函数调用列表，它按照CPU消耗时间的最�
 
 内存分析器也可以针对函数对内存的使用情况进行跟踪，如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/memory_profiler_record.png"/>                 
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/memory_profiler_record.png"/>                 
 
 我们还可以点击上面的dunp java heap按钮来捕获堆转储，来帮助我们分析内存分配和内存泄漏相关信息，如下所示：
 
@@ -159,7 +159,7 @@ Debug.dumpHprofData()
 
 网络分析器就比较简单了，用来实时显示网络请求的情况，网络的速度，接收和发出的数据量等信息，如下所示：
 
-<img src="https://github.com/guoxiaoxing/android-open-source-project-analysis/raw/master/art/practice/performance/network_profiler.png"/>    
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/performance/network_profiler.png"/>    
 
 - 红圈1：无线功耗状态（低/高）
 - 红圈2：时间线
