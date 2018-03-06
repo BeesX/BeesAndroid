@@ -2,21 +2,22 @@
 
 ## 功能介绍
 
-[![License](https://img.shields.io/github/license/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid) 
+[![License](https://img.shields.io/github/issues/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid) 
 [![Stars](https://img.shields.io/github/stars/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid) 
 [![Stars](https://img.shields.io/github/forks/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid) 
 [![Forks](https://img.shields.io/github/issues/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid) 
 
 > BeesAndroid项目旨在通过提供一系列的工具与方法，降低阅读系统源码的门槛，帮助更多的Android工程师理解Andriod系统，掌握Android系统。
 
-- Github：https://github.com/BeesAndroid
-- GitBook：https://www.gitbook.com/book/beesandroid/beesandroid/welcome
-- 掘金博客：https://juejin.im/user/5a9e5b95518825558b3d6e22/posts
+- [Blog](https://juejin.im/user/5a9e5b95518825558b3d6e22/posts)
+- [GitBook](https://www.gitbook.com/book/beesandroid/beesandroid/welcome)
 
 欢迎关注我们的微信公众号，新文章会第一时间发布到掘金博客与微信公众平台，我们也有自己的交流群，下方是QQ交流群，微信群已满，可以加我微信 allenwells 邀请入群。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/android_system_structure.png"/>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/android_system_structure.png"/>
+<p>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq.png"/>
+<p/>
 
 第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
