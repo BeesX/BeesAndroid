@@ -7,6 +7,9 @@
 [![Stars](https://img.shields.io/github/forks/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid) 
 [![Forks](https://img.shields.io/github/issues/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid) 
 
+BeesAndroid项目于2018年3月6日正式成立啦，该项目的前身是[android-open-source-project-analysis](https://github.com/guoxiaoxing/android-open-source-project-analysis)，这个项目提供了一系列的Android系统源码
+分析文章，收到了良好的反馈，但是一个人的力量是有限的，因此将其推成团体项目BeesAndroid，有什么问题和意见可以提交issue，欢迎参与。
+
 > BeesAndroid项目旨在通过提供一系列的工具与方法，降低阅读系统源码的门槛，帮助更多的Android工程师理解Andriod系统，掌握Android系统。
 
 - [Blog](https://juejin.im/user/5a9e5b95518825558b3d6e22/posts)
@@ -16,7 +19,7 @@
 
 <p>
 <img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="300"/>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq.png" width="300"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq.png" width="280"/>
 <p/>
 
 第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
