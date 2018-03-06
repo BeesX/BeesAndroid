@@ -11,6 +11,8 @@
 
 <img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq.JPG" width="300"/>
 
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.jpg" width="300"/>
+
 第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 - [Git repositories on android](https://android.googlesource.com/)
