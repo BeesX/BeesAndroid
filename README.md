@@ -12,11 +12,11 @@
 - [Blog](https://juejin.im/user/5a9e5b95518825558b3d6e22/posts)
 - [GitBook](https://www.gitbook.com/book/beesandroid/beesandroid/welcome)
 
-欢迎关注我们的微信公众号，新文章会第一时间发布到掘金博客与微信公众平台，我们也有自己的交流群，下方是QQ交流群，微信群已满，可以加我微信 allenwells 邀请入群。
+> 欢迎关注我们的微信公众号，新文章会第一时间发布到掘金博客与微信公众平台，我们也有自己的交流群，下方是QQ交流群，微信群已满，可以加我微信 allenwells 邀请入群。
 
 <p>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png"/>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="300"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq.png" width="300"/>
 <p/>
 
 第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
