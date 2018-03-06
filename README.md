@@ -1,4 +1,4 @@
-# <img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/logo.png" alt="BeesAndroid analysis" width="80" height="80" align="bottom"/> Android open source project analysis
+# <img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/logo.png" alt="BeesAndroid" width="80" height="80" align="bottom"/> BeesAndroid
 
 ## 功能介绍
 
