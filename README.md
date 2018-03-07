@@ -9,15 +9,15 @@
 
 BeesAndroid开源技术小组正式成立啦，Bees，即蜜蜂，取义分享、合作与奉献的意思，这也是BeesAndroid小组的宗旨，我们第一个团体项目BeesAndroid也于2018年3月6日同步上线，该项目的前
 身是[android-open-source-project-analysis](https://github.com/guoxiaoxing/android-open-source-project-analysis)，这个项目提供了一系列的Android系统源码分析文章，收
-到了良好的反馈，但是一个人的力量是有限的，因此将其推成团体项目BeesAndroid，项目采用GPL协议，在保护作者知识产权的基础上，最大化的做到开源与开放，如果有什么问题和意见欢迎提交issue，也
-欢迎大家参与到本项目中来。
+到了良好的反馈。
+
+但是一个人的力量是有限的，因此将其推成团体项目BeesAndroid，项目采用GPL协议，在保护作者知识产权的基础上，最大化的做到开源与开放，如果有什么问题和意见欢迎提交issue，也欢迎大家参与
+到本项目中来。
 
 > BeesAndroid项目旨在通过提供一系列的工具与方法，降低阅读系统源码的门槛，帮助更多的Android工程师理解Andriod系统，掌握Android系统。
 
 - [Blog](https://juejin.im/user/5a9e5b95518825558b3d6e22/posts)
 - [GitBook](https://www.gitbook.com/book/beesandroid/beesandroid/welcome)
-
-第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 - [Git repositories on android](https://android.googlesource.com/)
 - [Android Open Source Project](https://source.android.com/)
@@ -69,91 +69,109 @@ Android系统架构图
 
 - [导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)
 
-## Android系统应用框架篇
+## 原理篇
+
+### 应用框架层
 
 **Android窗口管理框架**
 
-- [01Android窗口管理框架：Android窗口管理框架概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android窗口管理框架/01Android窗口管理框架：Android窗口管理框架概述.md)
-- [02Android窗口管理框架：Android应用视图的载体View](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android窗口管理框架/02Android窗口管理框架：Android应用视图载体View.md)
-- [03Android窗口管理框架：Android应用视图的管理者Window](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android窗口管理框架/03Android窗口管理框架：Android应用视图管理者Window.md)
-- [04Android窗口管理框架：Android应用窗口管理服务WindowServiceManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android窗口管理框架/04Android窗口管理框架：Android应用窗口管理服务WindowServiceManager.md)
-- [05Android窗口管理框架：Android布局解析者LayoutInflater](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android窗口管理框架/05Android窗口管理框架：Android布局解析者LayoutInflater.md)
-- [06Android窗口管理框架：Android列表控件RecyclerView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android窗口管理框架/06Android窗口管理框架：Android列表控件RecyclerView.md)
+- Android窗口管理框架：Android窗口管理框架概述
+- Android窗口管理框架：Android应用视图的载体View
+- Android窗口管理框架：Android应用视图的管理者Window
+- Android窗口管理框架：Android应用窗口管理服务WindowServiceManager
+- Android窗口管理框架：Android布局解析者LayoutInflater
+- Android窗口管理框架：Android列表控件RecyclerView
 
 **Android组件管理框架**
 
-- [01Android组件管理框架：Android组件管理框架概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android组件管理框架/01Android组件管理框架：组件管理框架概述.md)
-- [02Android组件管理框架：Android组件管理服务ActivityServiceManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android组件管理框架/02Android组件管理框架：Android组件管理服务ActivityServiceManager.md)
-- [03Android组件管理框架：Android视图容器Activity](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android组件管理框架/03Android组件管理框架：Android视图容器Activity.md)
-- [04Android组件管理框架：Android视图片段Fragment](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android组件管理框架/04Android组件管理框架：Android视图片段Fragment.md)
-- [05Android组件管理框架：Android后台服务Service](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android组件管理框架/05Android组件管理框架：Android后台服务Service.md)
-- [06Android组件管理框架：Android内容提供者ContentProvider](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android组件管理框架/06Android组件管理框架：Android内容提供者ContentProvider.md)
-- [07Android组件管理框架：Android广播接收者BroadcastReceiver](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android组件管理框架/07Android组件管理框架：Android广播接收者BroadcastReceiver.md)
-- [08Android组件管理框架：Android应用上下文Context](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android组件管理框架/08Android组件管理框架：Android应用上下文Context.md)
+- Android组件管理框架：Android组件管理框架概述
+- Android组件管理框架：Android组件管理服务ActivityServiceManager
+- Android组件管理框架：Android视图容器Activity
+- Android组件管理框架：Android视图片段Fragment
+- Android组件管理框架：Android后台服务Service
+- Android组件管理框架：Android内容提供者ContentProvider
+- Android组件管理框架：Android广播接收者BroadcastReceiver
+- Android组件管理框架：Android应用上下文Context
 
 **Android包管理框架**
 
-- [01Android包管理框架：APK的打包流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android包管理框架/01Android包管理框架：APK的打包流程.md)
-- [02Android包管理框架：APK的安装流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android包管理框架/02Android包管理框架：APK的安装流程.md)
-- [03Android包管理框架：APK的加载流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android包管理框架/03Android包管理框架：APK的加载流程.md)
+- Android包管理框架：APK的打包流程
+- Android包管理框架：APK的安装流程
+- Android包管理框架：APK的加载流程
 
 **Android资源管理框架**
 
-- [01Android资源管理框架：资源管理器AssetManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统应用框架篇/Android资源管理管理框架/01Android资源管理框架：资源管理器AssetManager.md)
+- Android资源管理框架：资源管理器AssetManager
 
-## Android系统底层框架篇
+**Android线程通信框架**
 
-**Android进程框架**
+- Android线程通信框架：Handler
 
-- [01Android进程框架：进程的创建、启动与调度流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统底层框架篇/Android进程框架/01Android进程框架：进程的创建、启动与调度流程.md)
-- [02Android进程框架：线程与线程池](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统底层框架篇/Android进程框架/02Android进程框架：线程与线程池.md)
-- [03Android进程框架：线程通信的桥梁Handler](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统底层框架篇/Android进程框架/03Android进程框架：线程通信的桥梁Handler.md)
-- [04Android进程框架：进程通信的桥梁Binder](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统底层框架篇/Android进程框架/04Android进程框架：进程通信的桥梁Binder.md)
-- [05Android进程框架：进程通信的桥梁Socket](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统底层框架篇/Android进程框架/05Android进程框架：进程通信的桥梁Socket.md)
+### 进程通信层
 
-**Android内存框架**
+**Binder进程通信框架**
 
-- [01Android内存框架：内存管理系统](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统底层框架篇/Android内存框架/01Android内存框架：内存管理系统.md)
-- [02Android内存框架：Ashmem匿名共享内存系统](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统底层框架篇/Android内存框架/02Android内存框架：Ashmem匿名共享内存系统.md)
+- Binder进程通信框架：服务管理器ServiceManager
+- Binder进程通信框架：BpBinder与BBinder
+- Binder进程通信框架：Binder驱动
+
+**Socket进程通信框架**
+
+- Socket进程通信框架：Socket
+
+### 系统服务层
+
+### Android运行时层
 
 **Android虚拟机框架**
 
-- [01Android虚拟机框架：Java类加载机制](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统底层框架篇/Android虚拟机框架/01Android虚拟机框架：Java类加载机制.md)
+- Android虚拟机框架：Java类加载机制
 
-## Android应用开发实践篇
+### 硬件抽象层
+
+### Linux内核层
+
+**Android进程框架**
+
+- Android进程框架：进程的创建、启动与调度流程
+- Android进程框架：线程与线程池
+
+**Android内存框架**
+
+- Android内存框架：内存管理系统
+- Android内存框架：Ashmem匿名共享内存系统
+
+## 实践篇
 
 **Android界面开发**
 
-- [01Android界面开发：View自定义实践概览](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android界面开发/01Android界面开发：View自定义实践概览.md)
-- [02Android界面开发：View自定义实践布局篇](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android界面开发/02Android界面开发：View自定义实践布局篇.md)
-- [03Android界面开发：View自定义实践绘制篇](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android界面开发/03Android界面开发：View自定义实践绘制篇.md)
-- [04Android界面开发：View自定义实践交互篇](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android界面开发/04Android界面开发：View自定义实践交互篇.md)
+- Android界面开发：View自定义实践概览
+- Android界面开发：View自定义实践布局篇
+- Android界面开发：View自定义实践绘制篇
+- Android界面开发：View自定义实践交互篇
 
 **Android应用优化**
 
-- [01Android应用优化：优化概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android应用优化/01Android应用优化：优化概述.md)
-- [02Android应用优化：启动优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android应用优化/02Android应用优化：启动优化.md)
-- [03Android应用优化：界面优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android应用优化/03Android应用优化：界面优化.md)
-- [04Android应用优化：内存优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android应用优化/04Android应用优化：内存优化.md)
-- [05Android应用优化：图像优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android应用优化/05Android应用优化：图像优化.md)
-- [06Android应用优化：网络优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android应用优化/06Android应用优化：网络优化.md)
-- [07Android应用优化：并发优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android应用优化/07Android应用优化：并发优化.md)
-- [08Android应用优化：优化工具](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android应用优化/08Android应用优化：优化工具.md)
+- Android应用优化：优化概述
+- Android应用优化：启动优化
+- Android应用优化：界面优化
+- Android应用优化：内存优化
+- Android应用优化：图像优化
+- Android应用优化：网络优化
+- Android应用优化：并发优化
+- Android应用优化：优化工具
 
 **Android媒体开发**
 
-- [01Android媒体开发：Bitmap实践指南](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android媒体开发/01Android媒体开发：Bitmap实践指南.md)
-- [02Android媒体开发：Camera实践指南](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android媒体开发/02Android媒体开发：Camera实践指南.md)
+- Android媒体开发：Bitmap实践指南
+- Android媒体开发：Camera实践指南
 
 **其他**
 
-- [01Android混合编程：WebView实践](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/其他/01Android混合编程：WebView实践.md)
-- [02Android网络编程：网络编程实践](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/其他/02Android网络编程：网络编程实践.md)
-
-## Android系统软件设计篇
-
-- [01Android系统软件设计篇：软件设计原则](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统软件设计篇/01Android系统软件设计篇：软件设计原则.md)
-- [02Android系统软件设计篇：设计模式](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统软件设计篇/02Android系统软件设计篇：设计模式.md)
+- Android混合编程：WebView实践]
+- Android网络编程：网络编程实践]
+- Android系统设计：软件设计原则]
+- Android系统设计：设计模式]
 
 > 欢迎关注我们的微信公众号，新文章会第一时间发布到掘金博客与微信公众平台，我们也有自己的交流群，下方是QQ交流群，微信群已满，可以加我微信 allenwells 邀请入群。
 
