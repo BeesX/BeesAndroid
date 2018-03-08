@@ -66,6 +66,10 @@ Android系统架构图
 
 - [导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)
 
+欢迎提交Issue与PR，为帮助我们更好的维护此项目，请先阅读wiki里的相关规范。
+
+- [Wiki](https://github.com/BeesAndroid/BeesAndroid/wiki)
+
 ## 原理篇
 
 ### 应用框架层
