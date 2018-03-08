@@ -9,9 +9,7 @@ Android系统，掌握Android系统。
 
 **文章目录**
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/android_ui_system.png"/>
-
-从上图可以看出，Android的显示系统分为3层：
+Android的显示系统分为三层：
 
 - UI框架层：负责管理窗口中View组件的布局与绘制以及响应用户输入事件
 - WindowManagerService层：负责管理窗口Surface的布局与次序
