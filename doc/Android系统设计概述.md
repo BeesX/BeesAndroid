@@ -1,6 +1,6 @@
-作者：[xxx](https://github.com/xxx)
+作者：[郭孝星](https://github.com/guoxiaoxing)
 
-校对：[xxx](https://github.com/xxx)、[xxx](https://github.com/xxx)
+校对：[郭孝星](https://github.com/guoxiaoxing)
 
 **关于项目**
 
