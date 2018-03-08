@@ -9,7 +9,6 @@ Android系统，掌握Android系统。
 
 **文章目录**
 
-
 <img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/view/android_ui_system.png"/>
 
 从上图可以看出，Android的显示系统分为3层：
