@@ -1,12 +1,16 @@
-# Android窗口管理框架篇：Android窗口管理框架概述
+作者：[xxx](https://github.com/xxx)
 
-**关于作者**
+校对：[xxx](https://github.com/xxx)、[xxx](https://github.com/xxx)
 
->郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
+**关于项目**
 
-第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
+> [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读Android系统源码的门槛，让更多的Android工程师理解
+Android系统，掌握Android系统。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/android_ui_system.png"/>
+**文章目录**
+
+
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/view/android_ui_system.png"/>
 
 从上图可以看出，Android的显示系统分为3层：
 
