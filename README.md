@@ -39,24 +39,13 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 - 要善于去粗存精，Android Framework也是人写的，有精华也有糟粕，并不是每行代码你都需要问个为什么，很多时候没有那么多为什么，只是当时那种情况下就那样设计了。但是
 对于关键函数我们要去深究它的实现细节。
 
-**Android系统架构图**
-
-Android系统架构图
-
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/android_system_structure.png"/>
-
-从上到下依次分为六层：
-
-- 应用框架层
-- 进程通信层
-- 系统服务层
-- Android运行时层
-- 硬件抽象层
-- Linux内核层
-
 在正式阅读本系列文章之前，请先阅读导读相关内容，这会帮助你更加快捷的理解文章内容。
 
 - [导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)
+
+你也可以先阅读关于Android系统的概述，让你有Android系统的设计有个整体的把握。
+
+- [Android系统设计概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统设计概述.md)
 
 欢迎提交Issue与PR，为帮助我们更好的维护此项目，请先阅读wiki里的相关规范。
 
