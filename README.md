@@ -73,39 +73,52 @@ Android系统架构图
 
 ### 应用框架层
 
-**Android窗口管理框架**
+**Android窗口系统**
 
-- Android窗口管理框架：Android窗口管理框架概述
-- Android窗口管理框架：Android应用视图的载体View
-- Android窗口管理框架：Android应用视图的管理者Window
-- Android窗口管理框架：Android应用窗口管理服务WindowServiceManager
-- Android窗口管理框架：Android布局解析者LayoutInflater
-- Android窗口管理框架：Android列表控件RecyclerView
+- Android窗口系统：Android窗口系统概述
+- Android窗口系统：Android应用视图管理者Window
+- Android窗口系统：Android应用视图载体View
+- Android窗口系统：Android应用视图容器ViewGroup
+- Android窗口系统：Android帧布局控件FrameLayout
+- Android窗口系统：Android线性布局控件LinearLayout
+- Android窗口系统：Android相对布局控件RelativeLayout
+- Android窗口系统：Android协调布局控件CoordinatorLayout
+- Android窗口系统：Android下拉刷新控件SwipeRefreshLayout
+- Android窗口系统：Android滑动控件ViewPager
+- Android窗口系统：Android滚动控件ScrollView
+- Android窗口系统：Android列表控件RecyclerView
+- Android窗口系统：Android进度条控件ProgressBar
+- Android窗口系统：Android图片控件ImageView
+- Android窗口系统：Android文字控件TextView
+- Android窗口系统：Android编辑框控件EditView
+- Android窗口系统：Android图片控件Dialog
 
-**Android组件管理框架**
+**Android组件系统**
 
-- Android组件管理框架：Android组件管理框架概述
-- Android组件管理框架：Android组件管理服务ActivityServiceManager
-- Android组件管理框架：Android视图容器Activity
-- Android组件管理框架：Android视图片段Fragment
-- Android组件管理框架：Android后台服务Service
-- Android组件管理框架：Android内容提供者ContentProvider
-- Android组件管理框架：Android广播接收者BroadcastReceiver
-- Android组件管理框架：Android应用上下文Context
+- Android组件系统：Android组件系统概述
+- Android组件系统：Android视图容器Activity
+- Android组件系统：Android视图片段Fragment
+- Android组件系统：Android后台服务Service
+- Android组件系统：Android内容提供者ContentProvider
+- Android组件系统：Android广播接收者BroadcastReceiver
+- Android组件系统：Android应用上下文Context
 
-**Android包管理框架**
+**Android资源系统**
 
-- Android包管理框架：APK的打包流程
-- Android包管理框架：APK的安装流程
-- Android包管理框架：APK的加载流程
+- Android资源系统：Android资源系统概述
+- Android资源系统：资源管理器AssetManager
 
-**Android资源管理框架**
+**Android包系统**
 
-- Android资源管理框架：资源管理器AssetManager
+- Android包系统：Android包系统概述
+- Android包系统：APK的打包流程
+- Android包系统：APK的安装流程
+- Android包系统：APK的加载流程
 
-**Android线程通信框架**
+**Android应用通信系统**
 
-- Android线程通信框架：Handler
+- Android应用通信系统：Android应用通信系统概述
+- Android应用通信系统：Android线程通信桥梁Handler
 
 ### 进程通信层
 
@@ -121,11 +134,80 @@ Android系统架构图
 
 ### 系统服务层
 
+**Android组件管理服务**
+
+- Android组件管理服务：ActivityServiceManager
+
+**Android窗口管理服务**
+
+- Android窗口管理服务：WindowServiceManager
+
+**Android图形绘制服务**
+
+- Android图形绘制服务：SurfaceFlinger
+- Android图形绘制服务：Android布局解析器LayoutInflater
+
+**Android包管理服务**
+
+- Android窗口管理服务：PackageServiceManager
+
+**Android反馈管理服务**
+
+- Android反馈管理服务：AccessibilityManagerService
+
+**Android壁纸管理服务**
+
+- Android壁纸管理服务：WallpaperManagerService
+
+**Android搜索管理服务**
+
+- Android搜索管理服务：SearchManagerService
+
+**Android通知管理服务**
+
+- Android通知管理服务：NotificationManagerService
+
+**Android定位管理服务**
+
+- Android定位管理服务：LocationManagerService
+
+**Android输入法管理服务**
+
+- Android输入法管理服务：InputMethodManagerService
+
+**Android电源管理服务**
+
+- Android电源管理服务：PowerManagerService
+
+**Android闹钟管理服务**
+
+- Android闹钟管理服务：AlarmManagerService
+
+**Android网络管理服务**
+
+- Android闹钟管理服务：NetworkManagementService
+
+**Android账户管理服务**
+
+- Android账户管理服务：AccountManagerService
+
+**Android设备存储管理服务**
+
+- Android设备存储管理服务：DeviceStorageMonitorService
+
+**Android备份管理服务**
+
+- Android备份管理服务：BackupManagerService
+
 ### Android运行时层
 
-**Android虚拟机框架**
+**JVM虚拟机**
 
-- Android虚拟机框架：Java类加载机制
+- JVM虚拟机：Java类加载机制
+
+**Android ART虚拟机**
+
+- Android ART虚拟机：Android ART虚拟机概述
 
 ### 硬件抽象层
 
@@ -168,10 +250,10 @@ Android系统架构图
 
 **其他**
 
-- Android混合编程：WebView实践]
-- Android网络编程：网络编程实践]
-- Android系统设计：软件设计原则]
-- Android系统设计：设计模式]
+- Android混合编程：WebView实践
+- Android网络编程：网络编程实践
+- Android系统设计：软件设计原则
+- Android系统设计：设计模式
 
 > 欢迎关注我们的微信公众号，新文章会第一时间发布到掘金博客与微信公众平台，我们也有自己的交流群，下方是QQ交流群，微信群已满，可以加我微信 allenwells 邀请入群。
 
