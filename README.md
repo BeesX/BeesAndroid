@@ -73,25 +73,25 @@ Android系统架构图
 
 ### 应用框架层
 
-**Android窗口系统**
+**Android视图系统**
 
-- Android窗口系统：Android窗口系统概述
-- Android窗口系统：Android应用视图管理者Window
-- Android窗口系统：Android应用视图载体View
-- Android窗口系统：Android应用视图容器ViewGroup
-- Android窗口系统：Android帧布局控件FrameLayout
-- Android窗口系统：Android线性布局控件LinearLayout
-- Android窗口系统：Android相对布局控件RelativeLayout
-- Android窗口系统：Android协调布局控件CoordinatorLayout
-- Android窗口系统：Android下拉刷新控件SwipeRefreshLayout
-- Android窗口系统：Android滑动控件ViewPager
-- Android窗口系统：Android滚动控件ScrollView
-- Android窗口系统：Android列表控件RecyclerView
-- Android窗口系统：Android进度条控件ProgressBar
-- Android窗口系统：Android图片控件ImageView
-- Android窗口系统：Android文字控件TextView
-- Android窗口系统：Android编辑框控件EditView
-- Android窗口系统：Android图片控件Dialog
+- Android视图系统：Android视图系统概述
+- Android视图系统：Android应用视图管理者Window
+- Android视图系统：Android应用视图载体View
+- Android视图系统：Android应用视图容器ViewGroup
+- Android视图系统：Android帧布局控件FrameLayout
+- Android视图系统：Android线性布局控件LinearLayout
+- Android视图系统：Android相对布局控件RelativeLayout
+- Android视图系统：Android协调布局控件CoordinatorLayout
+- Android视图系统：Android下拉刷新控件SwipeRefreshLayout
+- Android视图系统：Android滑动控件ViewPager
+- Android视图系统：Android滚动控件ScrollView
+- Android视图系统：Android列表控件RecyclerView
+- Android视图系统：Android进度条控件ProgressBar
+- Android视图系统：Android图片控件ImageView
+- Android视图系统：Android文字控件TextView
+- Android视图系统：Android编辑框控件EditView
+- Android视图系统：Android图片控件Dialog
 
 **Android组件系统**
 
