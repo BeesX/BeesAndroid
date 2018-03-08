@@ -19,9 +19,6 @@ BeesAndroid开源技术小组正式成立啦，Bees，即蜜蜂，取义分享�
 - [Blog](https://juejin.im/user/5a9e5b95518825558b3d6e22/posts)
 - [GitBook](https://www.gitbook.com/book/beesandroid/beesandroid/welcome)
 
-- [Git repositories on android](https://android.googlesource.com/)
-- [Android Open Source Project](https://source.android.com/)
-
 **代码版本**
 
 - 细分版本：N6F26U	
