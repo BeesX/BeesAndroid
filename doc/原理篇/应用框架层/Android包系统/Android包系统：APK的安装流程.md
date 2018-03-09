@@ -76,7 +76,7 @@ Linux用户ID与Linux用户组ID的分配与管理是由Settings类来完成的�
 
 👉 点击图片查看高清大图
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/package/apk_install_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/package/apk_install_sequence.png"/>
 
 嗯，看起来有点长😤，但只要我们掌握核心逻辑和原理，再长的函数调用链都是纸老虎。😎
 
