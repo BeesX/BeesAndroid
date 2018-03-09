@@ -1,4 +1,4 @@
-# Android系统编程思想：设计模式
+# Android系统设计原则与设计模式
 
 作者：[郭孝星](https://github.com/guoxiaoxing)
 
@@ -27,7 +27,7 @@ Android系统，掌握Android系统。
 
 23种设计模式划分如下图所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/program/design_pattern.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/design/design_pattern.png"/>
 
 👉 注：23种设计模式很多小伙伴都烂熟于心，但是真正编程实践的时候未必会想的起来，这其实是一个潜移默化的过程，在看设计模式的时候，尽量多动手写一写，其中
 手写（不借助IDE）的效果最佳，可以加深理解，理解的深了，编程的时候自然就可以想的到去应用。
