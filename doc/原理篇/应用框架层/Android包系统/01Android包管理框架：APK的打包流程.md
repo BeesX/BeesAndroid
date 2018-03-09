@@ -1,8 +1,13 @@
 # Android包管理框架：APK的打包流程
 
-**关于作者**
+作者：[郭孝星](https://github.com/guoxiaoxing)
 
->郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
+校对：[郭孝星](https://github.com/guoxiaoxing)
+
+**关于项目**
+
+> [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读Android系统源码的门槛，让更多的Android工程师理解
+Android系统，掌握Android系统。
 
 **文章目录**
 
@@ -13,7 +18,7 @@ Android的包文件APK分为两个部分：代码和资源，所以打包方面�
 
 APK整体的的打包流程如下图所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/apk_package_flow.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/package/apk_package_flow.png"/>
 
 具体说来：
 
@@ -207,5 +212,5 @@ resources.arsc索引表从上至下文件格式依次为：
 
 Android打包流程详图
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/apk_package_flow_detail.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/package/apk_package_flow_detail.png"/>
 
