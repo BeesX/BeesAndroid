@@ -1,4 +1,4 @@
-# Android组件管理框架：Android应用上下文Context
+# Android组件系统：Android应用上下文Context
 
 **关于作者**
 

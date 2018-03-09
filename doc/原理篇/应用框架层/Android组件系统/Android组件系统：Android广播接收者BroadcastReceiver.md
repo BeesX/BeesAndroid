@@ -1,15 +1,20 @@
-# Android组件管理框架：Android广播接收者BroadcastReceiver
+# Android组件系统：Android广播接收者BroadcastReceiver
 
-**关于作者**
+作者：[郭孝星](https://github.com/guoxiaoxing)
 
->郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
+校对：[郭孝星](https://github.com/guoxiaoxing)
+
+文章状态：编辑中
+
+**关于项目**
+
+> [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读Android系统源码的门槛，让更多的Android工程师理解
+Android系统，掌握Android系统。
 
 **文章目录**
 
 - 一 广播的注册流程
 - 二 广播的发送流程
-
-第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
 Android里的广播机制用来做进程或者线程通信，它基于Binder实现，使用广播的过程分为发送广播和接收广播两个过程，BroadcastReceiver作为四大组件之一，就是用来接收广播的。
 
