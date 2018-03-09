@@ -176,6 +176,6 @@ public class InitIntentService extends IntentService {
 ### 2.3 界面预加载
 
 界面预加载主要指的是MainActivity的预加载问题，现在的应用一般都会有个闪屏页，闪屏页一般有个2s左右的广告时间，这个就是可以利用的黄金时间，可以利用它做MainActivity，利用首页的UI逻辑不要
-过于负责，利用TraceView和Systrace做好耗时组件和方法的分析与优化，另外，如果主页是通过ViewPager实现的，要做好ViewPager的懒加载。
+过于复杂，利用TraceView和Systrace做好耗时组件和方法的分析与优化，另外，如果主页是通过ViewPager实现的，要做好ViewPager的懒加载。
 
 另外，还可以给MainActivity设置一个windowBackground，免得MainActivity在加载的时候一直白屏。
