@@ -158,7 +158,7 @@ camera = Camera.open(cameraId);
 //获取相机参数
 camera.getParameters();
 //设置相机参数
-camera.getParameters();
+camera.setParameters();
 ```
 
 常见的参数有以下几种。
