@@ -347,4 +347,4 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 QQ交流群
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq.png" width="300"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq_2.png" width="300"/>
