@@ -46,7 +46,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 你也可以先阅读关于Android系统的概述，让你有Android系统的设计有个整体的把握。
 
 - [Android系统设计概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统设计概述.md)
-- [Android系统设计原则与设计模式](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/AndroidAndroid系统设计原则与设计模式.md)
+- [Android系统设计原则与设计模式](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android系统设计原则与设计模式.md)
 
 欢迎提交Issue与PR，为帮助我们更好的维护此项目，请先阅读wiki里的相关规范。
 
