@@ -72,7 +72,7 @@ nStartCommand()的返回值用来表示系统如何在Service停止的情况下�
 应用通过startService()或者bindService()方法去启动或者绑定Service的过程主要是通过ActivityManagerService来完成，Service启动的过程除了Service组件的创建
 还包括Service所在进程（如果没有创建的话）的创建，具体流程如下图所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/service_create_structure.png" height="400"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/component/service_create_structure.png" height="400"/>
 
 1. ActivityManagerService通过Socket方式向Zygote进程请求生成（fork）新的进程用来承载Service。
 2. Zygote进程调用fork()方法创建新的进程，并将ActivityThread相关资源加载到新进程。
@@ -81,7 +81,7 @@ nStartCommand()的返回值用来表示系统如何在Service停止的情况下�
 
 Service启动流程序列图如下图所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/service_start_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/component/service_start_sequence.png"/>
 
 从整个序列图我们还可以看出，Service的启动流程涉及到4个进程，按颜色划分，如下所示：
 
@@ -171,7 +171,7 @@ public final class ActivityThread {
 
 Service绑定流程序列图如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/service_bind_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/component/service_bind_sequence.png"/>
 
 1. ClientActivity组件向ActivityManagerService发送一个绑定ServerService组件的进程间通信请求。
 2. ActivityManagerService发现用来运行ServerService组件与ClientActivity组件运行在同一个进程里，它
