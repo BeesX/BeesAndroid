@@ -48,7 +48,7 @@ PackageInstallerActivity显示的是个对话框，当点击确定安装以后�
 
 整个APK的安装流程如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/package/apk_install_structure.png" width="600"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/package/apk_install_structure.png" width="600"/>
 
 1. 复制APK到/data/app目录下，解压并扫描安装包。
 2. 资源管理器解析APK里的资源文件。
