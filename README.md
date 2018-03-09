@@ -52,6 +52,8 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 - [Wiki](https://github.com/BeesAndroid/BeesAndroid/wiki)
 
+👉 注：每篇文章有三种状态：编辑中、校对中和已完成。请阅读已完成状态的文章。
+
 ## 原理篇
 
 ### 应用框架层
@@ -60,23 +62,26 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|Android视图系统：Android视图系统概述| | | |
-|Android视图系统：Android应用视图管理者Window| | | |
-|Android视图系统：Android应用视图载体View| | | |
-|Android视图系统：Android应用视图容器ViewGroup| | | | 
-|Android视图系统：Android帧布局控件FrameLayout| | | |
-|Android视图系统：Android线性布局控件LinearLayout| | | |
-|Android视图系统：Android相对布局控件RelativeLayout| | |  |
-|Android视图系统：Android协调布局控件CoordinatorLayout| | | | 
-|Android视图系统：Android下拉刷新控件SwipeRefreshLayout| | | | 
-|Android视图系统：Android滑动控件ViewPager| | | | 
-|Android视图系统：Android滚动控件ScrollView| | | | 
-|Android视图系统：Android列表控件RecyclerView| | | | 
-|Android视图系统：Android进度条控件ProgressBar| | | | 
-|Android视图系统：Android图片控件ImageView| | | | 
-|Android视图系统：Android文字控件TextView| | | | 
-|Android视图系统：Android编辑框控件EditView| | | | 
-|Android视图系统：Android图片控件Dialog| | | |
+|[Android视图系统：Android视图系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android视图系统概述.md)| 编辑中|  |  |
+|[Android视图系统：Android应用视图管理者Window](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android应用视图管理者Window.md)| 编辑中|  |  |
+|[Android视图系统：Android应用视图View](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android应用视图View.md)| 编辑中|  |  |
+|[Android视图系统：Android应用视图组ViewGroup](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android应用视图组ViewGroup.md)| 编辑中|  |  |
+|[Android视图系统：Android帧布局控件FrameLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android帧布局控件FrameLayout.md)| 编辑中|  |  |
+|[Android视图系统：Android线性布局控件LinearLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android线性布局控件LinearLayout.md)| 编辑中|  |  |
+|[Android视图系统：Android相对布局控件RelativeLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android相对布局控件RelativeLayout.md)| 编辑中|  |  |
+|[Android视图系统：Android协调布局控件CoordinatorLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android协调布局控件CoordinatorLayout.md)| 编辑中|  |  |
+|[Android视图系统：Android下拉刷新控件SwipeRefreshLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android下拉刷新控件SwipeRefreshLayout.md)| 编辑中|  |  |
+|[Android视图系统：Android滑动控件ViewPager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android滑动控件ViewPager.md)| 编辑中|  |  |
+|[Android视图系统：Android滚动控件ScrollView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android滚动控件ScrollView.md)| 编辑中|  |  |
+|[Android视图系统：Android列表控件RecyclerView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android列表控件RecyclerView.md)| 编辑中|  |  |
+|[Android视图系统：Android进度条控件ProgressBar](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android进度条控件ProgressBar.md)| 编辑中|  |  |
+|[Android视图系统：Android进度条控件ProgressBar](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android进度条控件ProgressBar.md)| 编辑中|  |  |
+|[Android视图系统：Android文字控件TextView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android文字控件TextView.md)| 编辑中|  |  |
+|[Android视图系统：Android编辑框控件EditText](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android编辑框控件EditText.md)| 编辑中|  |  |
+|[Android视图系统：Android图片控件ImageView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android图片控件ImageView.md)| 编辑中|  |  |
+|[Android视图系统：Android对话框控件Dialog](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android对话框控件Dialog.md)| 编辑中|  |  |
+|[Android视图系统：Android弹出窗口控件PopupWindow](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android弹出窗口控件PopupWindow.md)| 编辑中|  |  |
+
 
 **Android组件系统**
 
