@@ -1,8 +1,13 @@
 # Android包管理框架：APK的加载流程
 
-**关于作者**
+作者：[郭孝星](https://github.com/guoxiaoxing)
 
->郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
+校对：[郭孝星](https://github.com/guoxiaoxing)
+
+**关于项目**
+
+> [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读Android系统源码的门槛，让更多的Android工程师理解
+Android系统，掌握Android系统。
 
 **文章目录**
 
@@ -12,267 +17,9 @@
 我们知道在代码中我们通常会通过getResource()去获取Resources对象，Resource对象是应用进程内的一个全局对象，它用来访问应用的资源。除了Resources对象我们还可以通过getAsset()获取
 AssetManger来读取指定文件路径下的文件。Resource与AssetManger这对兄弟就构造了资源访问框架的基础。
 
-那么AssetManager对象与Resources对象在哪里创建的呢？🤔
 
-### 3.1 AssetManager的创建流程
 
-我们知道每个启动的应用都需要先创建一个应用上下文Context，Context的实际实现类是ContextImpl，ContextImpl在创建的时候创建了Resources对象和AssetManager对象。
 
-AssetManager对象创建序列图如下所示：
-
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/resource/asset_manager_create_sequence.png"/>
-
-我们可以发现在整个流程AssetManager在Java和C++层都有一个实现，那么它们俩有什么关系呢？🤔
-
->事实上实际的功能都是由C++层的AssetManag来完成的。每个Java层的AssetManager对象都一个long型的成员变量mObject，用来保存C++层
-AssetManager对象的地址，通过这个变量将Java层的AssetManager对象与C++层的AssetManager对象关联起来。
-
-```java
-public final class AssetManager implements AutoCloseable {
-    // 通过这个变量将Java层的AssetManager对象与C++层的AssetManager对象关联起来。
-    private long mObject;
-}
-```
-
-从上述序列图中我们可以看出，最终调用Asset的构造函数来创建Asset对象，如下所示：
-
-```java
-public final class AssetManager implements AutoCloseable {
-      public AssetManager() {
-          synchronized (this) {
-              if (DEBUG_REFS) {
-                  mNumRefs = 0;
-                  incRefsLocked(this.hashCode());
-              }
-              init(false);
-              if (localLOGV) Log.v(TAG, "New asset manager: " + this);
-              //创建系统的AssetManager
-              ensureSystemAssets();
-          }
-      }
-  
-      private static void ensureSystemAssets() {
-          synchronized (sSync) {
-              if (sSystem == null) {
-                  AssetManager system = new AssetManager(true);
-                  system.makeStringBlocks(null);
-                  sSystem = system;
-              }
-          }
-      }
-      
-      private AssetManager(boolean isSystem) {
-          if (DEBUG_REFS) {
-              synchronized (this) {
-                  mNumRefs = 0;
-                  incRefsLocked(this.hashCode());
-              }
-          }
-          init(true);
-          if (localLOGV) Log.v(TAG, "New asset manager: " + this);
-      }
-      
-    private native final void init(boolean isSystem);
-}
-```
-
-可以看到构造函数会先调用native方法init()去构造初始化AssetManager对象，可以发现它还调用了ensureSystemAssets()方法去创建系统AssetManager，为什么还会有个系统AssetManager呢？🤔
-
->这是因为Android应用程序不仅要访问自己的资源，还需要访问系统的资源，系统的资源放在/system/framework/framework-res.apk文件中，它在应用进程中是通过一个单独的Resources对象（Resources.sSystem）
-和一个单独的AssetManger（AssetManager.sSystem）对象来管理的。
-
-我们接着来看native方法init()的实现，它实际上是调用android_util_AssetManager.cpp类的android_content_AssetManager_init()方法，如下所示；
-
-👉 [android_util_AssetManager.cpp](https://android.googlesource.com/platform/frameworks/base.git/+/android-4.3_r2.1/core/jni/android_util_AssetManager.cpp)
-
-```java
-static void android_content_AssetManager_init(JNIEnv* env, jobject clazz, jboolean isSystem)
-{
-    if (isSystem) {
-        verifySystemIdmaps();
-    }
-    //构建AssetManager对象
-    AssetManager* am = new AssetManager();
-    if (am == NULL) {
-        jniThrowException(env, "java/lang/OutOfMemoryError", "");
-        return;
-    }
-
-    //添加默认的资源路径，也就是系统资源的路径
-    am->addDefaultAssets();
-
-    ALOGV("Created AssetManager %p for Java object %p\n", am, clazz);
-    env->SetLongField(clazz, gAssetManagerOffsets.mObject, reinterpret_cast<jlong>(am));
-}
-```
-我们接着来看看AssetManger.cpp的ddDefaultAssets()方法。
-
-👉 [AssetManager.cpp](https://android.googlesource.com/platform/frameworks/base/+/master/libs/androidfw/AssetManager.cpp)
-
-```java
-static const char* kSystemAssets = "framework/framework-res.apk";
-
-bool AssetManager::addDefaultAssets()
-{
-    const char* root = getenv("ANDROID_ROOT");
-    LOG_ALWAYS_FATAL_IF(root == NULL, "ANDROID_ROOT not set");
-
-    String8 path(root);
-    path.appendPath(kSystemAssets);
-
-    return addAssetPath(path, NULL, false /* appAsLib */, true /* isSystemAsset */);
-}
-```
-ANDROID_ROOT指的就是/sysetm目录，全局变量kSystemAssets指向的是"framework/framework-res.apk"，所以拼接以后就是我们前面说的系统资源的存放目录"/system/framework/framework-res.apk"
-
-拼接好path后作为参数传入addAssetPath()方法，注意Java层的addAssetPath()方法实际调用的也是底层的此方法，如下所示：
-
-```java
-
-static const char* kAppZipName = NULL; //"classes.jar";
-
-bool AssetManager::addAssetPath(
-        const String8& path, int32_t* cookie, bool appAsLib, bool isSystemAsset)
-{
-    AutoMutex _l(mLock);
-
-    asset_path ap;
-
-    String8 realPath(path);
-    //kAppZipName如果不为NULL，一般将会被设置为classes.jar
-    if (kAppZipName) {
-        realPath.appendPath(kAppZipName);
-    }
-    
-    //检查传入的path是一个文件还是一个目录，两者都不是的时候直接返回
-    ap.type = ::getFileType(realPath.string());
-    if (ap.type == kFileTypeRegular) {
-        ap.path = realPath;
-    } else {
-        ap.path = path;
-        ap.type = ::getFileType(path.string());
-        if (ap.type != kFileTypeDirectory && ap.type != kFileTypeRegular) {
-            ALOGW("Asset path %s is neither a directory nor file (type=%d).",
-                 path.string(), (int)ap.type);
-            return false;
-        }
-    }
-
-    //资源路径mAssetPaths是否已经添加过参数path描述的一个APK的文件路径，如果
-    //已经添加过，则不再往下处理。直接将path保存在输出参数cookie中
-    for (size_t i=0; i<mAssetPaths.size(); i++) {
-        if (mAssetPaths[i].path == ap.path) {
-            if (cookie) {
-                *cookie = static_cast<int32_t>(i+1);
-            }
-            return true;
-        }
-    }
-
-    ALOGV("In %p Asset %s path: %s", this,
-         ap.type == kFileTypeDirectory ? "dir" : "zip", ap.path.string());
-
-    ap.isSystemAsset = isSystemAsset;
-    //path所描述的APK资源路径没有被添加过，则添加到mAssetPaths中。
-    mAssetPaths.add(ap);
-
-    //...
-
-    return true;
-```
-
-该方法的实现也很简单，就是把path描述的APK资源路径加入到资源目录数组mAssetsPath中去，mAssetsPath是AssetManger.cpp的成员变量，AssetManger.cpp有三个
-比较重要的成员变量：
-
-- mAssetsPath：资源存放目录。
-- mResources：资源索引表。
-- mConfig：设备的本地配置信息，包括设备大小，国家地区、语音等配置信息。
-
-有了这些变量AssetManger就可以正常的工作了。AssetManger对象也就创建完成了。
-
-ResroucesManager的createResroucesImpl()方法会先调用createAssetManager()方法创建AssetManger对象，然后再调用ResourcesImpl的构造方法创建ResourcesImpl对象。
-
-### 3.1 Resources的创建流程
-
-Resources对象的创建序列图如下所示：
-
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/resource/resource_create_sequence.png"/>
-
-ResourcesImpl的构造方法如下所示：
-
-```java
-public class ResourcesImpl {
-   public ResourcesImpl(@NonNull AssetManager assets, @Nullable DisplayMetrics metrics,
-            @Nullable Configuration config, @NonNull DisplayAdjustments displayAdjustments) {
-        mAssets = assets;
-        mMetrics.setToDefaults();
-        mDisplayAdjustments = displayAdjustments;
-        updateConfiguration(config, metrics, displayAdjustments.getCompatibilityInfo());
-        mAssets.ensureStringBlocks();
-    }
-}
-```
-在这个方法里有两个重要的函数：
-
-- updateConfiguration(config, metrics, displayAdjustments.getCompatibilityInfo())：首先是根据参数config和metrics来更新设备的当前配置信息，例如，屏幕大小和密码、国家地区和语言、键盘
-配置情况等，接着再调用成员变量mAssets所指向的一个Java层的AssetManager对象的成员函数setConfiguration来将这些配置信息设置到与之关联的C++层的AssetManger。
-- ensureStringBlocks()：读取
-
-我们重点来看看ensureStringBlocks()的实现。
-
-```java
-public final class AssetManager implements AutoCloseable {
-    
-    @NonNull
-    final StringBlock[] ensureStringBlocks() {
-        synchronized (this) {
-            if (mStringBlocks == null) {
-                //读取字符串资源池，sSystem.mStringBlocks表示系统资源索引表的字符串常量池
-                //前面我们已经创建的了系统资源的AssetManger sSystem，所以系统资源字符串资源池已经读取完毕。
-                makeStringBlocks(sSystem.mStringBlocks);
-            }
-            return mStringBlocks;
-        }
-    }
-
-    //seed表示是否要将系统资源索引表里的字符串资源池也一起拷贝出来
-    /*package*/ final void makeStringBlocks(StringBlock[] seed) {
-        //系统资源索引表个数
-        final int seedNum = (seed != null) ? seed.length : 0;
-        //总的资源索引表个数
-        final int num = getStringBlockCount();
-        mStringBlocks = new StringBlock[num];
-        if (localLOGV) Log.v(TAG, "Making string blocks for " + this
-                + ": " + num);
-        for (int i=0; i<num; i++) {
-            if (i < seedNum) {
-                //系统预加载资源的时候，已经解析过framework-res.apk中的resources.arsc
-                mStringBlocks[i] = seed[i];
-            } else {
-                //调用getNativeStringBlock(i)方法读取字符串资源池
-                mStringBlocks[i] = new StringBlock(getNativeStringBlock(i), true);
-            }
-        }
-    }
-    
-    private native final int getStringBlockCount();
-    private native final long getNativeStringBlock(int block);
-}
-```
-
-首先解释一下什么是StringBlocks，StringBlocks描述的是一个字符串资源池，Android里每一个资源索引表resources.arsc都包含一个字符串资源池。 getStringBlockCount()
-方法返回的也就是这种资源池的个数。
-
-上面我们已经说了resources.arsc的文件格式，接下来就会调用native方法getNativeStringBlock()去解析resources.arsc文件的内容，获取字符串
-常量池，getNativeStringBlock()方法实际上就是将每一个资源包里面的resources.arsc的数据项值的字符串资源池数据块读取出来，并封装在C++层的StringPool对象中，然后Java层的makeStringBlocks()方法
-再将该StringPool对象封装成Java层的StringBlock中。
-
-关于C++层的具体实现，可以参考罗哥的这两篇博客：
-
-- [resources.arsc的数据格式](http://blog.csdn.net/luoshengyang/article/details/8744683)
-- [resources.arsc的解析流程](http://blog.csdn.net/luoshengyang/article/details/8806798)
-
-如此，AssetManager和Resources对象的创建流程便分析完了，这两个对象构成了Android应用程序资源管理器的核心基础，资源的加载就是借由这两个对象来完成的。
 
 ### 3.3 资源的查找与解析流程
 
@@ -968,3 +715,9 @@ public abstract class LayoutInflater {
 ```
 
 好了，讲到这里一个布局xml资源文件的查找和解析流程就分析完了。
+
+> 本篇文章到这里就结束了，欢迎关注我们的BeesAndroid微信公众平台，BeesAndroid致力于分享Android系统源码的设计与实现相关文章，也欢迎开源爱好者参与到BeesAndroid项目中来。
+
+微信公众平台
+
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="300"/>
