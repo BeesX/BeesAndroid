@@ -7,11 +7,11 @@
 ##### 1. ContentProviderRecord
 在记录ContentProvider重要信息的数据对象中，毫无疑问ContentProviderRecord是最重要的。无论是在ProcessRecord中记录本APP内已经发布的ContentProvider，还是在AMS中记录所有APP发布的ContentProvider。
 ContentProviderRecord中记录的重要内容：
-{% asset_img ContentProviderRecord.jpg ContentProviderRecord %}
+![ContentProviderRecord](https://github.com/wusp/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F/contentprovider/ContentProviderRecord.jpg)
 ##### 2. ProviderClientRecord
 另外一个重要的则是ProviderClientRecord，用于在Client APP中缓存已经获得的ContentProvider信息（包括本地的ContentProvider）。在使用ContentProvider时，如果发现缓存中已经存在对应的ContentProvider信息，则
 不再向AMS请求获取ContentProvider接口，而是直接使用缓存中记录的IContentProvider接口。
-{% asset_img ProviderClientRecord.jpg ProviderClientRecord %}
+![ProviderClientRecord](https://github.com/wusp/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F/contentprovider/ProviderClientRecord.jpg)
 ProviderClientRecord中记录的IContentProvider是由ContentProviderHolder传来，在AMS初始化ContentProviderHolder时会将其中的IContentProvider赋值为IContentProvider的代理对象——**ContentProviderProxy**。后续通过ContentResolver执行ContentProvider的CRUD操作时，便是通过ContentProviderProxy对象Binder IPC到实际的ContentProvider中。
 
 ### Acquire ContentProvider on App
