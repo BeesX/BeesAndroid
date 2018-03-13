@@ -92,7 +92,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |[Android组件系统：Android视图容器Activity](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android视图容器Activity.md)| 编辑中|  |  |
 |[Android组件系统：Android视图片段Fragment](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android视图片段Fragment.md)| 编辑中|  |  |
 |[Android组件系统：Android后台服务Service](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android后台服务Service.md)| 编辑中|  |  |
-|[Android组件系统：Android内容提供者ContentProvider](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android内容提供者ContentProvider.md)| 编辑中|  |  |
+|[Android组件系统：Android内容提供者ContentProvider](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android内容提供者ContentProvider.md)| 校对中| [wusp](https://github.com/wusp) |  |
 |[Android组件系统：Android广播接收者BroadcastReceiver](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android广播接收者BroadcastReceiver.md)| 编辑中|  |  |
 
 **Android资源系统**
@@ -140,7 +140,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
 |Android视图系统：Android视图系统概述| | | |
-|Android数据库系统：Android数据库系统概述| | |
+|Android数据库系统：Android数据库系统概述|编辑中| [wusp](https://github.com/wusp)| |
 
 ### 进程通信层
 
@@ -384,3 +384,4 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 QQ交流群
 
 <img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq_2.png" width="300"/>
+
