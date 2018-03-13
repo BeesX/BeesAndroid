@@ -986,4 +986,4 @@ Luban的算法实现，大家在做项目的时候可以做个参考。
 
 微信公众平台
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="300"/>

@@ -917,4 +917,4 @@ try {
 
 微信公众平台
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="300"/>
