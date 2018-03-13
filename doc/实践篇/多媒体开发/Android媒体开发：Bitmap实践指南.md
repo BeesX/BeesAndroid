@@ -1,8 +1,14 @@
 # Android媒体开发：Bitmap实践指南
 
-**关于作者**
+作者：[郭孝星](https://github.com/guoxiaoxing)
 
->郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
+校对：[郭孝星](https://github.com/guoxiaoxing)
+
+文章状态：编辑中
+
+**关于项目**
+
+> [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读Android系统源码的门槛，让更多的Android工程师理解Android系统，掌握Android系统。
 
 **文章目录**
 
@@ -21,11 +27,11 @@
 
 像素密度
 
->像素密度指的是每英寸像素数目，在Bitmap里用mDensity/mTargetDensity，mDensity默认是设备屏幕的像素密度，mTargetDensity是图片的目标像素密度，在加载图片时就是 drawable 目录的像素密度。
+> 像素密度指的是每英寸像素数目，在Bitmap里用mDensity/mTargetDensity，mDensity默认是设备屏幕的像素密度，mTargetDensity是图片的目标像素密度，在加载图片时就是 drawable 目录的像素密度。
 
 色彩模式
 
->色彩模式是数字世界中表示颜色的一种算法，在Bitmap里用Config来表示。
+> 色彩模式是数字世界中表示颜色的一种算法，在Bitmap里用Config来表示。
 
 - ARGB_8888：每个像素占四个字节，A、R、G、B 分量各占8位，是 Android 的默认设置；
 - RGB_565：每个像素占两个字节，R分量占5位，G分量占6位，B分量占5位；
@@ -975,3 +981,9 @@ jbyteArray GraphicsJNI::allocateJavaPixelRef(JNIEnv* env, SkBitmap* bitmap,
 
 好了，以上就是关于Android平台处理图像压缩的全部内容，下一篇文章我们来分析视频压缩的实现方案。另外[phoenix](https://github.com/guoxiaoxing/phoenix)项目完整的实现了图片与视频的压缩，其中图片的压缩就是用的上文提到的
 Luban的算法实现，大家在做项目的时候可以做个参考。
+
+> 本篇文章到这里就结束了，欢迎关注我们的BeesAndroid微信公众平台，BeesAndroid致力于分享Android系统源码的设计与实现相关文章，也欢迎开源爱好者参与到BeesAndroid项目中来。
+
+微信公众平台
+
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art
