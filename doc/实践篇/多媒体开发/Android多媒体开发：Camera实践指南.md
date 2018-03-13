@@ -65,7 +65,7 @@ Android Camera 相关API也是Android生态碎片化最为严重的一块，首�
 
 官方的开源库[cameraview](https://github.com/google/cameraview)给出了方案：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/cameraview_overview.png" width="400"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/cameraview_overview.png" width="600"/>
 
 既然要两套并用，就要定义统一的接口，针对不同场景提供不同的实现，使用的时候也是根据不同的场景来创建不同的实例。
 
