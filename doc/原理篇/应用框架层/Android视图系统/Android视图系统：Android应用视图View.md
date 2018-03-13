@@ -2034,3 +2034,9 @@ true，CLICKABLE默认为false，值得一提的是setOnClickListener()方法和
 - 一般情况下，一个事件序列只能由一个View拦截并消耗，一旦一个View拦截了该事件，则该事件序列的后续事件都会交由该View来处理。
 - ViewGroup默认不拦截任何事件
 - View没有onInterceptTouchEvent()方法，一但有点击事件传递给它，它的ouTouchEvent()方法就会被调用。
+
+> 本篇文章到这里就结束了，欢迎关注我们的BeesAndroid微信公众平台，BeesAndroid致力于分享Android系统源码的设计与实现相关文章，也欢迎开源爱好者参与到BeesAndroid项目中来。
+
+微信公众平台
+
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="
