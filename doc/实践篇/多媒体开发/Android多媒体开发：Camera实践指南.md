@@ -98,8 +98,8 @@ UI（当然我们也需要提供默认的实现），这样就可以让功能和
 [phoenix](https://github.com/guoxiaoxing/phoenix)项目最新版本[![Download](https://api.bintray.com/packages/guoxiaoxing/maven/phoenix/allList/download.svg)](https://bintray.com/guoxiaoxing/maven/phoenix/_latestVersion)已经实现了这套方案，效果图如下所示：
 
 <p align="center">
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/function_4.png" width="400"/>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/media/play_3.gif" width="400"/>
+<img src="https://github.com/guoxiaoxing/phoenix/raw/master/art/practice/media/function_4.png" width="400"/>
+<img src="https://github.com/guoxiaoxing/phoenix/raw/master/art/practice/media/play_3.gif" width="400"/>
 </p>
 
 理解了整体的架构，我们接着就来分析针对这套架构，Camera/Camera2分别该如何实现。
