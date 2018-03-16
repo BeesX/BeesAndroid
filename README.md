@@ -27,6 +27,8 @@ BeesAndroid开源技术小组正式成立啦，Bees，即蜜蜂，取义分享�
 - 支持设备：Nexus 6
 
 **分析思路**
+。
+👉注：文章整理中，如果想查阅过往文章可以参见[android-open-source-project-analysis](https://github.com/guoxiaoxing/android-open-source-project-analysis)。
 
 Android是一个庞大的系统，Android Framework只是对系统的一个封装，里面还牵扯到JNI、C++、Java虚拟机、Linux系统内核、指令集等。面对如此庞大的系统，我们得有一定的
 章法去阅读源码，否则就会只见树木不见森林，陷入卷帙浩繁的细节与琐碎之中。
