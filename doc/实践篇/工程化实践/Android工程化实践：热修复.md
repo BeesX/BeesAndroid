@@ -9,7 +9,7 @@
 
 热修复原理图如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/project/hotfix/hotfix_principle_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/project/hotfix/hotfix_principle_structure.png" width="500"/>
 
 > 将补丁class文件打成dex文件，将该dex文件插入到App的Element数组的首部，App在遍历Element数组时会率先加载hotfix dex文件。从而达到热修复的目的。
 
