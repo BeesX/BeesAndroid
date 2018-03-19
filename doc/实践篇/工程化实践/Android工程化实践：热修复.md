@@ -1,10 +1,17 @@
-# 大型Android项目的工程化实践：热修复
+# Android项目的工程化实践：热修复
 
 **关于作者**
 
 >郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
 
 **文章目录**
+
+
+热修复原理图如下所示：
+
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/practice/project/hotfix/hotfix_principle_structure.png"/>
+
+> 将补丁class文件打成dex文件，将该dex文件插入到App的Element数组的首部，App在遍历Element数组时会率先加载hotfix dex文件。从而达到热修复的目的。
 
 QQ控件超级补丁
 
