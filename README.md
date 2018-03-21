@@ -120,10 +120,9 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android应用通信系统：Android应用通信系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android包系统/Android应用通信系统：Android应用通信系统概述.md)| 编辑中|  |  |
-|[Android应用通信系统：Android线程通信桥梁Handler](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android包系统/Android应用通信系统：Android线程通信桥梁Handler.md)| 编辑中|  |  |
-|[Android应用通信系统：Android局域广播LocalBroadcastReceiver](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android包系统/Android应用通信系统：Android局域广播LocalBroadcastReceiver.md)| 编辑中|  |  |
-
+|[Android应用通信系统：Android应用通信系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android应用通信系统/Android应用通信系统：Android应用通信系统概述.md)| 编辑中|  |  |
+|[Android应用通信系统：Android线程通信桥梁Handler](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android应用通信系统/Android应用通信系统：Android线程通信桥梁Handler.md)| 编辑中|  |  |
+|[Android应用通信系统：Android局域广播LocalBroadcastReceiver](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android应用通信系统/Android应用通信系统：Android局域广播LocalBroadcastReceiver.md)| 编辑中|  |  |
 
 **Android动画系统**
 
