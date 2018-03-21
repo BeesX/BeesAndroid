@@ -1,4 +1,4 @@
-# 文章标题
+# Android资源系统：应用资源Resources
 
 作者：[郭孝星](https://github.com/guoxiaoxing)
 

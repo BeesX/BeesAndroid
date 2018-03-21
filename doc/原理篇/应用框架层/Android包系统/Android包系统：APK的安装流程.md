@@ -1,4 +1,4 @@
-# Android包管理框架：APK的安装流程
+# Android包系统：APK的安装流程
 
 作者：[郭孝星](https://github.com/guoxiaoxing)
 

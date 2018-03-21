@@ -1,8 +1,14 @@
-# Android资源管理框架：资源管理器AssetManager
+# Android资源系统：资源管理器AssetManager
 
-**关于作者**
+作者：[郭孝星](https://github.com/guoxiaoxing)
 
->郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
+校对：[郭孝星](https://github.com/guoxiaoxing)
+
+文章状态：编辑中
+
+**关于项目**
+
+> [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读Android系统源码的门槛，让更多的Android工程师理解Android系统，掌握Android系统。
 
 **文章目录**
 

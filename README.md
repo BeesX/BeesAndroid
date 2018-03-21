@@ -95,7 +95,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |[Android组件系统：Android视图容器Activity](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android视图容器Activity.md)| 编辑中|  |  |
 |[Android组件系统：Android视图片段Fragment](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android视图片段Fragment.md)| 编辑中|  |  |
 |[Android组件系统：Android后台服务Service](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android后台服务Service.md)| 编辑中|  |  |
-|[Android组件系统：Android内容提供者ContentProvider](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android内容提供者ContentProvider.md)| 校对中| [wusp](https://github.com/wusp) | [郭孝星](https://github.com/guoxiaoxing) |
+|[Android组件系统：Android数据提供者ContentProvider](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android数据提供者ContentProvider.md)| 校对中| [wusp](https://github.com/wusp) | [郭孝星](https://github.com/guoxiaoxing) |
 |[Android组件系统：Android广播接收者BroadcastReceiver](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android广播接收者BroadcastReceiver.md)| 编辑中|  |  |
 
 **Android资源系统**
@@ -103,7 +103,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
 |[Android资源系统：Android资源系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android资源系统/Android资源系统概述.md)| 编辑中|  |  |
-|[Android资源系统：应用资源Resouces](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android资源系统/应用资源Resouces.md)| 编辑中|  |  |
+|[Android资源系统：应用资源Resources](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android资源系统/应用资源Resources.md)| 编辑中|  |  |
 |[Android资源系统：资源管理器AssetManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android资源系统/资源管理器AssetManager.md)| 编辑中|  |  |
 
 **Android包系统**
