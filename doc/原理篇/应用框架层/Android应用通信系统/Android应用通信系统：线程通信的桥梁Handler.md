@@ -1,8 +1,14 @@
-# Android进程框架：线程通信的桥梁Handler
+# Android应用通信系统：线程通信的桥梁Handler
 
-**关于作者**
+作者：[郭孝星](https://github.com/guoxiaoxing)
 
->郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
+校对：[郭孝星](https://github.com/guoxiaoxing)
+
+文章状态：编辑中
+
+**关于项目**
+
+> [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读Android系统源码的门槛，让更多的Android工程师理解Android系统，掌握Android系统。
 
 **文章目录**
 
@@ -20,7 +26,7 @@ Android是一个消息驱动型的系统，消息机制在Android系统中扮演
 
 Android消息循环流程图如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/android_handler_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/communication/android_handler_structure.png"/>
 
 主要涉及的角色如下所示：
 
@@ -37,7 +43,7 @@ Android消息循环流程图如下所示：
 
 事实上，在整个消息循环的流程中，并不只有Java层参与，很多重要的工作都是在C++层来完成的。我们来看下这些类的调用关系。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/android_handler_class.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/communication/android_handler_class.png"/>
 
 注：虚线表示关联关系，实线表示调用关系。
 
@@ -893,5 +899,8 @@ handler.post(new Runnable() {
 
 好了，到这里整个Android的消息机制我们都已经分析完了，如果对底层的管道这些东西感觉比较模糊，可以先理解Java层的实现。
 
+> 本篇文章到这里就结束了，欢迎关注我们的BeesAndroid微信公众平台，BeesAndroid致力于分享Android系统源码的设计与实现相关文章，也欢迎开源爱好者参与到BeesAndroid项目中来。
 
+微信公众平台
 
+<img src="https
