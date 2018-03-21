@@ -903,4 +903,4 @@ handler.post(new Runnable() {
 
 微信公众平台
 
-<img src="https
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="300"/>

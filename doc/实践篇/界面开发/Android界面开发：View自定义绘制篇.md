@@ -22,18 +22,6 @@
 
 第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
 
-- [01Android界面开发：View自定义实践概览](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android界面开发/01Android界面开发：View自定义实践概览.md)
-- [02Android界面开发：View自定义实践布局篇](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android界面开发/02Android界面开发：View自定义实践布局篇.md)
-- [03Android界面开发：View自定义实践绘制篇](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android界面开发/03Android界面开发：View自定义实践绘制篇.md)
-- [04Android界面开发：View自定义实践交互篇](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android应用开发实践篇/Android界面开发/04Android界面开发：View自定义实践交互篇.md)
-
-**文章源码**
-
-- [DrawView](https://github.com/BeesAndroid/BeesAndroid/blob/master/demo/src/main/java/com/guoxiaoxing/android/framework/demo/application/ui/DrawView.java)
-- [WaveView](https://github.com/BeesAndroid/BeesAndroid/blob/master/demo/src/main/java/com/guoxiaoxing/android/framework/demo/application/ui/bazier/WaveView.java)
-- [RippleLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/demo/src/main/java/com/guoxiaoxing/android/framework/demo/application/ui/RippleLayout.java)
-- [LabelImageView](https://github.com/BeesAndroid/BeesAndroid/blob/master/demo/src/main/java/com/guoxiaoxing/android/framework/demo/application/ui/LabelImageView.java)
-
 本文还提供了三个综合性的完整实例来辅助理解。
 
 - View绘制 - 图片标签效果实现
@@ -41,9 +29,9 @@
 - 二阶贝塞尔曲线的应用 - 杯中倒水效果实现
 
 <p>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/label_view.png" width="250" height="500"/>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/ripple.gif" width="260" height="500"/>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/bezier_wave.gif" width="260" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/label_view.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/ripple.gif" width="260" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/bezier_wave.gif" width="260" height="500"/>
 </p>
 
 第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。
@@ -79,7 +67,7 @@ public class DrawView extends View {
 ```
 它在屏幕上绘制了一个圆形，如图：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/draw_view_1.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/draw_view_1.png" width="250" height="500"/>
 
 在处理绘制的时候有以下几个关键点：
 
@@ -98,7 +86,7 @@ public class DrawView extends View {
 3. dispatchDraw()：绘制子View
 4. onDrawForeground()：绘制滑动边缘渐变、滚动条和前景。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/view_draw_flow.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/view_draw_flow.png"/>
 
 我们先从个小例子开始。
 
@@ -137,7 +125,7 @@ public class DrawView extends TextView {
 
 举例
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/label_view.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/label_view.png" width="250" height="500"/>
 
 ```java
 public class LabelImageView extends AppCompatImageView {
@@ -307,7 +295,7 @@ public LinearGradient(float x0, float y0, float x1, float y1, int color0, int co
 
 举例
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/shader_linear.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/shader_linear.png" width="250" height="500"/>
 
 ```java
 //线性渐变
@@ -339,7 +327,7 @@ public RadialGradient(float centerX, float centerY, float radius, int centerColo
 
 举例
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/shader_radial.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/shader_radial.png" width="250" height="500"/>
 
 
 ```java
@@ -371,7 +359,7 @@ canvas.drawRect(0, 600, 1000, 1000, paint2);
 
 BitmapShader是一个很有用的类，可以利用该类做各种各样的图片裁剪。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/shader_bitmap.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/shader_bitmap.png" width="250" height="500"/>
 
 ```java
 //位图着色
@@ -397,8 +385,8 @@ PorterDuff.Mode用来指定两个Shader叠加时颜色的绘制策略，它有�
 
 蓝色矩形为原图像，红色圆形为目标图像。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/porter_buff_mode_alpha.png"/>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/porter_duff_mode_blending.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/porter_buff_mode_alpha.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/porter_duff_mode_blending.png"/>
 
 更多细节可以参见[PorterDuff.Mode官方文档](https://developer.android.com/reference/android/graphics/PorterDuff.Mode.html)。
 
@@ -420,7 +408,7 @@ mul 和 add 都是和颜色值格式相同的 int 值，其中 mul 用来和目�
 
 举例
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/color_filter_lighting.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/color_filter_lighting.png" width="250" height="500"/>
 
 ```java
 //颜色过滤器
@@ -546,7 +534,7 @@ setStrokeMiter(float miter)- 设置 MITER 型拐角的延长线的最大值
 
 设置图像的抖动。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/dither.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/dither.png" width="250" height="500"/>
 
 >抖动是指把图像从较高色彩深度（即可用的颜色数）向较低色彩深度的区域绘制时，在图像中有意地插入噪点，通过有规律地扰乱图像来让图像对于肉眼更加真实的做法。
 
@@ -556,7 +544,7 @@ setStrokeMiter(float miter)- 设置 MITER 型拐角的延长线的最大值
 
 设置是否使用双线性过滤来绘制 Bitmap 。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/bitmap_filter.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/bitmap_filter.png" width="250" height="500"/>
 
 图像在放大绘制的时候，默认使用的是最近邻插值过滤，这种算法简单，但会出现马赛克现象；而如果开启了双线性过滤，就可以让结果图像显得更加平滑。
 
@@ -604,7 +592,7 @@ ComposePathEffect(PathEffect outerpe, PathEffect innerpe)
 
 举例
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/path_effect.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/path_effect.png" width="250" height="500"/>
 
 ```java
 //图形轮廓效果
@@ -647,7 +635,7 @@ paint4.setPathEffect(pathDashPathEffect);
 
 举例
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/shadow_layer.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/shadow_layer.png" width="250" height="500"/>
 
 ```java
 paint1.setTextSize(200);
@@ -679,10 +667,10 @@ MaskFilter有两个子类：
 分别为：
 
 <p>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/blur_mask_filter_style_normal.png" width="200"/>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/blur_mask_filter_style_sold.png" width="200"/>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/blur_mask_filter_style_inner.png" width="200"/>
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/blur_mask_filter_style_outter.png" width="200"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/blur_mask_filter_style_normal.png" width="200"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/blur_mask_filter_style_sold.png" width="200"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/blur_mask_filter_style_inner.png" width="200"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/blur_mask_filter_style_outter.png" width="200"/>
 </p>
 
 ```java
@@ -737,7 +725,7 @@ public void drawArc(float left, float top, float right, float bottom, float star
 
 例如
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/draw_view_2.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/draw_view_2.png" width="250" height="500"/>
 
 ```java
 paint.setStyle(Paint.Style.FILL);//填充模式
@@ -769,7 +757,7 @@ drawBitmapMesh()方法将位图分为若干网格，然后对每个网格进行�
 
 我们来用drawBitmapMesh()方法实现一个水面涟漪效果。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/ripple.gif" width="260" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/ripple.gif" width="260" height="500"/>
 
 举例
 
@@ -1060,11 +1048,11 @@ Canvas里的范围裁切主要有两类方法：
 
 clipReact
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/clip_rect.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/clip_rect.png" width="250" height="500"/>
 
 clipPath
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/clip_path.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/clip_path.png" width="250" height="500"/>
 
 ```java
 //范围裁切
@@ -1099,7 +1087,7 @@ Canvas还提供了对象的位置变换的方法，其中包括：
 
 举例
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/canvas_rotate.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/canvas_rotate.png" width="250" height="500"/>
 
 ```java
 canvas.save();//保存画布
@@ -1127,7 +1115,7 @@ Matrix也实现了Canvas里的四种常规变换，它的实现流程如下：
 
 举例
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/canvas_rotate.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/canvas_rotate.png" width="250" height="500"/>
 
 ```java
 //Matrix几何变换
@@ -1153,7 +1141,7 @@ Matrix除了四种基本的几何变换，还可以自定义几何变换。
 
 举例
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/matrix_poly_to_poly.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/matrix_poly_to_poly.png" width="250" height="500"/>
 
 ```java
 //Matrix几何变换
@@ -1169,15 +1157,15 @@ canvas.restore();//恢复画布
 
 我们前面说过，Canvas使用的是二维坐标系。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/canvas_coordinate_system.png" width="350"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/canvas_coordinate_system.png" width="350"/>
 
 而Camera使用的是三维坐标系，这里偷个懒😊，借用凯哥的图来描述一下。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/camera_coordinate_system_1.gif"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/camera_coordinate_system_1.gif"/>
 
 关于Camera坐标系：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/camera_tranlate_direction.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/camera_tranlate_direction.png"/>
 
 - 首先你要注意x、y、z轴的方向，z轴朝外是负轴。
 - 在z的负轴上有个虚拟相机（就是图中的哪个黄点），它就是用来做投影的，setLocation(float x, float y, float z)方法移动的也就是它的位置。
@@ -1185,7 +1173,7 @@ canvas.restore();//恢复画布
 
 比如我们在Camera坐标系里做个X轴方向的旋转
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/camera_coordinate_system_2.gif"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/camera_coordinate_system_2.gif"/>
 
 Camera的三维变换包括：旋转、平移与移动相机。
 
@@ -1208,7 +1196,7 @@ Camera的三维变换包括：旋转、平移与移动相机。
 
 旋转
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/camera_rotate.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/camera_rotate.png" width="250" height="500"/>
 
 
 ```java
@@ -1228,7 +1216,7 @@ canvas.restore();//恢复画布
 
 平移
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/camera_rotate.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/camera_rotate.png" width="250" height="500"/>
 
 ```java
 //Camera三维变换
@@ -1247,7 +1235,7 @@ canvas.restore();//恢复画布
 
 移动相机
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/camera_translate.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/camera_translate.png" width="250" height="500"/>
 
 ```java
 //Camera三维变换
@@ -1313,7 +1301,7 @@ public void rLineTo(float dx, float dy) {
 
 举例
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/draw_view_3.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/draw_view_3.png" width="250" height="500"/>
 
 ```java
 paint.setStyle(Paint.Style.STROKE);
@@ -1333,23 +1321,23 @@ canvas.drawPath(path, paint);
 
 一阶贝塞尔曲线
 
-![](https://github.com/BeesAndroid/BeesAndroid/blob/master/art/app/ui/bezier_cure_1_formula.svg)
+![](https://github.com/BeesAndroid/BeesAndroid/blob/master/art/principle/app/view/bezier_cure_1_formula.svg)
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/bezier_cure_1_demo.gif"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/bezier_cure_1_demo.gif"/>
 
 B(t)为时间为t时的坐标，P0为起点，P1为终点。
 
 二阶贝塞尔曲线
 
-![](https://github.com/BeesAndroid/BeesAndroid/blob/master/art/app/ui/bezier_cure_2_formula.svg)
+![](https://github.com/BeesAndroid/BeesAndroid/blob/master/art/principle/app/view/bezier_cure_2_formula.svg)
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/bezier_cure_2_demo.gif"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/bezier_cure_2_demo.gif"/>
 
 三阶贝塞尔曲线
 
-![](https://github.com/BeesAndroid/BeesAndroid/blob/master/art/app/ui/bezier_cure_3_formula.svg)
+![](https://github.com/BeesAndroid/BeesAndroid/blob/master/art/principle/app/view/bezier_cure_3_formula.svg)
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/bezier_cure_3_demo.gif"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/bezier_cure_3_demo.gif"/>
 
 贝塞尔曲线的模拟可以使用[bezier-curve](http://myst729.github.io/bezier-curve/)
 
@@ -1388,7 +1376,7 @@ public void rCubicTo(float x1, float y1, float x2, float y2,
 
 举例
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/bezier_wave.gif" width="260" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/bezier_wave.gif" width="260" height="500"/>
 
 ```java
 /**
@@ -1537,9 +1525,9 @@ public void arcTo(float left, float top, float right, float bottom, float startA
 >WINDING：non-zero winding rule，非零环绕数原则，该原则基于所有图形的绘制都有绘制方向（前面提到的Direction描述的顺时针与逆向时针），对于平面上的任意一点，向任意方向射出一条射线，射线遇到每个顺时针
 的交点则加1，遇到逆时针的交点则减1，最后的结果如果不为0，则认为该点在图形内部，染色。如果结果为0，则认为该点在图形外部，不染色。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/fill_type_winding.jpg"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/fill_type_winding.jpg"/>
 
 >EVEN_ODD：even-odd rule，奇偶原则，对于平面上的任意一点，向任意方向射出一条射线，这条射线与图形相交（不是相切）的次数为奇数则说明这个点在图形内部，则进行染色。若为偶数则认为在图形外部，不进行染色。
 这是一中交叉染色的情况。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/fill_type_even_odd.jpg"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/fill_type_even_odd.jpg"/>
