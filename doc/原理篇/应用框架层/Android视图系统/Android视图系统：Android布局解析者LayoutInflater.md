@@ -737,3 +737,9 @@ public abstract class LayoutInflater {
 - Android多媒体框架
 
 等Android子系统的分析，后续的内容可以关注[Android open source project analysis](https://github.com/BeesAndroid/BeesAndroid)项目。
+
+> 本篇文章到这里就结束了，欢迎关注我们的BeesAndroid微信公众平台，BeesAndroid致力于分享Android系统源码的设计与实现相关文章，也欢迎开源爱好者参与到BeesAndroid项目中来。
+
+微信公众平台
+
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="300"/>

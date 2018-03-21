@@ -27,3 +27,9 @@ Android的显示系统分为三层：
 - WindowManagerService：用来创建、管理和销毁Window。
 
 后续的分析思路是这样的，我们先分析最上层的View，然后依次是Window、WindowManagerService。这样可以由浅入深，便于理解。至于Activity我们会放在Android组件框架里分析。
+
+> 本篇文章到这里就结束了，欢迎关注我们的BeesAndroid微信公众平台，BeesAndroid致力于分享Android系统源码的设计与实现相关文章，也欢迎开源爱好者参与到BeesAndroid项目中来。
+
+微信公众平台
+
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="300"/>

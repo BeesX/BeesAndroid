@@ -1770,4 +1770,8 @@ private native void init(SurfaceSession s,
 好，本篇文章至此结束，本篇文章完成了Context、Window、View、WindowState与Surface对象创建流程的分析，这样我们就可以在应用界面上绘制UI了，下篇文章
 就来分析UI的绘制流程。
 
- 
+> 本篇文章到这里就结束了，欢迎关注我们的BeesAndroid微信公众平台，BeesAndroid致力于分享Android系统源码的设计与实现相关文章，也欢迎开源爱好者参与到BeesAndroid项目中来。
+
+微信公众平台
+
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="300"/>

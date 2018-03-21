@@ -1,4 +1,4 @@
-# Android视图系统：Android应用视图的载体View
+# Android视图系统：Android应用视图View
 
 作者：[郭孝星](https://github.com/guoxiaoxing)
 
@@ -2039,4 +2039,4 @@ true，CLICKABLE默认为false，值得一提的是setOnClickListener()方法和
 
 微信公众平台
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png" width="300"/>

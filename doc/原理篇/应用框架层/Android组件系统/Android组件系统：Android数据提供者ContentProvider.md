@@ -1,6 +1,6 @@
-# Android组件系统：Android后台服务Service
+# Android组件系统：Android数据提供者ContentProvider
 
-作者：[郭孝星](https://github.com/guoxiaoxing)
+作者：[wusp](https://github.com/wusp)
 
 校对：[郭孝星](https://github.com/guoxiaoxing)
 

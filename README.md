@@ -65,7 +65,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
 |[Android视图系统：Android视图系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android视图系统概述.md)| 编辑中|  |  |
-|[Android视图系统：Android应用视图管理者Window](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android应用视图管理者Window.md)| 编辑中|  |  |
+|[Android视图系统：Android应用窗口Window](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android应用窗口Window.md)| 编辑中|  |  |
 |[Android视图系统：Android应用视图View](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android应用视图View.md)| 编辑中|  |  |
 |[Android视图系统：Android应用视图组ViewGroup](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android应用视图组ViewGroup.md)| 编辑中|  |  |
 |[Android视图系统：Android帧布局控件FrameLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android帧布局控件FrameLayout.md)| 编辑中|  |  |
@@ -90,11 +90,12 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
 |[Android组件系统：Android组件系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android组件系统概述.md)| 编辑中|  |  |
+|[Android组件系统：Android组件注册表AndroidManifest](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android组件注册表AndroidManifest.md)| 编辑中|  |  |
 |[Android组件系统：Android应用上下文Context](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android应用上下文Context.md)| 编辑中|  |  |
 |[Android组件系统：Android视图容器Activity](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android视图容器Activity.md)| 编辑中|  |  |
 |[Android组件系统：Android视图片段Fragment](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android视图片段Fragment.md)| 编辑中|  |  |
 |[Android组件系统：Android后台服务Service](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android后台服务Service.md)| 编辑中|  |  |
-|[Android组件系统：Android内容提供者ContentProvider](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android内容提供者ContentProvider.md)| 校对中| [wusp](https://github.com/wusp) |  |
+|[Android组件系统：Android内容提供者ContentProvider](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android内容提供者ContentProvider.md)| 校对中| [wusp](https://github.com/wusp) | [郭孝星](https://github.com/guoxiaoxing) |
 |[Android组件系统：Android广播接收者BroadcastReceiver](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android广播接收者BroadcastReceiver.md)| 编辑中|  |  |
 
 **Android资源系统**
@@ -119,29 +120,26 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|Android视图系统：Android视图系统概述| | | |
 |Android应用通信系统：Android应用通信系统概述| | |
 |Android应用通信系统：Android线程通信桥梁Handler| | |
+|Android应用通信系统：Android局域广播LocalBroadcastReceiver| | |
 
 **Android动画系统**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|Android视图系统：Android视图系统概述| | | |
 |Android动画系统：Android动画系统概述| | |
 
 **Android多媒体系统**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|Android视图系统：Android视图系统概述| | | |
 |Android多媒体系统：Android多媒体系统概述| | |
 
 **Android数据库系统**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|Android视图系统：Android视图系统概述| | | |
 |Android数据库系统：Android数据库系统概述|编辑中| [wusp](https://github.com/wusp)| |
 
 ### 进程通信层
