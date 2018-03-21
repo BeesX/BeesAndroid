@@ -1,4 +1,4 @@
-# 文章标题
+# Android视图系统：Android相对布局控件RelativeLayout
 
 作者：[郭孝星](https://github.com/guoxiaoxing)
 

@@ -1,4 +1,4 @@
-# 文章标题
+# Android视图系统：Android图片控件ImageView
 
 作者：[郭孝星](https://github.com/guoxiaoxing)
 
