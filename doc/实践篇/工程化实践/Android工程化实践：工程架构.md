@@ -1,8 +1,18 @@
-# 大型Android项目的工程化实践：项目架构
+# Android工程化实践：工程架构
 
-**关于作者**
+作者：[郭孝星](https://github.com/guoxiaoxing)
 
->郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
+校对：[郭孝星](https://github.com/guoxiaoxing)
+
+文章状态：编辑中
+
+**关于项目**
+
+> [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读Android系统源码的门槛，让更多的Android工程师理解Android系统，掌握Android系统。
+
+**文章目录**
+
+- [Android官方架构](https://github.com/googlesamples/android-architecture)
 
 本篇文章是《大型Android项目的工程化之路》的开篇之作，用来讨论Android项目架构的最佳实践。
 
@@ -16,3 +26,12 @@
 - 游戏类：这个类型的app的特点是各类游戏引擎的使用，网络连接以长连接为主，比较典型的就是市场上各类游戏，例如：王者荣耀、狼人杀等。
 
 对于大部分人而言，我们开发的主要是第一类app。
+
+- 编译时隔离性：编译时彼此独立，互不依赖。最大化多团队并行开发的能力。
+- 运行时隔离性：运行的时候彼此独立，某一模块的crash不会影响其他模块。
+- 动态部署能力：快速发布业务，及时修复bug。
+- 良好的兼容性：应用升级与系统升级时不会对应用带来影响。
+
+- 基于ReactNative的容器化方案。
+- APK/Bundle更加轻量级组件化、服务化。
+- 基于MVP与AOP的框架设计。
