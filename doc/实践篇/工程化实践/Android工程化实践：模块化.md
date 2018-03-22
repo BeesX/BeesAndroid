@@ -133,7 +133,7 @@ Google自己也开了一个Repo来讨论这些框架的最佳实践，如下所�
 
 - [android-architecture](https://github.com/googlesamples/android-architecture)
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/mvp_structure.png" width="600"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/mvp_structure.png"/>
 
 - MVC：PC时代就有的架构方案，在Android上也是最早的方案，Activity/Fragment这些上帝角色既承担了V的角色，也承担了C的角色，小项目开发起来十分顺手，大项目就会遇到
 耦合过重，Activity/Fragment类过大等问题。
