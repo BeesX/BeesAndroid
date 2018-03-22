@@ -186,16 +186,20 @@ Google官方也提供了MVP的实现，这个MVP框架的核心思想如下所�
 
 进程内通信的手段有很多种，最常见的就是EventBus，
 
-EventBus：https://github.com/greenrobot/EventBus
+- [EventBus](https://github.com/greenrobot/EventBus)
 
 > EventBus 用来完成 Activities, Fragments, Threads, Services 之间的数据交互和通信。
 
-EventBus是早期页面通信和模块通信常见的手段，但是随着工程的膨胀，它的问题也凸显出来，具体说来：
+EventBus是早期页面通信和模块通信常见的手段，它的好处是显而易见的，将事件的发布者与订阅者解耦，无需再定义一堆复杂的回调接口，但是随着工程的
+膨胀，它的问题也凸显出来，具体说来：
 
 - Event并非所有通信常见的最佳方式，它主要适合一对多的广播场景，如果业务中的通信需要一组接口时，就需要定义多个Event，代码复杂。
 - 大量的Event的类，难以管理，如果应用越来越庞大，模块划分也越来越多，这个Event就变得难以维护。
 
-除了EventBus以外，我们还可以选择LocalBroadcastReceiver。LocalBroadcastReceiver是一个应用内的局域广播，它也是利用一个Looper Handler维护一个全局Map进行应用内部通信，与EventBus不同，它发送的是字符串。
+但是即便这样，EventBus还是一个优秀的进程内通信的方式。
+
+👉 注：当然除了EventBus以外，在简单的通信场景下，我们还可以选择LocalBroadcastReceiver。LocalBroadcastReceiver是一个应用内的局域广播，它也是利用一个Looper Handler维护一个
+全局Map进行应用内部通信，与EventBus不同，它发送的是字符串。LocalBroadcastReceiver在面临业务膨胀的时候，也会遇到消息字符串的管理问题。
 
 #### 2.3.2 进程间通信
 
@@ -246,9 +250,15 @@ EventBus是早期页面通信和模块通信常见的手段，但是随着工程
 
 ### 3.2 模块拆分
 
+对需要重构的模块进行拆分，包括代码，资源等等。
+
 ### 3.3 灰度发布
 
+对小部分用户推送重构版本。
+
 ### 3.4 应用回流
+
+对git代码做好tag，遇到问题时随时准备回流。
 
 ## 附录
 
