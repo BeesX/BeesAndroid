@@ -117,6 +117,8 @@
 
 一般说来，从纵向角度，一个模块一般可以划分为三个部分：
 
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/level_structure.png"/>
+
 - api：接口部分，提供对外的接口和数据结构。
 - implementation：实现部分，提供对业务逻辑的实现，它往往和应用的状态、账户信息等息息相关，library为它提供具体的功能，它决定如何去加载、组织、以及展示这些功能。
 - library：功能部分，为implementation提供一些具体的功能。
@@ -206,19 +208,18 @@ EventBus是早期页面通信和模块通信常见的手段，但是随着工程
 - Event并非所有通信常见的最佳方式，它主要适合一对多的广播场景，如果业务中的通信需要一组接口时，就需要定义多个Event，代码复杂。
 - 大量的Event的类，难以管理，如果应用越来越庞大，模块划分也越来越多，这个Event就变得难以维护。
 
-除了EventBus以外，我们还可以选择LocalBroadcastReceiver。LocalBroadcastReceiver
-是一个应用内的局域广播，它也是利用一个Looper Handler维护一个全局Map进行应用内部通信，与EventBus不同，它发送的是字符串。
-
+除了EventBus以外，我们还可以选择LocalBroadcastReceiver。LocalBroadcastReceiver是一个应用内的局域广播，它也是利用一个Looper Handler维护一个全局Map进行应用内部通信，与EventBus不同，它发送的是字符串。
 
 #### 2.3.2 进程间通信
 
 跨进程通信可以借助Content Provider来完成，
 
-Content Provider：https://developer.android.com/guide/topics/providers/content-providers.html
+- [Content Provider官方文档](https://developer.android.com/guide/topics/providers/content-providers.html)
 
 > Content Provider 底层采用的是Binder机制，用来完成进程间的数据交互和通信。
 
-模块通信采用Content Provider的方式来解决。
+模块通信采用Content Provider的方式来解决，一个比较常见的场景就是多模块共享登录信息，登录信息可以用Content Provider来保存，当登录状态发生变化时，可以通知到
+各个模块。
 
 ## 三 解决问题
 
