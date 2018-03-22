@@ -127,7 +127,7 @@
 
 Google自己也开了一个Repo来讨论这些框架的最佳实践，如下所示：
 
-android-architecture：https://github.com/googlesamples/android-architecture
+- [android-architecture](https://github.com/googlesamples/android-architecture)
 
 <img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/mvp_structure.png" width="500"/>
 
@@ -157,8 +157,8 @@ Google官方也提供了MVP的实现，这个MVP框架的核心思想如下所�
 
 综上所述，一个理想的方案就是结合ViewModel组件与LiveData组件来实现MVVM框架。
 
-- todo-mvvm-live：https://github.com/googlesamples/android-architecture/tree/todo-mvvm-live/
-- Lifecycle Component官方文档：https://developer.android.com/topic/libraries/architecture/guide.html
+- [todo-mvvm-live](https://github.com/googlesamples/android-architecture/tree/todo-mvvm-live/)
+- [Lifecycle Component官方文档](https://developer.android.com/topic/libraries/architecture/guide.html)
 
 这套框架有两个重要的原则：
 
@@ -169,8 +169,6 @@ Google官方也提供了MVP的实现，这个MVP框架的核心思想如下所�
 
 👉 注：这里可能有人有疑问，非得用Lifecycle组件吗，利用View的onAttachToWindow()、onDetachToWindow()这些方法来模拟Activity或者Fragment的生命周期不可以吗，事实上View的生命周期在
 一些特殊的场景下是不可靠的，例如：RecyclerView、ViewPager，所以我们还是需要利用Lifecycle组件来监听Activity或者Fragment的生命周期变化。
-
-
 
 模块生命周期
 
