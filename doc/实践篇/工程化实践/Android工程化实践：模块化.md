@@ -95,7 +95,7 @@
 
 从长远来看，这三套容器都不是用来相互取代对方，而是会长期并存，取长补短，相互助益。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/three_container_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/three_container_structure.png" width="600"/>
 
 - Native容器：Native容器适合用来编写应用的基础骨架页面，例如主页等，这在iOS上也用来避免审核上的问题。
 - H5容器：H5容器适合用来编写经常需要变化的页面，例商家活动页等。
@@ -117,7 +117,7 @@
 
 一般说来，从纵向角度，一个模块一般可以划分为三个部分：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/level_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/level_structure.png" width="600"/>
 
 - api：接口部分，提供对外的接口和数据结构。
 - implementation：实现部分，提供对业务逻辑的实现，它往往和应用的状态、账户信息等息息相关，library为它提供具体的功能，它决定如何去加载、组织、以及展示这些功能。
@@ -131,7 +131,7 @@ Google自己也开了一个Repo来讨论这些框架的最佳实践，如下所�
 
 - [android-architecture](https://github.com/googlesamples/android-architecture)
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/mvp_structure.png" width="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/mvp_structure.png" width="600"/>
 
 - MVC：PC时代就有的架构方案，在Android上也是最早的方案，Activity/Fragment这些上帝角色既承担了V的角色，也承担了C的角色，小项目开发起来十分顺手，大项目就会遇到
 耦合过重，Activity/Fragment类过大等问题。
