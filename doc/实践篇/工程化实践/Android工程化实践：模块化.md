@@ -103,7 +103,7 @@
 
 那如何实现这三套容器呢？🤔
 
-- Native容器：插件化方案。
+- Native容器：插件化方案，插件化方案大体都比较相似，具体可以参见我这一篇文章的讨论[VirtualAPK](https://github.com/guoxiaoxing/android-open-framwork-analysis/blob/master/doc/Android开源框架源码鉴赏：VIrtualAPK.md)。
 - H5容器：WebView封装，Jockey通信协议封装。
 - ReactNative/Weex/Flutter容器：ReactNative/Weex/Flutter容器工程化体系搭建，事实上，用RN或者Weex写页面是十分简单的，它的复杂性在于工程化框架的实现。
 
@@ -117,11 +117,14 @@ Google自己也开了一个Repo来讨论这些框架的最佳实践，如下所�
 
 android-architecture：https://github.com/googlesamples/android-architecture
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/mvp_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/mvp_structure.png" width="500"/>
 
 - MVC：PC时代就有的架构方案，在Android上也是最早的方案，Activity/Fragment这些上帝角色既承担了V的角色，也承担了C的角色，小项目开发起来十分顺手，大项目就会遇到
 耦合过重，Activity/Fragment类过大等问题。
-- MVP：为了解决MVC耦合过重的问题，MVP的核心思想就是将视图逻辑I和业务逻辑相分离，达到解耦的目的。
+- MVP：为了解决MVC耦合过重的问题，MVP的核心思想就是提供一个Presenter将视图逻辑I和业务逻辑相分离，达到解耦的目的。
+- MVVM：使用ViewModel代替Presenter，实现数据与View的双向绑定，这套框架最早使用的data-binding将数据绑定到xml里，这么做在大规模应用的时候是不行的，不过数据绑定是
+一个很有用的概念，后续Google又推出了ViewModel组件与LiveData组件。ViewModel组件规范了ViewModel所处的地位、生命周期、生产方式以及一个Activity下多个Fragment共享View
+Model数据的问题。LiveData组件则提供了在Java层面View订阅ViewModel数据源的实现方案。
 
 Google官方也提供了MVP的实现，这个MVP框架的核心思想如下所示：
 
@@ -140,23 +143,10 @@ Google官方也提供了MVP的实现，这个MVP框架的核心思想如下所�
 
 总的说来，就是当业务量急剧膨胀的时候，就会需要写大量的View接口和Presenter类，而且这还牵扯到Presenter类与Activity生命周期同步的问题，在大型项目面前，这些操作都会变得十分复杂。
 
-笔者认为一个设计良好的组件必须是自管理的，内部实现细节都外界完全透明，别人在调用这个组件的时候只用传递一些配置参数即可，如下所示：
+综上所述，一个理想的方案就是结合ViewModel组件与LiveData组件来实现MVVM框架。
 
-```java
-Component view = new Component.Builder()
-                    .setXXX()
-                    .setXXX()
-                    .setXXX()
-                    .build();
-```
-
-这样就成功把一个View构建成功了，它负责去展示业务的某一部分页面，自己去加载数据，自己去刷新UI，当页面销毁时，自己负责释放资源。它不仅可以添加到Fragment中去，还可以添加到Activity中，甚至
-还可以添加到一个ViewGroup中去，灵活自由。
-
-去掉Presenter的管理成本，并不意味着去掉Presenter中，只是把它放在了View内部，交由View对它进行管理。
-
-
-Lifecycle Component官方文档：https://developer.android.com/topic/libraries/architecture/guide.html
+- todo-mvvm-live：https://github.com/googlesamples/android-architecture/tree/todo-mvvm-live/
+- Lifecycle Component官方文档：https://developer.android.com/topic/libraries/architecture/guide.html
 
 这套框架有两个重要的原则：
 
@@ -190,11 +180,7 @@ Lifecycle Component官方文档：https://developer.android.com/topic/libraries/
 
 模块边界
 
-### 2.1 模块解耦
-
-模块解耦我们使用的是路由的方式
-
-### 2.1 模块通信
+### 2.3 模块通信
 
 解决了模块间的解耦问题，另一个就是模块间的通信问题。在一个大型的应用里很多模块都是可以独立运行甚至独立成一个App的，这就牵扯到模块间的数据交互和通信问题，例如：最常见的一种
 场景就是子模块需要知道主应用里的登录信息等等，模块间的通信业可以分为两种情况：
@@ -202,7 +188,7 @@ Lifecycle Component官方文档：https://developer.android.com/topic/libraries/
 - 进程内通信：模块都运行在同一个进程中。
 - 跨进程通信：模块运行在不同的进程中。
 
-#### 2.1.1 进程内通信
+#### 2.3.1 进程内通信
 
 进程内通信的手段有很多种，最常见的就是EventBus，
 
@@ -215,14 +201,11 @@ EventBus是早期页面通信和模块通信常见的手段，但是随着工程
 - Event并非所有通信常见的最佳方式，它主要适合一对多的广播场景，如果业务中的通信需要一组接口时，就需要定义多个Event，代码复杂。
 - 大量的Event的类，难以管理，如果应用越来越庞大，模块划分也越来越多，这个Event就变得难以维护。
 
-
-
-
 除了EventBus以外，我们还可以选择LocalBroadcastReceiver。LocalBroadcastReceiver
 是一个应用内的局域广播，它也是利用一个Looper Handler维护一个全局Map进行应用内部通信，与EventBus不同，它发送的是字符串。
 
 
-#### 2.1.2 跨进程通信
+#### 2.3.2 进程间通信
 
 跨进程通信可以借助Content Provider来完成，
 
@@ -257,7 +240,6 @@ Content Provider：https://developer.android.com/guide/topics/providers/content-
 ## 附录
 
 每个人认领自己的模块，对别人在该模块上做的修改予以监督。
-
 
 最后啰嗦几句：
 
