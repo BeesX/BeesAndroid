@@ -13,7 +13,6 @@
     - 2.3 模块通信
 - 三 解决问题
 
-
 模块化也是近两年经常被提及的一个技术点，究其原因，随着公司业务的逐渐壮大，主应用的工程体积也逐渐变大，管理和编译都变得十分困难。再加上随着公司业务的发展，主应用功能拆分和研发团队的拆分已成必然，这就要求
 主应用里的各个模块能够独立编译、独立运行、不与主工程以及其他模块相互耦合。
 
@@ -35,7 +34,7 @@
 
 > 一款SaaS产品，提供建站系统、ERP、CRM、微信营销系统、财务系统等解决方案，旨在帮助车商及4S集团提升运营和管理水平。
 
-<img src="https://github.com/guoxiaoxing/software-engineering/blob/master/art/module/dafengche_banner.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/dafengche_banner.png"/>
 
 在分析方案之前，首先我们要知道我们的应用出了什么问题，针对大风车这个项目，我们来具体分析下。
 
@@ -43,7 +42,7 @@
 
 大风车与2015年上线，经过三年的发展，业务有了很大的增长，功能也逐渐完善，大风车里程碑如下所示：
 
-<img src="https://github.com/guoxiaoxing/software-engineering/blob/master/art/module/dafengche_banner.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/dafengche_banner.png"/>
 
 我们和其他团队一样，在业务的发展中，主工程的架构也在不断的变化，我简单总结一下：
 
@@ -61,7 +60,7 @@
 
 大风车工程层级结构如下图所示：
 
-<img src="https://github.com/guoxiaoxing/software-engineering/blob/master/art/module/dafengche_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/dafengche_structure.png"/>
 
 可以看到整个大风车的主工程可以分为四层：
 
@@ -87,7 +86,7 @@ Google自己也开了一个Repo来讨论这些框架的最佳实践，如下所�
 
 android-architecture：https://github.com/googlesamples/android-architecture
 
-<img src="https://github.com/guoxiaoxing/software-engineering/blob/master/art/module/android_architecture.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/android_architecture.png"/>
 
 我们今天中调讨论的就是MVP框架，这里也不去搬弄网上的那些关于MVP的概念，它的核心思想就是将视图逻辑I和业务逻辑相分离，达到解耦的目的。
 
