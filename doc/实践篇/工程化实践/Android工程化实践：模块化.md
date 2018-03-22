@@ -4,7 +4,7 @@
 
 校对：[郭孝星](https://github.com/guoxiaoxing)
 
-文章状态：编辑中
+文章状态：已完成
 
 **关于项目**
 
