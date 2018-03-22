@@ -95,6 +95,14 @@
 - H5容器：H5容器适合用来编写经常需要变化的页面，例商家活动页等。
 - ReactNative/Weex/Flutter容器：这一类容器就适合用来编写常规的页面界面，由于这一类容器也天然带有热更新能力，所以它也可以用来解决动态发布，热修复等方面的问题。
 
+那如何实现这三套容器呢？🤔
+
+- Native容器：插件化方案。
+- H5容器：WebView封装，Jockey通信协议封装。
+- ReactNative/Weex/Flutter容器：ReactNative/Weex/Flutter容器工程化体系搭建，事实上，用RN或者Weex写页面是十分简单的，它的复杂性在于工程化框架的实现。
+
+这三套容器的实现，我们后续都有详细的文章来讨论，我们接着来看看模块架构的实现。
+
 ### 2.2 模块架构
 
 关于Android项目的实践，也一直是大家经常讨论的事情，从最宠的MVC、到MVP、MVVM，各种架构的目的都都是希望模块的耦合性更低、独立性更强，移植性更好。
@@ -103,14 +111,13 @@ Google自己也开了一个Repo来讨论这些框架的最佳实践，如下所�
 
 android-architecture：https://github.com/googlesamples/android-architecture
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/android_architecture.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/mvp_structure.png"/>
 
-我们今天中调讨论的就是MVP框架，这里也不去搬弄网上的那些关于MVP的概念，它的核心思想就是将视图逻辑I和业务逻辑相分离，达到解耦的目的。
+- MVC：PC时代就有的架构方案，在Android上也是最早的方案，Activity/Fragment这些上帝角色既承担了V的角色，也承担了C的角色，小项目开发起来十分顺手，大项目就会遇到
+耦合过重，Activity/Fragment类过大等问题。
+- MVP：为了解决MVC耦合过重的问题，MVP的核心思想就是将视图逻辑I和业务逻辑相分离，达到解耦的目的。
 
-👉 注：MVVM比MVP后出来，那么说明它比MVP更好，为什么我们还要去MVP呢，这是因为MVVM有个DataBinding的概念，虽然官方提供了库，但是这个在实际的项目中实践起来并不容量，相比之下MVP
-更加简单。
-
-官方的这个MVP框架的核心思想如下所示：
+Google官方也提供了MVP的实现，这个MVP框架的核心思想如下所示：
 
 - 使用Contract接口统一管理View接口和Presenter接口的定义，当然这个也不是一定非得这么写，并不是每个View接口和Presenter接口都可以成对出现，可能会出现一个VIew接口对应介个Presenter接口或者
 一个Presenter接口对应几个View接口的情况。
@@ -124,6 +131,8 @@ android-architecture：https://github.com/googlesamples/android-architecture
 - 当页面增大到一定的量级的时候，就出出现大量的Presenter实现类，其实大风车现有的工程就有很多的Presenter实现类，Presenter实现类和View实现类需要相互set，以便View可以调用Presenter加载数据
 ，Presenter调用View刷新UI，管理这些Presenter类是个很大的问题，而且如果别人要继承你这个View，你还要告诉它在View的生命周期里如何去处理Presenter的创建和销毁，以及何时去加载数据等等。
 如果出现跨部门甚至跨跨城市的合作时，沟通成本就非常的高。
+
+总的说来，就是当业务量急剧膨胀的时候，就会需要写大量的View接口和Presenter类，而且这还牵扯到Presenter类与Activity生命周期同步的问题，在大型项目面前，这些操作都会变得十分复杂。
 
 笔者认为一个设计良好的组件必须是自管理的，内部实现细节都外界完全透明，别人在调用这个组件的时候只用传递一些配置参数即可，如下所示：
 
