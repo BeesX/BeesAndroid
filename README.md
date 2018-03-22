@@ -324,7 +324,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |[Android工程化实践：编译系统](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：编译系统.md)| 编辑中|  |  |
 |[Android工程化实践：插件化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：插件化.md)| 编辑中|  |  |
 |[Android工程化实践：热修复](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：热修复.md)| 编辑中|  |  |
-|[Android工程化实践：模块化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：模块化.md)| 编辑中|  |  |
+|[Android工程化实践：模块化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：模块化.md)| 已完成| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
 |[Android工程化实践：VCS工作流](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：VCS工作流.md)| 编辑中|  |  |
 |[Android工程化实践：持续集成](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：持续集成.md)| 编辑中|  |  |
 |[Android工程化实践：编码规范](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：编码规范.md)| 编辑中|  |  |
