@@ -1,15 +1,21 @@
-# 大型Android项目的工程化实践：模块化
+# Android工程化实践：模块化
 
-**关于作者**
+作者：[郭孝星](https://github.com/guoxiaoxing)
 
->郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
+校对：[郭孝星](https://github.com/guoxiaoxing)
+
+文章状态：编辑中
+
+**关于项目**
+
+> [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读Android系统源码的门槛，让更多的Android工程师理解Android系统，掌握Android系统。
 
 **文章目录**
 
 - 一 发现问题
 - 二 提出方案
-    - 2.1 模块架构
-    - 2.2 模块解耦
+    - 2.1 模块容器
+    - 2.2 模块架构
     - 2.3 模块通信
 - 三 解决问题
 
@@ -48,7 +54,7 @@
 
 大风车与2015年上线，经过三年的发展，业务有了很大的增长，功能也逐渐完善，大风车里程碑如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/dafengche_banner.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/practice/project/module/dafengche_milestone.png"/>
 
 我们和其他团队一样，在业务的发展中，主工程的架构也在不断的变化，我简单总结一下：
 
