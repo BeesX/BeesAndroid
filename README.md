@@ -27,8 +27,6 @@ BeesAndroid开源技术小组正式成立啦，Bees，即蜜蜂，取义分享�
 - 支持设备：Nexus 6
 
 **分析思路**
-。
-👉注：文章整理中，如果想查阅过往文章可以参见[android-open-source-project-analysis](https://github.com/guoxiaoxing/android-open-source-project-analysis)。
 
 Android是一个庞大的系统，Android Framework只是对系统的一个封装，里面还牵扯到JNI、C++、Java虚拟机、Linux系统内核、指令集等。面对如此庞大的系统，我们得有一定的
 章法去阅读源码，否则就会只见树木不见森林，陷入卷帙浩繁的细节与琐碎之中。
@@ -40,6 +38,8 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 的优化，但问题的本质没有改变，我们要善于抓住本质。
 - 要善于去粗存精，Android Framework也是人写的，有精华也有糟粕，并不是每行代码你都需要问个为什么，很多时候没有那么多为什么，只是当时那种情况下就那样设计了。但是
 对于关键函数我们要去深究它的实现细节。
+
+👉注：文章整理中，如果想查阅过往文章可以参见[android-open-source-project-analysis](https://github.com/guoxiaoxing/android-open-source-project-analysis)。
 
 在正式阅读本系列文章之前，请先阅读导读相关内容，这会帮助你更加快捷的理解文章内容。
 
