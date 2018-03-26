@@ -2,10 +2,10 @@
 
 ## 功能介绍
 
-[![License](https://img.shields.io/github/issues/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid) 
-[![Stars](https://img.shields.io/github/stars/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid) 
-[![Stars](https://img.shields.io/github/forks/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid) 
-[![Forks](https://img.shields.io/github/issues/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid) 
+[![License](https://img.shields.io/github/issues/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid)
+[![Stars](https://img.shields.io/github/stars/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid)
+[![Stars](https://img.shields.io/github/forks/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid)
+[![Forks](https://img.shields.io/github/issues/BeesAndroid/BeesAndroid.svg)](https://jitpack.io/#BeesAndroid/BeesAndroid)
 
 BeesAndroid开源技术小组正式成立啦，Bees，即蜜蜂，取义分享、合作与奉献的意思，这也是BeesAndroid小组的宗旨，我们第一个团体项目BeesAndroid也于2018年3月6日同步上线，该项目的前
 身是[android-open-source-project-analysis](https://github.com/guoxiaoxing/android-open-source-project-analysis)，这个项目提供了一系列的Android系统源码分析文章，收
@@ -21,9 +21,9 @@ BeesAndroid开源技术小组正式成立啦，Bees，即蜜蜂，取义分享�
 
 **代码版本**
 
-- 细分版本：N6F26U	
-- 分支：android-7.1.1_r28	
-- 版本：Nougat	
+- 细分版本：N6F26U
+- 分支：android-7.1.1_r28
+- 版本：Nougat
 - 支持设备：Nexus 6
 
 **分析思路**
@@ -252,7 +252,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
 |Android视图系统：Android视图系统概述| | | |
-|Android闹钟管理服务：NetworkManagementService| | |
+|Android网络管理服务：ConnectivityService| | |
 
 **Android账户管理服务**
 
@@ -382,4 +382,3 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 QQ交流群
 
 <img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq_2.png" width="300"/>
-
