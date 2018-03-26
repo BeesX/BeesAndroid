@@ -1,6 +1,6 @@
 # Android数据库系统：Android数据库系统概述
 
-作者：[郭孝星](https://github.com/guoxiaoxing)
+作者：[wusp](https://github.com/wusp)
 
 校对：[郭孝星](https://github.com/guoxiaoxing)
 
