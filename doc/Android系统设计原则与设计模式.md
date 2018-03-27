@@ -110,55 +110,42 @@ Android里一般用AIDL实现。
 建造者模式的实现，也十分简单，如下所示：
 
 ```java
+
 public class Product {
 
     private String board;
     private String display;
-    private String os;
+    // 建造者模式还可以设置默认值
+    private String os = "default value";
 
     public String getBoard() {
         return board;
+    }
+
+    public Product setBoard(String board) {
+        this.board = board;
+        return this;
     }
 
     public String getDisplay() {
         return display;
     }
 
+    public Product setDisplay(String display) {
+        this.display = display;
+        return this;
+    }
+
     public String getOs() {
         return os;
     }
 
-    private Product(Builder builder) {
-        // 进行构建
-        this.board = builder.board;
-        this.display = builder.display;
-        this.os = builder.os;
-    }
-
-    public static class Builder {
-        // 建造者模式还可以设置默认值
-        private String board = "default value";
-        private String display = "default value";
-        private String os = "default value";
-
-        public void setBoard(String board) {
-            this.board = board;
-        }
-
-        public void setDisplay(String display) {
-            this.display = display;
-        }
-
-        public void setOs(String os) {
-            this.os = os;
-        }
-
-
-        public Product build() {
-            return new Product(this);
-        }
+    public Product setOs(String os) {
+        this.os = os;
+        return this;
     }
 }
+
 ```
 
 ### 1.3 原型模式
@@ -175,15 +162,42 @@ public class Product {
 实现原型模式也很简单，主需要声明实现loneable接口，然后覆写Object的clone()方法接口。
 
 ```java
-public class Person implements Cloneable{
+public class Person implements Cloneable {
 
-    public int age;
     public String name;
+    public Person child;
+    public List<Book> books;
 
     @Override
-    public Person clone() throws CloneNotSupportedException {
-        return (Person) super.clone();
+    protected Person clone() throws CloneNotSupportedException {
+//        return (Person) super.clone(); //浅克隆
+
+        /* 深克隆 */
+        Person newPerson = (Person) super.clone();
+        if (books != null) {
+            List<Book> newBooks = new ArrayList<>(); //maybe not ArrayList.
+            for (Book book : books) {
+                Book newBook = new Book();
+                newBook.name = book.name;
+                newBook.qrCode = book.qrCode;
+                newBooks.add(newBook);
+            }
+            // clone books.
+            newPerson.books = newBooks;
+        }
+        if (this.child != null) {
+            // clone child(recursion).
+            newPerson.child = this.child.clone();
+        }
+        return newPerson;
     }
+
+
+    public static class Book {
+        public String name;
+        public int qrCode;
+    }
+
 }
 ```
 
