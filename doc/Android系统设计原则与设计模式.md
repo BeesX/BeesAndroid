@@ -162,15 +162,42 @@ public class Product {
 实现原型模式也很简单，主需要声明实现loneable接口，然后覆写Object的clone()方法接口。
 
 ```java
-public class Person implements Cloneable{
+public class Person implements Cloneable {
 
-    public int age;
     public String name;
+    public Person child;
+    public List<Book> books;
 
     @Override
-    public Person clone() throws CloneNotSupportedException {
-        return (Person) super.clone();
+    protected Person clone() throws CloneNotSupportedException {
+//        return (Person) super.clone(); //浅克隆
+
+        /* 深克隆 */
+        Person newPerson = (Person) super.clone();
+        if (books != null) {
+            List<Book> newBooks = new ArrayList<>(); //maybe not ArrayList.
+            for (Book book : books) {
+                Book newBook = new Book();
+                newBook.name = book.name;
+                newBook.qrCode = book.qrCode;
+                newBooks.add(newBook);
+            }
+            // clone books.
+            newPerson.books = newBooks;
+        }
+        if (this.child != null) {
+            // clone child(recursion).
+            newPerson.child = this.child.clone();
+        }
+        return newPerson;
     }
+
+
+    public static class Book {
+        public String name;
+        public int qrCode;
+    }
+
 }
 ```
 
