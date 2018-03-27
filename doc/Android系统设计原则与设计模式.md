@@ -110,42 +110,55 @@ Android里一般用AIDL实现。
 建造者模式的实现，也十分简单，如下所示：
 
 ```java
-
 public class Product {
 
     private String board;
     private String display;
-    // 建造者模式还可以设置默认值
-    private String os = "default value";
+    private String os;
 
     public String getBoard() {
         return board;
-    }
-
-    public Product setBoard(String board) {
-        this.board = board;
-        return this;
     }
 
     public String getDisplay() {
         return display;
     }
 
-    public Product setDisplay(String display) {
-        this.display = display;
-        return this;
-    }
-
     public String getOs() {
         return os;
     }
 
-    public Product setOs(String os) {
-        this.os = os;
-        return this;
+    private Product(Builder builder) {
+        // 进行构建
+        this.board = builder.board;
+        this.display = builder.display;
+        this.os = builder.os;
+    }
+
+    public static class Builder {
+        // 建造者模式还可以设置默认值
+        private String board = "default value";
+        private String display = "default value";
+        private String os = "default value";
+
+        public void setBoard(String board) {
+            this.board = board;
+        }
+
+        public void setDisplay(String display) {
+            this.display = display;
+        }
+
+        public void setOs(String os) {
+            this.os = os;
+        }
+
+
+        public Product build() {
+            return new Product(this);
+        }
     }
 }
-
 ```
 
 ### 1.3 原型模式
