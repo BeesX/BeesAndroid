@@ -313,36 +313,6 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 ## 实践篇
 
-### Android工程化实践
-
-|文章                                                      |文章状态                            |作者                               |校对                              |
-|:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android工程化实践：Android工程化实践概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：Android工程化实践概述.md)| 编辑中|  |  |
-|[Android工程化实践：项目架构](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：项目架构.md)| 编辑中|  |  |
-|[Android工程化实践：编译系统](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：编译系统.md)| 编辑中|  |  |
-|[Android工程化实践：插件化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：插件化.md)| 编辑中|  |  |
-|[Android工程化实践：热修复](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：热修复.md)| 编辑中|  |  |
-|[Android工程化实践：模块化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：模块化.md)| 已完成| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android工程化实践：VCS工作流](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：VCS工作流.md)| 编辑中|  |  |
-|[Android工程化实践：持续集成](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：持续集成.md)| 编辑中|  |  |
-|[Android工程化实践：编码规范](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：编码规范.md)| 编辑中|  |  |
-|[Android工程化实践：自动化测试](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：自动化测试.md)| 编辑中|  |  |
-|[Android工程化实践：日志系统](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：日志系统.md)| 编辑中|  |  |
-|[Android工程化实践：自动化埋点与数据采集](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：自动化埋点与数据采集.md)| 编辑中|  |  |
-
-### Android应用优化
-
-|文章                                                      |文章状态                            |作者                               |校对                              |
-|:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android应用优化：优化概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：优化概述.md)| 编辑中|  |  |
-|[Android应用优化：启动优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：启动优化.md)| 编辑中|  |  |
-|[Android应用优化：界面优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：界面优化.md)| 编辑中|  |  |
-|[Android应用优化：内存优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：内存优化.md)| 编辑中|  |  |
-|[Android应用优化：图像优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：图像优化.md)| 编辑中|  |  |
-|[Android应用优化：网络优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：网络优化.md)| 编辑中|  |  |
-|[Android应用优化：并发优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：并发优化.md)| 编辑中|  |  |
-|[Android应用优化：优化工具](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：优化工具.md)| 编辑中|  |  |
-
 ### Android界面开发
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
@@ -356,8 +326,8 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android多媒体开发：Bitmap实践指南](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/多媒体开发/Android多媒体开发：Bitmap实践指南.md)| 编辑中|  |  |
-|[Android多媒体开发：Camera实践指南](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/多媒体开发/Android多媒体开发：Camera实践指南.md)| 编辑中|  |  |
+|[Android多媒体开发：Bitmap实践指南](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/多媒体开发/Android多媒体开发：Bitmap实践指南.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android多媒体开发：Camera实践指南](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/多媒体开发/Android多媒体开发：Camera实践指南.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
 
 ### Android网络编程
 
@@ -370,6 +340,37 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
 |Android混合编程：WebView实践| | |
+
+### Android应用优化
+
+|文章                                                      |文章状态                            |作者                               |校对                              |
+|:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
+|[Android应用优化：优化概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：优化概述.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android应用优化：启动优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：启动优化.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android应用优化：界面优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：界面优化.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android应用优化：内存优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：内存优化.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android应用优化：图像优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：图像优化.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android应用优化：网络优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：网络优化.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android应用优化：并发优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：并发优化.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android应用优化：优化工具](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/应用优化/Android应用优化：优化工具.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+
+### Android工程化实践
+
+|文章                                                      |文章状态                            |作者                               |校对                              |
+|:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
+|[Android工程化实践：Android工程化实践概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：Android工程化实践概述.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：SDK设计](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：SDK设计.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：Gradle编译系统](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：Gradle编译系统.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：插件化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：插件化.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：热修复](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：热修复.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：模块化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：模块化.md)| 已完成| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：VCS工作流](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：VCS工作流.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：持续集成](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：持续集成.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：编码规范](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：编码规范.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：自动化测试](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：自动化测试.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：日志系统](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：日志系统.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android工程化实践：埋点与数据采集](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：标准文档.md.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+
 
 > 欢迎关注我们的微信公众号，新文章会第一时间发布到掘金博客与微信公众平台，我们也有自己的交流群，下方是QQ交流群，微信群已满，可以加我微信 allenwells 邀请入群。
 

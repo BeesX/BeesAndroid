@@ -1,4 +1,4 @@
-# Android工程化实践：工程架构
+# Android工程化实践：SDK设计
 
 作者：[郭孝星](https://github.com/guoxiaoxing)
 
