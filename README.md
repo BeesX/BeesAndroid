@@ -39,8 +39,6 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 - 要善于去粗存精，Android Framework也是人写的，有精华也有糟粕，并不是每行代码你都需要问个为什么，很多时候没有那么多为什么，只是当时那种情况下就那样设计了。但是
 对于关键函数我们要去深究它的实现细节。
 
-👉注：文章整理中，如果想查阅过往文章可以参见[android-open-source-project-analysis](https://github.com/guoxiaoxing/android-open-source-project-analysis)。
-
 在正式阅读本系列文章之前，请先阅读导读相关内容，这会帮助你更加快捷的理解文章内容。
 
 - [导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/导读.md)
@@ -82,7 +80,6 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |[Android视图系统：Android图片控件ImageView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android图片控件ImageView.md)| 编辑中|  |  |
 |[Android视图系统：Android对话框控件Dialog](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android对话框控件Dialog.md)| 编辑中|  |  |
 |[Android视图系统：Android弹出窗口控件PopupWindow](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android弹出窗口控件PopupWindow.md)| 编辑中|  |  |
-
 
 **Android组件系统**
 
@@ -279,9 +276,8 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|JVM虚拟机：JVM虚拟机概述| | | |
-|JVM虚拟机：Java虚拟机概述| | |
-|JVM虚拟机：Java类加载机制| | |
+|[JVM虚拟机：JVM虚拟机概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/内核层/Android进程系统/JVM虚拟机概述：JVM虚拟机概述概述.md)|编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
+|[JVM虚拟机：Java类加载机制](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/内核层/Android进程系统/JVM虚拟机概述：Java类加载机制.md)|已完成 | [郭孝星](https://github.com/guoxiaoxing)| [郭孝星](https://github.com/guoxiaoxing)|
 
 **ART虚拟机**
 
