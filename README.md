@@ -17,7 +17,7 @@ BeesAndroid开源技术小组正式成立啦，Bees，即蜜蜂，取义分享�
 > BeesAndroid项目旨在通过提供一系列的工具与方法，降低阅读系统源码的门槛，帮助更多的Android工程师理解Andriod系统，掌握Android系统。
 
 - [Blog](https://juejin.im/user/5a9e5b95518825558b3d6e22/posts)
-- [GitBook](https://www.gitbook.com/book/beesandroid/beesandroid/welcome)
+- [GitBook](https://beesandroid.gitbooks.io/beesandroid/content/)
 
 **代码版本**
 
