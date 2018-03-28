@@ -1,8 +1,14 @@
-# Android虚拟机框架：Java类加载机制
+# JVM虚拟机：Java类加载机制
 
-**关于作者**
+作者：[郭孝星](https://github.com/guoxiaoxing)
 
->郭孝星，程序员，吉他手，主要从事Android平台基础架构方面的工作，欢迎交流技术方面的问题，可以去我的[Github](https://github.com/guoxiaoxing)提issue或者发邮件至guoxiaoxingse@163.com与我交流。
+校对：[郭孝星](https://github.com/guoxiaoxing)
+
+文章状态：编辑中
+
+**关于项目**
+
+> [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读Android系统源码的门槛，让更多的Android工程师理解Android系统，掌握Android系统。
 
 **文章目录**
 
@@ -97,7 +103,7 @@ SourceFile: "TestClass.java"
 
 Class文件十六机制内容如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/TestClass_0.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/TestClass_0.png"/>
 
 注：笔者用的二进制查看软件是iHex，可以去AppStore下载，Windows用户可以使用WinHex。
 
@@ -142,7 +148,7 @@ Class文件十六机制内容如下所示：
 
 >ca fe ba be
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/TestClass_1.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/TestClass_1.png"/>
 
 ### 1.2 版本号
 
@@ -154,7 +160,7 @@ Class文件十六机制内容如下所示：
 
 >5-6字节是次版本号0x0000（即0），7-8字节是主版本号0x0034（即52）.
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/TestClass_2.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/TestClass_2.png"/>
 
 JDK版本号与数值的对应关系如下所示：
 
@@ -178,7 +184,7 @@ JDK版本号与数值的对应关系如下所示：
 
 >9-10字节是常量池容器计数0x0013（即19）。说明常量池里有18个常量，从1-18.
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/TestClass_3.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/TestClass_3.png"/>
 
 这是我们上面用javap分析的字节码文件里的常量池里常量的个数是一直的。
 
@@ -190,7 +196,7 @@ JDK版本号与数值的对应关系如下所示：
 #17 = Utf8               com/guoxiaoxing/android/framework/demo/native_framwork/vm/TestClass
 ```
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/TestClass_4.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/TestClass_4.png"/>
 
 常量池主要存放字面量与符号引用。
 
@@ -243,7 +249,7 @@ cp_info {
 
 从上面的分析中常量池最后一个常量是#14 = Utf8 java/lang/Object，所以它后面的两个字节就代表访问标志，如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/TestClass_5.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/TestClass_5.png"/>
 
 访问表示值与含义如下所示：
 
@@ -276,15 +282,15 @@ cp_info {
 
 类索引为0x0002，它的全限定名为com/guoxiaoxing/android/framework/demo/native_framwork/vm/TestClass。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/TestClass_6.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/TestClass_6.png"/>
 
 父类索引为0x0003，它的全限定名为java/lang/Object。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/TestClass_7.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/TestClass_7.png"/>
 
 接口索引的第一项是一个u2类型的数据表示接口计数器，表示实现接口的个数。这里没有实现任何接口，所以为0x0000。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/TestClass_8.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/TestClass_8.png"/>
 
 ### 1.6 字段表集合
 
@@ -330,7 +336,7 @@ descriptor_index里描述符的含义如下所示：
 
 对应数值
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/TestClass_9.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/TestClass_9.png"/>
 
 - 第一个u2类型的值为0x0001，代表当前容器计数器field_count为1，说明这个类只有一个字段表数据。也就是我们上面定义的类成员变量private int m；
 - 第二个u2类型的值为0x0002，代表access_flags，说明这个成员变量的类型为private。
@@ -355,7 +361,7 @@ method_info {
 
 对应的值
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/TestClass_9.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/TestClass_9.png"/>
 
 - 第一个u2类型的值为0x0002，代表当前类有两个方法，即为构造函数和我们上面写的inc()方法。
 - 第二个u2类型的值为0x0001，代表access_flags，即方法的访问类型为public。
@@ -378,7 +384,7 @@ method_info {
 
 类加载的流程图如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/class_load_flow.png" width="600"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/class_load_flow.png" width="600"/>
 
 **加载**
 
@@ -454,7 +460,7 @@ method_info {
 
 这个时候就要提到类加载器的双亲委派模型，流程图如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/classloader_model_structure.png" width="600"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/classloader_model_structure.png" width="600"/>
 
 双亲委派模型的整个工作流程非常的简单，如下所示：
 
@@ -513,7 +519,7 @@ Java虚拟机加载的是class文件，而Android虚拟机加载的是dex文件�
 
 Android类加载器类图如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/avm_classloader_class.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/avm_classloader_class.png"/>
 
 可以看到Android类加载器的基类是BaseDexClassLoader，它有派生出两个子类加载器：
 
@@ -577,7 +583,7 @@ public class DexClassLoader extends BaseDexClassLoader {
 
 我们来看看Dex文件加载、类的查找加载的序列图，如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/vm/find_class_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/runtime/jvm/find_class_sequence.png"/>
 
 从上图Dex加载的流程可以看出，optimizedDirectory决定了调用哪一个DexFile的构造函数。
 
