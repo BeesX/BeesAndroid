@@ -276,8 +276,8 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[JVM虚拟机：JVM虚拟机概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/内核层/Android进程系统/JVM虚拟机概述：JVM虚拟机概述概述.md)|编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
-|[JVM虚拟机：Java类加载机制](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/内核层/Android进程系统/JVM虚拟机概述：Java类加载机制.md)|已完成 | [郭孝星](https://github.com/guoxiaoxing)| [郭孝星](https://github.com/guoxiaoxing)|
+|[JVM虚拟机：JVM虚拟机概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/运行时层/JVM虚拟机/JVM虚拟机：JVM虚拟机概述概述.md)|编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
+|[JVM虚拟机：Java类加载机制](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/运行时层/JVM虚拟机/JVM虚拟机：Java类加载机制.md)|已完成 | [郭孝星](https://github.com/guoxiaoxing)| [郭孝星](https://github.com/guoxiaoxing)|
 
 **ART虚拟机**
 
