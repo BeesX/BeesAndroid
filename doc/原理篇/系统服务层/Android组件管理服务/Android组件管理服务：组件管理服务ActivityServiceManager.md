@@ -26,7 +26,7 @@ Activity、Service、BroadcastReceiver的启动、切换、调度都有着相似
 
 Activity的启动流程图（放大可查看）如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/activity_start_flow.png" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/server/activitymanagerservice/activity_start_flow.png" />
 
 主要角色有：
 
@@ -39,7 +39,7 @@ Activity的启动流程图（放大可查看）如下所示：
 
 Service的启动流程图（放大可查看）如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/service_start_flow.png" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/server/activitymanagerservice/service_start_flow.png" />
 
 主要角色有：
 
@@ -49,7 +49,7 @@ Service的启动流程图（放大可查看）如下所示：
 
 BroadcastReceiver的启动流程图（放大可查看）如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/broadcast_start_flow.png" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/server/activitymanagerservice/broadcast_start_flow.png" />
 
 主要角色有：
 
@@ -191,7 +191,7 @@ public UiHandler() {
 
 ActivityManagerService类图如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/activity_manager_service_class.png" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/server/activitymanagerservice/activity_manager_service_class.png" />
 
 - ActivityManager：AMS给客户端调用的接口。
 - ActivityManagerNative：该类是ActivityManagerService的父类，继承与Binder，主要用来负责进程通信，接收ActivityManager传递过来的信息，这么写可以将通信部分分离在ActivityManagerNative，使得
@@ -233,7 +233,7 @@ ActivityManager定义了很多静态内部类来描述这些信息，具体说�
 
 我们知道四大组件的启动依赖于进程，如果该进程没有启动，会先启动该进程，再进行attach，描述进程信息的是ProcessRecord，还有很多其他以Record结尾的类用来描述组件信息，如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/activity_,anager_service_reocrd_class.png" width="600"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/server/activitymanagerservice/activity_,anager_service_reocrd_class.png" width="600"/>
 
 - ProcessRecord：描述进程信息。
 - ActivityRecord：描述Activity组件信息。
