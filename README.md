@@ -1,4 +1,4 @@
-# <img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/logo_circle.png" alt="BeesAndroid" width="80" height="80" align="bottom"/> BeesAndroid
+# <img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/logo.png" alt="BeesAndroid" width="80" height="80" align="bottom"/> BeesAndroid
 
 ## 功能介绍
 
