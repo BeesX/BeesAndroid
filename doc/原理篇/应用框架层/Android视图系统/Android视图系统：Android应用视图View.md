@@ -1032,7 +1032,7 @@ public final class ViewRoot extends Handler implements ViewParent,
 2. 根据AttachInfo里描述的数据，判断窗口是否需要缩放。
 3. 根据成员变量React mDirty的描述来判断窗口脏区域的大小，脏区域指的是需要全部重绘的窗口区域。
 4. 根据成员变量boolean mUserGL判断是否需要用OpenGL接口来绘制UI，当应用窗口flag等于WindowManager.LayoutParams.MEMORY_TYPE_GPU则表示需要用OpenGL接口来绘制UI.
-5. 如果不是用OpenGL来绘制，则用Surface来绘制，先调用Surface.lockCanvas()来创建画布，UI绘制完成后，再调用urface.unlockCanvasAndPost(canvas)S来请求SurfaceFlinger进行UI的渲染
+5. 如果不是用OpenGL来绘制，则用Surface来绘制，先调用Surface.lockCanvas()来创建画布，UI绘制完成后，再调用Surface.unlockCanvasAndPost(canvas)S来请求SurfaceFlinger进行UI的渲染
 
 注：这里的Surface对象对应了C++层里的Surface对象，真正的功能在C++层，关于C++层的实现，我们会在后续的文章进一步分析。
 
