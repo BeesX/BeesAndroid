@@ -27,7 +27,7 @@ Window在Android是一个窗口的概念，日常开发中我们和它接触的�
 
 ## 一 窗口类型
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/window_layer.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/window_layer.png" width="250" height="500"/>
 
 Window在Android中有三种类型：
 
