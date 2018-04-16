@@ -4,6 +4,8 @@
 
 校对：[郭孝星](https://github.com/guoxiaoxing)
 
+文章状态：已完成
+
 **关于项目**
 
 > [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读Android系统源码的门槛，让更多的Android工程师理解
@@ -16,6 +18,8 @@ Android系统，掌握Android系统。
 - 三 View的布局流程
 - 四 View的绘制流程
 - 五 View事件分发机制
+
+**官方简介**
 
 > This class represents the basic building block for user interface components. A Viewoccupies a rectangular area on the screen and is 
 responsible for drawing and event handling.
@@ -265,21 +269,21 @@ View是一个矩形区域，它有自己的位置、大小与边距。
 
 View位置
 
->View位置：有左上角坐标(getLeft(), getTop())决定，该坐标是以它的父View的左上角为坐标原点，单位是pixels。
+> View位置：有左上角坐标(getLeft(), getTop())决定，该坐标是以它的父View的左上角为坐标原点，单位是pixels。
 
 View大小
 
->View大小：View的大小有两对值来表示。getMeasuredWidth()/getMeasuredHeight()这组值表示了该View在它的父View里期望的大小值，在measure()方法完成后可获得。
+> View大小：View的大小有两对值来表示。getMeasuredWidth()/getMeasuredHeight()这组值表示了该View在它的父View里期望的大小值，在measure()方法完成后可获得。
 getWidth()/getHeight()这组值表示了该View在屏幕上的实际大小，在draw()方法完成后可获得。
 
 View内边距
 
->View内边距：View的内边距用padding来表示，它表示View的内容距离View边缘的距离。通过getPaddingXXX()方法获取。需要注意的是我们在自定义View的时候需要单独处理
+> View内边距：View的内边距用padding来表示，它表示View的内容距离View边缘的距离。通过getPaddingXXX()方法获取。需要注意的是我们在自定义View的时候需要单独处理
 padding，否则它不会生效，这一块的内容我们会在View自定义实践系列的文章中展开。
 
 View外边距
 
->View内边距：View的外边距用margin来表示，它表示View的边缘离它相邻的View的距离。
+> View内边距：View的外边距用margin来表示，它表示View的边缘离它相邻的View的距离。
 
 >Measure过程决定了View的宽高，该过程完成后，通常都可以通过getMeasuredWith()/getMeasuredHeight()获得宽高。
 

@@ -4,7 +4,7 @@
 
 校对：[郭孝星](https://github.com/guoxiaoxing)
 
-文章状态：编辑中
+文章状态：已完成
 
 **关于项目**
 
@@ -18,11 +18,11 @@
 - 四 窗口回调
 - 五 窗口实现
 
-从这篇文章开始，我们来分析和Window以及WindowManager相关的内容，
+**官方描述**
 
->Abstract base class for a top-level window look and behavior policy.
+> Abstract base class for a top-level window look and behavior policy.
 
->Window在Android是一个窗口的概念，日常开发中我们和它接触的不多，我们更多接触的是View，但是View都是通过Window来呈现的，Window是View的直接管理者。
+Window在Android是一个窗口的概念，日常开发中我们和它接触的不多，我们更多接触的是View，但是View都是通过Window来呈现的，Window是View的直接管理者。
 而WindowManager承担者管理Window的责任。
 
 ## 一 窗口类型
