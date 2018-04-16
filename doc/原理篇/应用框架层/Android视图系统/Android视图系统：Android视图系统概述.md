@@ -15,7 +15,7 @@
 
 Android视图系统结构如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/view_system_structure.png" width="250"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/view_system_structure.png" width="300"/>
 
 Android的显示系统分为三层：
 
