@@ -12,16 +12,17 @@
 
 **文章目录**
 
-
-Android视图系统结构如下所示：
-
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/view_system_structure.png" width="300"/>
-
-Android的显示系统分为三层：
+Android的视图系统主要分为三层，即负责处理用户事件以及触发绘制的UI框架层，管理窗口的WindowManagerService层以及最终完成界面渲染的SurfaceFlinger层，如下所示：
 
 - UI框架层：负责管理窗口中View组件的布局与绘制以及响应用户输入事件
 - WindowManagerService层：负责管理窗口Surface的布局与次序
 - SurfaceFlinger层：将WindowManagerService管理的窗口按照一定的次序显示在屏幕上
+
+关于WindowManagerService层与SurfaceFlinger层我们后续会详细讲，今天我们先来看看与应用开发工程师关系
+
+Android视图系统结构如下所示：
+
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/view_system_structure.png" width="300"/>
 
 在Android显示框架里有这么几个角色：
 
