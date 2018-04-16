@@ -12,6 +12,11 @@
 
 **文章目录**
 
+
+Android视图系统结构如下所示：
+
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/view_system_structure.png"/>
+
 Android的显示系统分为三层：
 
 - UI框架层：负责管理窗口中View组件的布局与绘制以及响应用户输入事件
