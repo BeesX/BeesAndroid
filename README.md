@@ -285,21 +285,26 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|Socket进程通信系统：Socket进程通信系统概述| | | |
+|[Socket进程通信系统：Socket进程通信系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/进程通信层/Socket进程通信系统/Socket进程通信系统：Socket进程通信系统概述.md)| 编辑中|  |  |
 
-**JVM虚拟机**
+**Java虚拟机**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[JVM虚拟机：JVM虚拟机概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/JVM虚拟机/JVM虚拟机：JVM虚拟机概述概述.md)|编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
-|[JVM虚拟机：Java类加载机制](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/JVM虚拟机/JVM虚拟机：Java类加载机制.md)|已完成 | [郭孝星](https://github.com/guoxiaoxing)| [郭孝星](https://github.com/guoxiaoxing)|
+|[Java虚拟机：Java虚拟机概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/Java虚拟机/Java虚拟机：JVM虚拟机概述概述.md)| 编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
+|[Java虚拟机：类加载机制](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/Java虚拟机/Java虚拟机：类加载机制.md)| 已完成 | [郭孝星](https://github.com/guoxiaoxing)| [郭孝星](https://github.com/guoxiaoxing)|
+|[Java虚拟机：自动内存管理机制](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/Java虚拟机/Java虚拟机：JVM虚拟机概述概述.md)| 编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
+|[Java虚拟机：垃圾收集器与内存分配策略](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/Java虚拟机/Java虚拟机：垃圾收集器与内存分配策略.md)| 编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
 
 **ART虚拟机**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|ART虚拟机：ART虚拟机概述| | | |
-|ART虚拟机：Android ART虚拟机概述| | |
+|[ART虚拟机：ART虚拟机概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/ART虚拟机/ART虚拟机：ART虚拟机概述.md)| 编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
+|[ART虚拟机：OAT文件的加载流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/ART虚拟机/ART虚拟机：OAT文件的加载流程.md)| 编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
+|[ART虚拟机：类与方法的查找流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/ART虚拟机/ART虚拟机：类与方法的查找流程.md)| 编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
+|[ART虚拟机：机器指令的查找流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/ART虚拟机/ART虚拟机：机器指令的查找流程.md)| 编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
+|[ART虚拟机：垃圾收集](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/ART虚拟机/ART虚拟机：垃圾收集.md)| 编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
 
 ### Linux内核层
 

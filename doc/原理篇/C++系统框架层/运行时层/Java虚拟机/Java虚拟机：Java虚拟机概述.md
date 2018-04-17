@@ -1,4 +1,4 @@
-# JVM虚拟机：JVM虚拟机概述
+# Java虚拟机：Java虚拟机概述
 
 作者：[郭孝星](https://github.com/guoxiaoxing)
 
