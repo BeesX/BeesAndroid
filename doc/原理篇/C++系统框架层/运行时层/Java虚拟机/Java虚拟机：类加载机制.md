@@ -1,4 +1,4 @@
-# Java虚拟机：垃圾收集器与内存分配策略
+# Java虚拟机：类加载机制
 
 作者：[郭孝星](https://github.com/guoxiaoxing)
 

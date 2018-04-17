@@ -387,7 +387,6 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |[Android工程化实践：日志系统](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：日志系统.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
 |[Android工程化实践：埋点与数据采集](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/实践篇/工程化实践/Android工程化实践：标准文档.md.md)| 编辑中| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
 
-
 > 欢迎关注我们的微信公众号，新文章会第一时间发布到掘金博客与微信公众平台，我们也有自己的交流群，下方是QQ交流群，微信群已满，可以加我微信 allenwells 邀请入群。
 
 微信公众平台
