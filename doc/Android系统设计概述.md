@@ -16,6 +16,6 @@ Android系统架构图
 从上到下依次分为四层：
 
 - Android应用框架层
-- Android Java Framework层
-- Android C++ Framework层
+- Java系统框架层
+- C++系统框架层
 - Linux内核层

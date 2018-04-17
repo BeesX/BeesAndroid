@@ -56,137 +56,120 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 ## 原理篇
 
-### 应用框架层
+### Android应用框架层
 
 **Android视图系统**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android视图系统：Android视图系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android视图系统概述.md)| 已完成| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android视图系统：Android应用窗口Window](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android应用窗口Window.md)| 已完成| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android视图系统：Android应用视图View](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android应用视图View.md)| 已完成| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
-|[Android视图系统：Android应用视图组ViewGroup](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android应用视图组ViewGroup.md)| 编辑中|  |  |
-|[Android视图系统：Android帧布局控件FrameLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android帧布局控件FrameLayout.md)| 编辑中|  |  |
-|[Android视图系统：Android线性布局控件LinearLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android线性布局控件LinearLayout.md)| 编辑中|  |  |
-|[Android视图系统：Android相对布局控件RelativeLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android相对布局控件RelativeLayout.md)| 编辑中|  |  |
-|[Android视图系统：Android协调布局控件CoordinatorLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android协调布局控件CoordinatorLayout.md)| 编辑中|  |  |
-|[Android视图系统：Android下拉刷新控件SwipeRefreshLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android下拉刷新控件SwipeRefreshLayout.md)| 编辑中|  |  |
-|[Android视图系统：Android滑动控件ViewPager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android滑动控件ViewPager.md)| 编辑中|  |  |
-|[Android视图系统：Android滚动控件ScrollView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android滚动控件ScrollView.md)| 编辑中|  |  |
-|[Android视图系统：Android列表控件RecyclerView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android列表控件RecyclerView.md)| 编辑中|  |  |
-|[Android视图系统：Android进度条控件ProgressBar](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android进度条控件ProgressBar.md)| 编辑中|  |  |
-|[Android视图系统：Android文字控件TextView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android文字控件TextView.md)| 编辑中|  |  |
-|[Android视图系统：Android编辑框控件EditText](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android编辑框控件EditText.md)| 编辑中|  |  |
-|[Android视图系统：Android图片控件ImageView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android图片控件ImageView.md)| 编辑中|  |  |
-|[Android视图系统：Android对话框控件Dialog](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android对话框控件Dialog.md)| 编辑中|  |  |
-|[Android视图系统：Android弹出窗口控件PopupWindow](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android视图系统/Android视图系统：Android弹出窗口控件PopupWindow.md)| 编辑中|  |  |
+|[Android视图系统：Android视图系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android视图系统概述.md)| 已完成| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android视图系统：Android应用窗口Window](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android应用窗口Window.md)| 已完成| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android视图系统：Android应用视图View](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android应用视图View.md)| 已完成| [郭孝星](https://github.com/guoxiaoxing)  | [郭孝星](https://github.com/guoxiaoxing)  |
+|[Android视图系统：Android应用视图组ViewGroup](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android应用视图组ViewGroup.md)| 编辑中|  |  |
+|[Android视图系统：Android帧布局控件FrameLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android帧布局控件FrameLayout.md)| 编辑中|  |  |
+|[Android视图系统：Android线性布局控件LinearLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android线性布局控件LinearLayout.md)| 编辑中|  |  |
+|[Android视图系统：Android相对布局控件RelativeLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android相对布局控件RelativeLayout.md)| 编辑中|  |  |
+|[Android视图系统：Android协调布局控件CoordinatorLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android协调布局控件CoordinatorLayout.md)| 编辑中|  |  |
+|[Android视图系统：Android下拉刷新控件SwipeRefreshLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android下拉刷新控件SwipeRefreshLayout.md)| 编辑中|  |  |
+|[Android视图系统：Android滑动控件ViewPager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android滑动控件ViewPager.md)| 编辑中|  |  |
+|[Android视图系统：Android滚动控件ScrollView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android滚动控件ScrollView.md)| 编辑中|  |  |
+|[Android视图系统：Android列表控件RecyclerView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android列表控件RecyclerView.md)| 编辑中|  |  |
+|[Android视图系统：Android进度条控件ProgressBar](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android进度条控件ProgressBar.md)| 编辑中|  |  |
+|[Android视图系统：Android文字控件TextView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android文字控件TextView.md)| 编辑中|  |  |
+|[Android视图系统：Android编辑框控件EditText](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android编辑框控件EditText.md)| 编辑中|  |  |
+|[Android视图系统：Android图片控件ImageView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android图片控件ImageView.md)| 编辑中|  |  |
+|[Android视图系统：Android对话框控件Dialog](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android对话框控件Dialog.md)| 编辑中|  |  |
+|[Android视图系统：Android弹出窗口控件PopupWindow](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android视图系统/Android视图系统：Android弹出窗口控件PopupWindow.md)| 编辑中|  |  |
 
 **Android组件系统**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android组件系统：Android组件系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android组件系统概述.md)| 编辑中|  |  |
-|[Android组件系统：Android组件注册表AndroidManifest](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android组件注册表AndroidManifest.md)| 编辑中|  |  |
-|[Android组件系统：Android应用上下文Context](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android应用上下文Context.md)| 编辑中|  |  |
-|[Android组件系统：Android视图容器Activity](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android视图容器Activity.md)| 编辑中|  |  |
-|[Android组件系统：Android视图片段Fragment](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android视图片段Fragment.md)| 编辑中|  |  |
-|[Android组件系统：Android后台服务Service](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android后台服务Service.md)| 编辑中|  |  |
-|[Android组件系统：Android数据提供者ContentProvider](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android数据提供者ContentProvider.md)| 校对中| [wusp](https://github.com/wusp) | [郭孝星](https://github.com/guoxiaoxing) |
-|[Android组件系统：Android广播接收者BroadcastReceiver](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android组件系统/Android组件系统：Android广播接收者BroadcastReceiver.md)| 编辑中|  |  |
+|[Android组件系统：Android组件系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android组件系统/Android组件系统：Android组件系统概述.md)| 编辑中|  |  |
+|[Android组件系统：Android组件注册表AndroidManifest](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android组件系统/Android组件系统：Android组件注册表AndroidManifest.md)| 编辑中|  |  |
+|[Android组件系统：Android应用上下文Context](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android组件系统/Android组件系统：Android应用上下文Context.md)| 编辑中|  |  |
+|[Android组件系统：Android视图容器Activity](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android组件系统/Android组件系统：Android视图容器Activity.md)| 编辑中|  |  |
+|[Android组件系统：Android视图片段Fragment](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android组件系统/Android组件系统：Android视图片段Fragment.md)| 编辑中|  |  |
+|[Android组件系统：Android后台服务Service](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android组件系统/Android组件系统：Android后台服务Service.md)| 编辑中|  |  |
+|[Android组件系统：Android数据提供者ContentProvider](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android组件系统/Android组件系统：Android数据提供者ContentProvider.md)| 校对中| [wusp](https://github.com/wusp) | [郭孝星](https://github.com/guoxiaoxing) |
+|[Android组件系统：Android广播接收者BroadcastReceiver](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android组件系统/Android组件系统：Android广播接收者BroadcastReceiver.md)| 编辑中|  |  |
 
 **Android资源系统**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android资源系统：Android资源系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android资源系统/Android包系统：Android资源系统概述.md)| 编辑中|  |  |
-|[Android资源系统：应用资源Resources](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android资源系统/Android包系统：应用资源Resources.md)| 编辑中|  |  |
-|[Android资源系统：资源管理器AssetManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android资源系统/Android包系统：资源管理器AssetManager.md)| 编辑中|  |  |
+|[Android资源系统：Android资源系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android资源系统/Android包系统：Android资源系统概述.md)| 编辑中|  |  |
+|[Android资源系统：应用资源Resources](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android资源系统/Android包系统：应用资源Resources.md)| 编辑中|  |  |
+|[Android资源系统：资源管理器AssetManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android资源系统/Android包系统：资源管理器AssetManager.md)| 编辑中|  |  |
 
 **Android包系统**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android包系统：Android包系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android包系统/Android包系统：Android资源系统概述.md)| 编辑中|  |  |
-|[Android包系统：APK解析器PackageParser](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android包系统/Android包系统：APK解析器PackageParser.md)| 编辑中|  |  |
-|[Android包系统：APK的打包流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android包系统/Android包系统：APK的打包流程.md)| 编辑中|  |  |
-|[Android包系统：APK的安装流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android包系统/Android包系统：APK的安装流程.md)| 编辑中|  |  |
-|[Android包系统：APK的加载流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android包系统/Android包系统：APK的加载流程.md)| 编辑中|  |  |
+|[Android包系统：Android包系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android包系统/Android包系统：Android资源系统概述.md)| 编辑中|  |  |
+|[Android包系统：APK解析器PackageParser](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android包系统/Android包系统：APK解析器PackageParser.md)| 编辑中|  |  |
+|[Android包系统：APK的打包流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android包系统/Android包系统：APK的打包流程.md)| 编辑中|  |  |
+|[Android包系统：APK的安装流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android包系统/Android包系统：APK的安装流程.md)| 编辑中|  |  |
+|[Android包系统：APK的加载流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android包系统/Android包系统：APK的加载流程.md)| 编辑中|  |  |
 
 **Android应用通信系统**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android应用通信系统：Android应用通信系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android应用通信系统/Android应用通信系统：Android应用通信系统概述.md)| 编辑中|  |  |
-|[Android应用通信系统：线程通信的桥梁Handler](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android应用通信系统/Android应用通信系统：线程通信的桥梁Handler.md)| 编辑中|  |  |
-|[Android应用通信系统：局域广播LocalBroadcastReceiver](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android应用通信系统/Android应用通信系统：局域广播LocalBroadcastReceiver.md)| 编辑中|  |  |
+|[Android应用通信系统：Android应用通信系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android应用通信系统/Android应用通信系统：Android应用通信系统概述.md)| 编辑中|  |  |
+|[Android应用通信系统：线程通信的桥梁Handler](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android应用通信系统/Android应用通信系统：线程通信的桥梁Handler.md)| 编辑中|  |  |
+|[Android应用通信系统：局域广播LocalBroadcastReceiver](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android应用通信系统/Android应用通信系统：局域广播LocalBroadcastReceiver.md)| 编辑中|  |  |
 
 **Android动画系统**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android动画系统：Android动画系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android动画系统/Android动画系统：Android动画系统概述.md)| 编辑中|  |  |
-|[Android动画系统：Android补间动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android动画系统/Android动画系统：Android补间动画.md)| 编辑中|  |  |
-|[Android动画系统：Android帧动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android动画系统/Android动画系统：Android帧动画.md)| 编辑中|  |  |
-|[Android动画系统：Android属性动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android动画系统/Android动画系统：Android属性动画.md)| 编辑中|  |  |
+|[Android动画系统：Android动画系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android动画系统/Android动画系统：Android动画系统概述.md)| 编辑中|  |  |
+|[Android动画系统：Android补间动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android动画系统/Android动画系统：Android补间动画.md)| 编辑中|  |  |
+|[Android动画系统：Android帧动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android动画系统/Android动画系统：Android帧动画.md)| 编辑中|  |  |
+|[Android动画系统：Android属性动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android动画系统/Android动画系统：Android属性动画.md)| 编辑中|  |  |
 
 **Android多媒体系统**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android多媒体系统：Android多媒体系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android多媒体系统/Android多媒体系统：Android多媒体系统概述.md)| 编辑中|  |  |
-|[Android多媒体系统：实时预览与播放SurfaceView、GLSurfaceVIew、TextureView与SurfaceTexture](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android多媒体系统/Android多媒体系统：实时预览与播放SurfaceView、GLSurfaceVIew、TextureView与SurfaceTexture.md)| 编辑中|  |  |
-|[Android多媒体系统：视频播放VideoView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android多媒体系统/Android多媒体系统：视频播放VideoView.md)| 编辑中|  |  |
-|[Android多媒体系统：相机Camera](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android多媒体系统/Android多媒体系统：相机Camera.md)| 编辑中|  |  |
-|[Android多媒体系统：相机Camera2](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android多媒体系统/Android多媒体系统：相机Camera2.md)| 编辑中|  |  |
-|[Android多媒体系统：音视频解码MediaCodec](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android多媒体系统/Android多媒体系统：音视频解码MediaCodec.md)| 编辑中|  |  |
+|[Android多媒体系统：Android多媒体系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android多媒体系统/Android多媒体系统：Android多媒体系统概述.md)| 编辑中|  |  |
+|[Android多媒体系统：实时预览与播放SurfaceView、GLSurfaceVIew、TextureView与SurfaceTexture](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android多媒体系统/Android多媒体系统：实时预览与播放SurfaceView、GLSurfaceVIew、TextureView与SurfaceTexture.md)| 编辑中|  |  |
+|[Android多媒体系统：视频播放VideoView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android多媒体系统/Android多媒体系统：视频播放VideoView.md)| 编辑中|  |  |
+|[Android多媒体系统：相机Camera](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android多媒体系统/Android多媒体系统：相机Camera.md)| 编辑中|  |  |
+|[Android多媒体系统：相机Camera2](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android多媒体系统/Android多媒体系统：相机Camera2.md)| 编辑中|  |  |
+|[Android多媒体系统：音视频解码MediaCodec](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android多媒体系统/Android多媒体系统：音视频解码MediaCodec.md)| 编辑中|  |  |
 
 **Android数据库系统**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android数据库系统：Android数据库系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android数据库系统/Android数据库系统：Android数据库系统概述.md)| 编辑中|  |  |
-|[Android数据库系统：数据库SQLiteDatabase](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android数据库系统/Android数据库系统：数据库SQLiteDatabase.md)| 编辑中|  |  |
-|[Android数据库系统：数据库连接SQLiteConnection](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android数据库系统/Android数据库系统：数据库连接SQLiteConnection.md)| 编辑中|  |  |
-|[Android数据库系统：数据库会话SQLiteSession](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android数据库系统/Android数据库系统：数据库会话SQLiteSession.md)| 编辑中|  |  |
-|[Android数据库系统：数据库语句转换SQLiteProgram](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android数据库系统/Android数据库系统：数据库语句转换SQLiteProgram.md)| 编辑中|  |  |
-|[Android数据库系统：数据库游标Cursor](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/应用框架层/Android数据库系统/Android数据库系统：数据库游标Cursor.md)| 编辑中|  |  |
+|[Android数据库系统：Android数据库系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android数据库系统/Android数据库系统：Android数据库系统概述.md)| 编辑中|  |  |
+|[Android数据库系统：数据库SQLiteDatabase](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android数据库系统/Android数据库系统：数据库SQLiteDatabase.md)| 编辑中|  |  |
+|[Android数据库系统：数据库连接SQLiteConnection](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android数据库系统/Android数据库系统：数据库连接SQLiteConnection.md)| 编辑中|  |  |
+|[Android数据库系统：数据库会话SQLiteSession](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android数据库系统/Android数据库系统：数据库会话SQLiteSession.md)| 编辑中|  |  |
+|[Android数据库系统：数据库语句转换SQLiteProgram](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android数据库系统/Android数据库系统：数据库语句转换SQLiteProgram.md)| 编辑中|  |  |
+|[Android数据库系统：数据库游标Cursor](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Android应用框架层/Android数据库系统/Android数据库系统：数据库游标Cursor.md)| 编辑中|  |  |
 
-### 进程通信层
-
-**Binder进程通信系统**
-
-|文章                                                      |文章状态                            |作者                               |校对                              |
-|:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Binder进程通信系统：Binder进程通信系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/进程通信层/Binder进程通信系统/Binder进程通信系统：Binder进程通信系统概述.md)| 编辑中|  |  |
-|[Binder进程通信系统：服务管理ServiceManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/进程通信层/Binder进程通信系统/Binder进程通信系统：服务管理ServiceManager.md)| 编辑中|  |  |
-|[Binder进程通信系统：Binder线程池](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/进程通信层/Binder进程通信系统/Binder进程通信系统：Binder线程池.md)| 编辑中|  |  |
-|[Binder进程通信系统：Binder驱动](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/进程通信层/Binder进程通信系统/Binder进程通信系统：Binder驱动.md)| 编辑中|  |  |
-
-**Socket进程通信系统**
-
-|文章                                                      |文章状态                            |作者                               |校对                              |
-|:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|Socket进程通信系统：Socket进程通信系统概述| | | |
-
-### 系统服务层
+### Java系统框架层
 
 **Android组件管理服务**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android组件管理服务：Android组件管理服务概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/系统服务层/Android组件管理服务/Android组件管理服务：Android组件管理服务概述.md)| 编辑中|  |  |
-|[Android组件管理服务：组件管理服务ActivityServiceManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/系统服务层/Android组件管理服务/Android组件管理服务：组件管理服务ActivityServiceManager.md)| 编辑中|  |  |
-|[Android组件管理服务：应用主线程ActivityThread](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/系统服务层/Android组件管理服务/Android组件管理服务：Android组件管理服务概述.md)| 编辑中|  |  |
+|[Android组件管理服务：Android组件管理服务概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android组件管理服务/Android组件管理服务：Android组件管理服务概述.md)| 编辑中|  |  |
+|[Android组件管理服务：组件管理服务ActivityServiceManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android组件管理服务/Android组件管理服务：组件管理服务ActivityServiceManager.md)| 编辑中|  |  |
+|[Android组件管理服务：应用主线程ActivityThread](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android组件管理服务/Android组件管理服务：Android组件管理服务概述.md)| 编辑中|  |  |
 
 **Android窗口管理服务**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android窗口管理服务：Android窗口管理服务概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/系统服务层/Android窗口管理服务/Android窗口管理服务：Android窗口管理服务概述.md)| 编辑中|  |  |
-|[Android窗口管理服务：窗口管理服务WindowServiceManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/系统服务层/Android窗口管理服务/Android窗口管理服务：窗口管理服务WindowServiceManager.md)| 编辑中|  |  |
-|[Android窗口管理服务：窗口启动、显示与切换](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/系统服务层/Android窗口管理服务/Android窗口管理服务：窗口启动、显示与切换.md)| 编辑中|  |  |
-|[Android窗口管理服务：窗口大小与位置计算](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/系统服务层/Android窗口管理服务/Android窗口管理服务：窗口大小与位置计算.md)| 编辑中|  |  |
-|[Android窗口管理服务：窗口动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/系统服务层/Android窗口管理服务/Android窗口管理服务：窗口动画.md)| 编辑中|  |  |
+|[Android窗口管理服务：Android窗口管理服务概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android窗口管理服务/Android窗口管理服务：Android窗口管理服务概述.md)| 编辑中|  |  |
+|[Android窗口管理服务：窗口管理服务WindowServiceManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android窗口管理服务/Android窗口管理服务：窗口管理服务WindowServiceManager.md)| 编辑中|  |  |
+|[Android窗口管理服务：窗口启动、显示与切换](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android窗口管理服务/Android窗口管理服务：窗口启动、显示与切换.md)| 编辑中|  |  |
+|[Android窗口管理服务：窗口大小与位置计算](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android窗口管理服务/Android窗口管理服务：窗口大小与位置计算.md)| 编辑中|  |  |
+|[Android窗口管理服务：窗口动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android窗口管理服务/Android窗口管理服务：窗口动画.md)| 编辑中|  |  |
 
 **Android图形绘制服务**
 
@@ -287,14 +270,29 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |Android备份管理服务：Android备份管理服务概述| | | |
 |Android备份管理服务：BackupManagerService| | |
 
-### 运行时层
+### C++系统框架层
+
+**Binder进程通信系统**
+
+|文章                                                      |文章状态                            |作者                               |校对                              |
+|:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
+|[Binder进程通信系统：Binder进程通信系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/进程通信层/Binder进程通信系统/Binder进程通信系统：Binder进程通信系统概述.md)| 编辑中|  |  |
+|[Binder进程通信系统：服务管理ServiceManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/进程通信层/Binder进程通信系统/Binder进程通信系统：服务管理ServiceManager.md)| 编辑中|  |  |
+|[Binder进程通信系统：Binder线程池](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/进程通信层/Binder进程通信系统/Binder进程通信系统：Binder线程池.md)| 编辑中|  |  |
+|[Binder进程通信系统：Binder驱动](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/进程通信层/Binder进程通信系统/Binder进程通信系统：Binder驱动.md)| 编辑中|  |  |
+
+**Socket进程通信系统**
+
+|文章                                                      |文章状态                            |作者                               |校对                              |
+|:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
+|Socket进程通信系统：Socket进程通信系统概述| | | |
 
 **JVM虚拟机**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[JVM虚拟机：JVM虚拟机概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/运行时层/JVM虚拟机/JVM虚拟机：JVM虚拟机概述概述.md)|编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
-|[JVM虚拟机：Java类加载机制](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/运行时层/JVM虚拟机/JVM虚拟机：Java类加载机制.md)|已完成 | [郭孝星](https://github.com/guoxiaoxing)| [郭孝星](https://github.com/guoxiaoxing)|
+|[JVM虚拟机：JVM虚拟机概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/JVM虚拟机/JVM虚拟机：JVM虚拟机概述概述.md)|编辑中 |[郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing)|
+|[JVM虚拟机：Java类加载机制](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/运行时层/JVM虚拟机/JVM虚拟机：Java类加载机制.md)|已完成 | [郭孝星](https://github.com/guoxiaoxing)| [郭孝星](https://github.com/guoxiaoxing)|
 
 **ART虚拟机**
 
@@ -303,18 +301,16 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |ART虚拟机：ART虚拟机概述| | | |
 |ART虚拟机：Android ART虚拟机概述| | |
 
-### 硬件抽象层
-
-### 内核层
+### Linux内核层
 
 **Android进程系统**
 
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
-|[Android进程系统：Android进程系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/内核层/Android进程系统/Android进程系统：Android进程系统概述.md)| 编辑中|  |  |
-|[Android进程系统：进程的创建、启动与调度流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/内核层/Android进程系统/Android进程系统：进程的创建、启动与调度流程.md)| 编辑中|  |  |
-|[Android进程系统：线程与线程池](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/内核层/Android进程系统/Android进程系统：线程与线程池.md)| 编辑中|  |  |
-|[Android进程系统：AIDL](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/内核层/Android进程系统/Android进程系统：AIDL.md)| 编辑中|  |  |
+|[Android进程系统：Android进程系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/内核层/Android进程系统/Android进程系统：Android进程系统概述.md)| 编辑中|  |  |
+|[Android进程系统：进程的创建、启动与调度流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/内核层/Android进程系统/Android进程系统：进程的创建、启动与调度流程.md)| 编辑中|  |  |
+|[Android进程系统：线程与线程池](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/内核层/Android进程系统/Android进程系统：线程与线程池.md)| 编辑中|  |  |
+|[Android进程系统：AIDL](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/C++系统框架层/内核层/Android进程系统/Android进程系统：AIDL.md)| 编辑中|  |  |
 
 **Android内存系统**
 
