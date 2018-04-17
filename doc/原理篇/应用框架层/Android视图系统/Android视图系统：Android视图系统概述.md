@@ -18,20 +18,17 @@ Android的视图系统主要分为三层，即负责处理用户事件以及触�
 - WindowManagerService层：负责管理窗口Surface的布局与次序
 - SurfaceFlinger层：将WindowManagerService管理的窗口按照一定的次序显示在屏幕上
 
-关于WindowManagerService层与SurfaceFlinger层我们后续会详细讲，今天我们先来看看与应用开发工程师关系
+关于WindowManagerService层与SurfaceFlinger层我们后续会详细讲，今天我们先来看看与应用开发工程师关系密切的UI框架层。
 
-Android视图系统结构如下所示：
+一个与用户交互的窗口，它的标准结构如下所示：
 
 <img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/view_system_structure.png" width="300"/>
 
-在Android显示框架里有这么几个角色：
+从上图可以看出UI框架层主要包含以下三个角色：
 
 - Activity：应用视图的容器。
-- Window：应用窗口的抽象表示，它的实际表现是View。
-- View：实际显示的应用视图。
-- WindowManagerService：用来创建、管理和销毁Window。
-
-后续的分析思路是这样的，我们先分析最上层的View，然后依次是Window、WindowManagerService。这样可以由浅入深，便于理解。至于Activity我们会放在Android组件框架里分析。
+- Window：应用窗口的抽象表示，它的实际表现是View。Window是一个抽象类，它的实现类是PhoneWindow。
+- ViewGroup/View：实际显示的应用视图。
 
 > 本篇文章到这里就结束了，欢迎关注我们的BeesAndroid微信公众平台，BeesAndroid致力于分享Android系统源码的设计与实现相关文章，也欢迎开源爱好者参与到BeesAndroid项目中来。
 

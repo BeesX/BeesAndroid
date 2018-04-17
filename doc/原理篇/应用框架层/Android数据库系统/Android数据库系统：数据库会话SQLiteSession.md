@@ -1,4 +1,4 @@
-# 文章标题
+# Android数据库系统：数据库会话SQLiteSession
 
 作者：[xxx](https://github.com/xxx)
 

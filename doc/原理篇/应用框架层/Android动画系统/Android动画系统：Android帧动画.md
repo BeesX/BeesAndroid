@@ -1,8 +1,8 @@
-# 文章标题
+# Android动画系统：帧动画
 
-作者：[xxx](https://github.com/xxx)
+作者：[郭孝星](https://github.com/guoxiaoxing)
 
-校对：[xxx](https://github.com/xxx)
+校对：[郭孝星](https://github.com/guoxiaoxing)
 
 文章状态：编辑中
 
