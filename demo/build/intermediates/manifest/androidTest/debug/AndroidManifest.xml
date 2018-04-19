@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.beesandroid.demo.test" >
+    package="com.beesandroid.demo.test" >
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -10,8 +10,8 @@
         android:name="android.support.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for com.github.beesandroid.demo"
-        android:targetPackage="com.github.beesandroid.demo" />
+        android:label="Tests for com.beesandroid.demo"
+        android:targetPackage="com.beesandroid.demo" />
 
     <application android:debuggable="true" >
         <uses-library android:name="android.test.runner" />

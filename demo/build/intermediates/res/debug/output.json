@@ -1,1 +1,1 @@
-[{"outputType":{"type":"PROCESSED_RES"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":1},"path":"resources-debug.ap_","properties":{"packageId":"com.github.beesandroid.demo","split":"","minSdkVersion":"15"}}]
+[{"outputType":{"type":"PROCESSED_RES"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":1},"path":"resources-debug.ap_","properties":{"packageId":"com.beesandroid.demo","split":"","minSdkVersion":"15"}}]

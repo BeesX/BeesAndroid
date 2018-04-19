@@ -1,7 +1,22 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/guoxiaoxing/Github-front/BeesAndroid/demo/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
+            "outputFile": "/Users/guoxiaoxing/Github/BeesAndroid/demo/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "/Users/guoxiaoxing/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/8e7c3d7de6c71bfc320f080fccadb45c/res/values-v18/values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/guoxiaoxing/Github/demo/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
             "map": [
                 {
                     "source": "/Users/guoxiaoxing/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/8e7c3d7de6c71bfc320f080fccadb45c/res/values-v18/values-v18.xml",
