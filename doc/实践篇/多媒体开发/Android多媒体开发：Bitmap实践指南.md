@@ -46,8 +46,8 @@ Bitmap是我们应用里使用内存的大户，很多OOM都是由于不当的�
 
 从上图可以看出：
 
-- Andrroid 3.0 以前：Bitmap存储在Native Heap中，不收GC管理，需要手动调用Bitmap的recycle()方法。
-- Andrroid 3.0 以前：Bitmap存储在Java Heap中，收GC管理，无需手动调用Bitmap的recycle()方法。
+- Andrroid 3.0 以前：Bitmap存储在Native Heap中，不受GC管理，需要手动调用Bitmap的recycle()方法。
+- Andrroid 3.0 以前：Bitmap存储在Java Heap中，受GC管理，无需手动调用Bitmap的recycle()方法。
 
 如何计算Bitmap占用内存的大小呢？🤔
 
