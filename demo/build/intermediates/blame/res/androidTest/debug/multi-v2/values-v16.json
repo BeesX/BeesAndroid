@@ -67,6 +67,40 @@
                     }
                 }
             ]
+        },
+        {
+            "outputFile": "/Users/suce/Github/BeesAndroid/demo/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/Users/suce/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/6e1d7ce55f1a2e51a1f8eab45f5f9c40/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/Users/suce/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/199cc46d83f4c2e11acf2d4412d85d16/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                }
+            ]
         }
     ]
 }

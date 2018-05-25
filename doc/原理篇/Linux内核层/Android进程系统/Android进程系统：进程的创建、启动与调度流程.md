@@ -18,7 +18,7 @@
 
 Android系统的启动流程如下图（点击查看大图）所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/android_process.png" width="700"  />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/kernel/process/android_process.png" width="700"  />
 
 Loader层
 
@@ -82,7 +82,7 @@ Zygote进程孵化出的第一个应用进程是Launcher进程（桌面），它
 这个新进程就是zygote进程通过复制自身来创建的，新进程在启动的过程中还会创建一个Binder线程池（用来做进程通信）和一个消息循环（用来做线程通信）
 整个流程如下图所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/process_start_flow.png" width="500" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/kernel/process/process_start_flow.png" width="500" />
 
 1. 当我们点击应用图标启动应用时或者在应用内启动一个带有process标签的Activity时，都会触发创建新进程的请求，这种请求会先通过Binder
 发送给system_server进程，也即是发送给ActivityManagerService进行处理。
@@ -95,7 +95,7 @@ Zygote进程孵化出的第一个应用进程是Launcher进程（桌面），它
 
 整个流程大致就是这样，我们接着来看看具体的代码实现，先来看一张进程启动序列图：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/process_start_sequence.png" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/kernel/process/process_start_sequence.png" />
 
 从第一步到第三步主要是收集整理uid、gid、groups、target-sdk、nice-name等一系列的参数，为后续启动新进程做准备。然后调用openZygoteSocketIfNeeded()方法
 打开Socket通信，向zygote进程发出创建新进程的请求。
@@ -467,7 +467,7 @@ Process.killProcess()开始讲起，继续分析进程的结束流程。
 
 进程按照优先级大小不同又可以分为实时进程与普通进程。
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/native/process/process_priority.png" width="400" />
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/kernel/process/process_priority.png" width="400" />
 
 prio值越小表示进程优先级越高，
 

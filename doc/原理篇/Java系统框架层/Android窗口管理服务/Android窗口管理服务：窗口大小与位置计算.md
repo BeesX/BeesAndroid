@@ -25,7 +25,7 @@
 
 WindowManagerService是窗口的真正管理者，它管理者所有的窗口，如下所示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/window_layer.png" width="250" height="500"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/window_layer.png" width="250" height="500"/>
 
 Window其实是一个抽象概念，每一个Window都对应着一个View和ViewRootImpl，View与Window通过ViewRootImpl来建立联系，因此Window并不是实际存在的，它是以View的形式存在的。WindowManagerService
 的主要作用就是计算Window的大小，层级以及创建、切换Window。
@@ -51,7 +51,7 @@ Window其实是一个抽象概念，每一个Window都对应着一个View和View
 
 窗口大小的计算序列图
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/window_size_compute_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/window_size_compute_sequence.png"/>
 
 我们来分析窗口大小（X轴、Y轴）的计算流程，在介绍窗口的计算流程之前，我们先来了解一下窗口的组成。
 
@@ -2175,11 +2175,11 @@ PhoneWindowManager.windowTypeToLayerLw()与PhoneWindowManager.subWindowTypeToLay
 
 主序
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/layer_type_base.jpg"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/layer_type_base.jpg"/>
 
 次序
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/ui/layer_type_sub.jpg"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/layer_type_sub.jpg"/>
 
 ```java
 public class WindowManagerService extends IWindowManager.Stub    
