@@ -21,7 +21,7 @@ WindowManagerService是位于Framework层的窗口管理服务，它的职责是
 
 Window在WindowManagerService的管理下，有序的显示在屏幕上，构成了多姿多彩的用户界面，关于Android的整个窗口系统，可以用下图来表示：
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/window_mansger_service_class.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/view/WindowManagerService_class.png"/>
 
 Android窗口管理框架从窗口的创建到UI的绘制主要涉及以下角色：
 
