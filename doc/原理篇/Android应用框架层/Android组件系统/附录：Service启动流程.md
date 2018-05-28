@@ -16,7 +16,7 @@
 
 新进程中启动Service组件序列图
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/component/service_start_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/component/service_start_sequence.png"/>
 
 
 #### 1 Activity.startService(Intent service)

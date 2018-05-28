@@ -2,11 +2,11 @@
 
 Activity启动流程序列图
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/1/activity_start_sequence.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/component/activity_start_sequence.png"/>
 
 Activity启动流程结构图
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/app/1/activity_start_structure.png"/>
+<img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/principle/app/component/activity_start_structure.png"/>
 
 ### 1 Launcher.startActivitySafely(Intent intent, Object tag)
 

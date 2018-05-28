@@ -82,7 +82,7 @@ ClientActivity组件可以通过这个Binder对象与ServerService组件建立�
 
 **Service组件在进程内绑定序列图**
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/app/10/service_bind_sequence.png">
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/principle/app/component/service_bind_sequence.png">
 
 我们来看一看具体的流程。
 
@@ -1130,7 +1130,7 @@ ServerService内部有一个继承Binder的本地Binder对象，该对象会在S
 
 **Service组件在进程内绑定序列图**
 
-<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/app/10/service_bind_sequence.png">
+<img src="https://github.com/BeesAndroid/BeesAndroid/blob/master/art/principle/app/component/service_bind_sequence.png">
 
 我们再来梳理一下整个流程：
 
