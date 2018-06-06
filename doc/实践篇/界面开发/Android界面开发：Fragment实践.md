@@ -78,7 +78,6 @@ Fragment的复杂性或者不方便的地方，就是操作方法的调用和回
 - Fragment的数据传递通过setArguments/getArguments进行，这样在Activity重启时，系统会帮你保存数据，这点和Activity很相似。
 - Fragment的构造通过newInstance()静态方法进行，这样调用者只用关心参数，而无需关心传递的key值。
 
-
 ##
 
 当配置发生改变、系统内存紧张等原因导致Activity重建。
