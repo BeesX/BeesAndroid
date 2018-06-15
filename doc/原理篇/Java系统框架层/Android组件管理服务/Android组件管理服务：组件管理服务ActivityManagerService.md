@@ -1,4 +1,4 @@
-# Android组件管理框架：组件管理服务ActivityServiceManager
+# Android组件管理框架：组件管理服务ActivityManagerService
 
 作者：[郭孝星](https://github.com/guoxiaoxing)
 

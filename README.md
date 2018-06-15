@@ -158,7 +158,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
 |[Android组件管理服务：Android组件管理服务概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android组件管理服务/Android组件管理服务：Android组件管理服务概述.md)| 编辑中|  |  |
-|[Android组件管理服务：组件管理服务ActivityServiceManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android组件管理服务/Android组件管理服务：组件管理服务ActivityServiceManager.md)| 编辑中|  |  |
+|[Android组件管理服务：组件管理服务ActivityManagerService](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android组件管理服务/Android组件管理服务：组件管理服务ActivityManagerService.md)| 编辑中|  |  |
 |[Android组件管理服务：应用主线程ActivityThread](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android组件管理服务/Android组件管理服务：Android组件管理服务概述.md)| 编辑中|  |  |
 
 **Android窗口管理服务**
@@ -166,7 +166,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 |文章                                                      |文章状态                            |作者                               |校对                              |
 |:--------------------------------------------------------|:----------------------------------|:----------------------------------|:--------------------------------|
 |[Android窗口管理服务：Android窗口管理服务概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android窗口管理服务/Android窗口管理服务：Android窗口管理服务概述.md)| 编辑中|  |  |
-|[Android窗口管理服务：窗口管理服务WindowServiceManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android窗口管理服务/Android窗口管理服务：窗口管理服务WindowServiceManager.md)| 编辑中|  |  |
+|[Android窗口管理服务：窗口管理服务WindowManagerService](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android窗口管理服务/Android窗口管理服务：窗口管理服务WindowManagerService.md)| 编辑中|  |  |
 |[Android窗口管理服务：窗口启动、显示与切换](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android窗口管理服务/Android窗口管理服务：窗口启动、显示与切换.md)| 编辑中|  |  |
 |[Android窗口管理服务：窗口大小与位置计算](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android窗口管理服务/Android窗口管理服务：窗口大小与位置计算.md)| 编辑中|  |  |
 |[Android窗口管理服务：窗口动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/原理篇/Java系统框架层/Android窗口管理服务/Android窗口管理服务：窗口动画.md)| 编辑中|  |  |
