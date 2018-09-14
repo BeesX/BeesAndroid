@@ -236,7 +236,7 @@ Activity的生命周期也是个老生常谈的问题，今天我们从源码的
 3. 主线程接收到ApplicationThread发出的消息后，调用主线程ActivityThread执行响应的操作，并回调Activity相应的周期方法。
 
 👉 注：这里提到了主线程ActivityThread，更准确来说ActivityThread不是线程，因为它没有继承Thread类或者实现Runnable接口，它是运行在应用主线程里的对象，那么应用的主线程
-到底是什么呢？从本质上来讲启动启动时创建的进程就是主线程，线程和进程处理是否共享资源外，没有其他的区别，对于Linux来说，它们都只是一个struct结构体。
+到底是什么呢？从本质上来讲启动启动时创建的进程就是主线程，线程和进程处理除了是否共享资源外，没有其他的区别，对于Linux来说，它们都只是一个struct结构体。
 
 上述这个流程的函数调用链如下所示：
 
@@ -394,7 +394,7 @@ Application Context没有所谓的任务栈，解决的方式就是给它添加�
 - singleTop：栈顶复用模式，如果新启动的Activity已经位于任务栈顶，则不会创建新的实例，而是回调原来Activity实例的onNewIntent()方法，如果新启动的Activity没有位于任务栈顶，则会创建
 新的Activity实例。
 - singleTask：栈内复用模式，如果新启动的Activity已经位于任务栈内，则不会创建新的实例，而是回调原来Activity实例的onNewIntent()方法并且**清除它之上的Activity（这里需要注意一下：任务栈里
-的Activity是永远不会重排序的，所以它会清楚上方所有的Activity来让自己回到栈顶）**，如果新启动的Activity
+的Activity是永远不会重排序的，所以它会清除上方所有的Activity来让自己回到栈顶）**，如果新启动的Activity
 没有位于任务栈，则新建一个Activity实例。
 - singleInstance：单实例模式，和singleTask相似，但是singleTask可以在多个栈里拥有多个实例，而singleInstance在多个栈里只能有唯一实例，这个一般用在特殊场景里，例如电话界面。
 
