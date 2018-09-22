@@ -1,6 +1,6 @@
 # Android包系统：Android包系统概述
 
-作者：[郭孝星](https://github.com/guoxiaoxing)
+作者：[Jesson](https://github.com/jessonyue)
 
 校对：[郭孝星](https://github.com/guoxiaoxing)
 
