@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/suce/Github/BeesAndroid/demo/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "E:\\Android\\Project\\BeesAndroid\\demo\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/suce/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/199cc46d83f4c2e11acf2d4412d85d16/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\4a96a3e1fbd38b3c6b5cd03f8a178d8e\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/suce/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/12495e91dee0d916b7e3690b447321fb/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\deba42313bc72ab7cad30705efaa275c\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -28,70 +28,6 @@
                         "startOffsets": "619,685,746,812",
                         "endColumns": "65,60,65,66",
                         "endOffsets": "680,741,807,874"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/Users/guoxiaoxing/Github/BeesAndroid/demo/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
-            "map": [
-                {
-                    "source": "/Users/guoxiaoxing/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/058f791c2147ded3df722db9f71e07b8/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,121,182,248",
-                        "endColumns": "65,60,65,66",
-                        "endOffsets": "116,177,243,310"
-                    },
-                    "to": {
-                        "startLines": "8,9,10,11",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "619,685,746,812",
-                        "endColumns": "65,60,65,66",
-                        "endOffsets": "680,741,807,874"
-                    }
-                },
-                {
-                    "source": "/Users/guoxiaoxing/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/8e7c3d7de6c71bfc320f080fccadb45c/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,212,347,416,480,549",
-                        "endColumns": "156,134,68,63,68,69",
-                        "endOffsets": "207,342,411,475,544,614"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/Users/guoxiaoxing/Github/demo/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
-            "map": [
-                {
-                    "source": "/Users/guoxiaoxing/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/058f791c2147ded3df722db9f71e07b8/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,121,182,248",
-                        "endColumns": "65,60,65,66",
-                        "endOffsets": "116,177,243,310"
-                    },
-                    "to": {
-                        "startLines": "8,9,10,11",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "619,685,746,812",
-                        "endColumns": "65,60,65,66",
-                        "endOffsets": "680,741,807,874"
-                    }
-                },
-                {
-                    "source": "/Users/guoxiaoxing/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/8e7c3d7de6c71bfc320f080fccadb45c/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,212,347,416,480,549",
-                        "endColumns": "156,134,68,63,68,69",
-                        "endOffsets": "207,342,411,475,544,614"
                     }
                 }
             ]
