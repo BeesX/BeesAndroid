@@ -9,7 +9,7 @@
 
 关于BeesX开源技术小组
 
-> Bees（蜜蜂），取义蜜蜂精神，取义求实、合作与奉献，这也是BeesX开源技术小组的宗旨，求真务实，合作奉献。本小组当前有两大工作方向：Android系统原理分析与实践、跨端技术原理分析与实践，欢迎感兴趣的同学参与进来。
+> Bees（蜜蜂），取义蜜蜂精神，取义求实、合作与奉献，这也是BeesX开源技术小组的宗旨，求真务实，合作奉献。本小组当前有两大技术方向：Android系统原理分析与实践、跨端技术原理分析与实践，欢迎感兴趣的同学参与进来。
 
 我们第一个团体项目BeesAndroid也于2018年3月6日同步上线，该项目的前身是[android-open-source-project-analysis](https://github.com/guoxiaoxing/android-open-source-project-analysis)，这个项目提供了一系列的Android系统源码分析文章，收
 到了良好的反馈。
