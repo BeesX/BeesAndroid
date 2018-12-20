@@ -323,7 +323,7 @@ public class PhoneWindow extends Window implements MenuBuilder.Callback {
 中，但是这个时候DecorView还没有真正的被WindowManager添加到Window中，它还无法接受用户的输入信息和焦点事件，这个时候就相当于走到了Activity的onCreate()流程，界面还
 未展示给用户。
 
-直到走到Activity的onResume()方法，它会调用Activity的makeVisiable()方法，DecorView才真正的被用户所看到。
+直到走到Activity的onResume()方法，它会调用Activity的makeVisible()方法，DecorView才真正的被用户所看到。
 
 ```java
 public class Activity extends ContextThemeWrapper
