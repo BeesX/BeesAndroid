@@ -3,7 +3,9 @@
 <a name="a7d80080"></a>
 ## 功能介绍
 
-[![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591113511-42045739-0c92-4100-a450-87fcae03f7d3.svg#align=left&display=inline&height=20&originHeight=20&originWidth=134&size=0&status=done&width=134)](https://jitpack.io/#BeesAndroid/BeesAndroid) [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591112173-5f54de88-7384-46dc-bf16-900862ffd51f.svg#align=left&display=inline&height=20&originHeight=20&originWidth=60&size=0&status=done&width=60)](https://jitpack.io/#BeesAndroid/BeesAndroid) [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591112118-36ef7b09-590f-4d9a-b14c-3c5c11df63ba.svg#align=left&display=inline&height=20&originHeight=20&originWidth=68&size=0&status=done&width=68)](https://jitpack.io/#BeesAndroid/BeesAndroid) [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591111611-d3912ef7-1020-43ba-849c-41022a21a5c1.svg#align=left&display=inline&height=20&originHeight=20&originWidth=134&size=0&status=done&width=134)](https://jitpack.io/#BeesAndroid/BeesAndroid)<br />关于BeesX开源技术小组
+[![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591113511-42045739-0c92-4100-a450-87fcae03f7d3.svg#align=left&display=inline&height=20&originHeight=20&originWidth=134&size=0&status=done&width=134)](https://jitpack.io/#BeesAndroid/BeesAndroid) [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591112173-5f54de88-7384-46dc-bf16-900862ffd51f.svg#align=left&display=inline&height=20&originHeight=20&originWidth=60&size=0&status=done&width=60)](https://jitpack.io/#BeesAndroid/BeesAndroid) [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591112118-36ef7b09-590f-4d9a-b14c-3c5c11df63ba.svg#align=left&display=inline&height=20&originHeight=20&originWidth=68&size=0&status=done&width=68)](https://jitpack.io/#BeesAndroid/BeesAndroid) [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591111611-d3912ef7-1020-43ba-849c-41022a21a5c1.svg#align=left&display=inline&height=20&originHeight=20&originWidth=134&size=0&status=done&width=134)](https://jitpack.io/#BeesAndroid/BeesAndroid)<br />
+
+关于BeesX开源技术小组
 
 > Bees（蜜蜂），取义蜜蜂精神求实、合作与奉献，也即BeesX开源技术小组的宗旨，求真务实，合作奉献，本小组旨在通过提供一系列的工具、方法与文档，帮助更多的无线开发工程师理解和掌握无线开发技术。
 
