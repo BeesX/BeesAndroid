@@ -1,174 +1,355 @@
-# Android源码阅读指南
+# 导读
 
-作者：[郭孝星](https://github.com/guoxiaoxing)<br />校对：[郭孝星](https://github.com/guoxiaoxing)<br />文章状态：编辑中<br />**关于项目**
-> [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读Android系统源码的门槛，让更多的Android工程师理解Android系统，掌握Android系统。
+<a name="a7d80080"></a>
+## 功能介绍
+[![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591113511-42045739-0c92-4100-a450-87fcae03f7d3.svg#align=left&display=inline&height=20&originHeight=20&originWidth=134&size=0&status=done&width=134)](https://jitpack.io/#BeesAndroid/BeesAndroid) [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591112173-5f54de88-7384-46dc-bf16-900862ffd51f.svg#align=left&display=inline&height=20&originHeight=20&originWidth=60&size=0&status=done&width=60)](https://jitpack.io/#BeesAndroid/BeesAndroid) [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591112118-36ef7b09-590f-4d9a-b14c-3c5c11df63ba.svg#align=left&display=inline&height=20&originHeight=20&originWidth=68&size=0&status=done&width=68)](https://jitpack.io/#BeesAndroid/BeesAndroid) [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591111611-d3912ef7-1020-43ba-849c-41022a21a5c1.svg#align=left&display=inline&height=20&originHeight=20&originWidth=134&size=0&status=done&width=134)](https://jitpack.io/#BeesAndroid/BeesAndroid)<br />关于BeesX开源技术小组
+> Bees（蜜蜂），取义蜜蜂精神，取义求实、合作与奉献，这也是BeesX开源技术小组的宗旨，求真务实，合作奉献。本小组当前有两大技术方向：Android系统原理分析与实践、跨端技术原理分析与实践，欢a迎感兴趣的同学参与进来。
 
-**文章目录**
-* 一 基础篇
-* 二 工具篇
-* 三 书籍篇
-* 二 源码篇
+我们第一个团体项目BeesAndroid也于2018年3月6日同步上线，该项目的前身是[android-open-source-project-analysis](https://github.com/guoxiaoxing/android-open-source-project-analysis)，这个项目提供了一系列的Android系统源码分析文章，收 到了良好的反馈。<br />但是一个人的力量是有限的，因此将其推成团体项目BeesAndroid，项目采用GPL协议，在保护作者知识产权的基础上，最大化的做到开源与开放，如果有什么问题和意见欢迎提交issue，也欢迎大家参与 到本项目中来。
+> BeesAndroid项目旨在通过提供一系列的工具与方法，降低阅读系统源码的门槛，帮助更多的Android工程师理解Andriod系统，掌握Android系统。
 
-第一次阅览本系列文章，请参见[导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md)，更多文章请参见[文章目录](https://github.com/BeesAndroid/BeesAndroid/blob/master/README.md)。<br />本篇文章是本系列文章的导读文章，强烈建议第一次阅读本系列本章的同学先看一下导读的内容，它会告诉你文章中都用到了哪些工具，以及牵扯到哪些理论知识这些内 容会帮助你更快更好地去理解文章内容。<br />在线源码
-* [Git repositories on android](https://android.googlesource.com/)
-* [Android Open Source Project](https://source.android.com/)
-<a name="37d355bc"></a>
-## [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%AF%87)一 基础篇
-在阅读 AOSP（Android Open Source Projec）之前你需要掌握的以下理论知识。
-* Java：AOSP的主要语言，当然是应该掌握的。
-* Linux：Android是基于Linux内核开发的，如何你需要涉及到内核或者驱动的开发，你需要掌握Linux相关技术。
-* Make：AOSP是用Make来编译的，因此要了解常用的Make语法。
-* Git：程序员必备技能。
-* C++：AOSP一些性能敏感的模块底层都是由C++完成的，当然如果你如果不需要关注底层实现，也可以跳过这一段，可以更多的去关注框架层。
-* 设计模式：AOSP里大量的框架都是用了设计模式，比方说观察者模式、工厂模式、复合模式等，如果对设计模式不够了解的会看的云里雾里。
-* 熟练的Android App开发技能
-<a name="2619dc69"></a>
-## [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#%E4%BA%8C-%E5%B7%A5%E5%85%B7%E7%AF%87)二 工具篇
-本系列的文章基于的环境是MacOS，但是所使用的工具软件多数都是跨平台的，所以对其他平台的小伙伴也没有影响。
-<a name="7ed21038"></a>
-### [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#%E4%BB%A3%E7%A0%81%E9%98%85%E8%AF%BB)代码阅读
-> 如果在Windows下直接上SourceInsight 就可以了，Mac下可以用Understand，功能和SourceInsight一样强大。
+* [Blog](https://juejin.im/user/5a9e5b95518825558b3d6e22/posts)
+* [GitBook](https://beesandroid.gitbooks.io/beesandroid/content/)
 
-[Understand 4.0.849 代码阅读分析软件](http://xclient.info/s/understand.html)<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590281507-82361e42-cc92-433e-8e42-26ab19203058.png#align=left&display=inline&height=256&originHeight=256&originWidth=256&size=0&status=done&width=256)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/understand.png)
-<a name="93090486"></a>
-### [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#%E6%BC%94%E7%A4%BA%E6%96%87%E7%A8%BF)演示文稿
-> 演示文稿是用Keynote来做的。
+**代码版本**
+* 细分版本：N6F26U
+* 分支：android-7.1.1_r28
+* 版本：Nougat
+* 支持设备：Nexus 6
 
-[Keynote](http://xclient.info/s/keynote.html)<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590281077-1bf15717-a8f8-4da1-95ca-769fb0e7c8d0.png#align=left&display=inline&height=256&originHeight=256&originWidth=256&size=0&status=done&width=256)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/keynote.png)
-<a name="74f5306f"></a>
-### [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C)文章写作
-> 文章都是用Markdown来写的，工具用的是MWeb，一款很强大的Markdown编辑工具。
+**分析思路**<br />Android是一个庞大的系统，Android Framework只是对系统的一个封装，里面还牵扯到JNI、C++、Java虚拟机、Linux系统内核、指令集等。面对如此庞大的系统，我们得有一定的 章法去阅读源码，否则就会只见树木不见森林，陷入卷帙浩繁的细节与琐碎之中。
+* 不要去记录那些API调用链，绘制一个序列图理清思路即可，Android Framework中有很多复杂的API调用链，你去关注这些东西，用处不大。你需要学会的是跟踪调用链和梳理流程的 技巧，思考一下作者是怎么找到关键入口的，核心的实现在什么地方。
+* 要善于思考，要多问为什么，面对一个模块，你要去思考这个模块解决了什么问题，这个问题的本质是什么，为什么这么解决，如果让我来写，我会怎么设计。事实上不管是是计算机还是 手机，从CPU、到内存、到操作系统、到应用层，看似纷繁复杂，但问题的本质无非就是这么几种：时间片怎么分配？线程/进程怎么调度？通信的机制是什么？只是在不同的场景下加了具体 的优化，但问题的本质没有改变，我们要善于抓住本质。
+* 要善于去粗存精，Android Framework也是人写的，有精华也有糟粕，并不是每行代码你都需要问个为什么，很多时候没有那么多为什么，只是当时那种情况下就那样设计了。但是 对于关键函数我们要去深究它的实现细节。
 
-[MWeb for Mac](http://www.mweb.im/)<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590281957-42515352-8b7b-40c5-a956-8babf922e9b8.png#align=left&display=inline&height=256&originHeight=256&originWidth=256&size=0&status=done&width=256)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/nweb_for_mac.png)<br />👉 注：Markdown语法请参见[Markdown维基百科](https://zh.wikipedia.org/wiki/Markdown)。
-<a name="b71d05e7"></a>
-### [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#%E5%9B%BE%E4%BE%8B%E7%BB%98%E5%88%B6)图例绘制
-> 流程图、类图、时序图、系统架构图等各种图例采用OmniGraffle来绘制，Visio也比较好用，可惜Mac下没有。
+在正式阅读本系列文章之前，请先阅读导读相关内容，这会帮助你更加快捷的理解文章内容。
+* [导读](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md)
 
-[OmniGraffle](http://xclient.info/s/omnigraffle.html?t=c9ed67f2304886c055051d955e56f9c6919c1419)<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590280504-9d97ae52-b676-447e-8bc2-4cc75fa5865d.png#align=left&display=inline&height=256&originHeight=256&originWidth=256&size=0&status=done&width=256)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/OmniGraffle.png)<br />👉 注：图片可以以Github为图床（图片仓库）来存储图片，然后使用图片的链接来显示图片，注意要把图片链接中的blob改成raw，否则在其他网站无法识别图片。<br />例如<br /><img src="https://github.com/BeesAndroid/BeesAndroid/raw/master/art/OmniGraffle.png"/>
-<a name="2f313f9b"></a>
-### [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86)图片处理
-> Gif图的制作用的是VideoGIF。
+你也可以先阅读关于Android系统的概述，让你有Android系统的设计有个整体的把握。
+* [Android系统设计概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%A6%82%E8%BF%B0.md)
+* [Android系统设计原则与设计模式](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/Android%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.md)
 
-[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590280235-9cd97739-d515-43af-8d72-ac5e2418e418.png#align=left&display=inline&height=256&originHeight=256&originWidth=256&size=0&status=done&width=256)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/VideoGIF.png)<br />[VideoGIF](http://xclient.info/s/videogif.html)
-<a name="d709d17c"></a>
-### [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#%E5%9B%BE%E7%89%87%E9%98%85%E8%A7%88)图片阅览
-> 本系列的文字会涉及各种时序图、UML图、系统结构图等，这些图片有时候会很大，为了读者能更加清晰的阅览，笔者不仅提供了png格式的图片，还 提供了压缩更好的svg（可缩放矢量图形）格式，该种格式用xml语言来描述图片信息，在mac下可用Gapplin打开。
+欢迎提交Issue与PR，为帮助我们更好的维护此项目，请先阅读wiki里的相关规范。
+* [Wiki](https://github.com/BeesAndroid/BeesAndroid/wiki)
 
-[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590280673-ba3abec3-b937-4b17-8ce4-0a84481092d5.png#align=left&display=inline&height=175&originHeight=175&originWidth=175&size=0&status=done&width=175)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/Gapplin.png)<br />[Gapplin](https://itunes.apple.com/cn/app/gapplin/id768053424?mt=12&ign-mpt=uo%3D4)
-<a name="6c3f83fc"></a>
-## [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#%E4%B8%89-%E4%B9%A6%E7%B1%8D%E7%AF%87)三 书籍篇
-站在前辈的肩膀上，我们能看的更远，进步的更快。以下是学习框架与源码一些不错的书籍。<br />[Android 源码设计模式解析与实战](https://item.jd.com/11793928.html)：何红辉，关爱民 著<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590283532-81062898-b162-4f80-a891-bfb8f3eb300d.png#align=left&display=inline&height=374&originHeight=374&originWidth=369&size=0&status=done&width=369)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/android_source_code_design_pattern.png)<br />[Android系统源代码情景分析](https://item.jd.com/11838754.html)：罗升阳 著<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590281077-f1a83542-8ec8-4e4b-b741-af71e1fb9ea6.png#align=left&display=inline&height=375&originHeight=375&originWidth=365&size=0&status=done&width=365)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/android_source_code_scenario_analysis.png)<br />[Android开发艺术探索](https://item.jd.com/11760209.html)：任玉刚 著<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590280645-63d454bc-521a-4293-926d-02946b9e3467.png#align=left&display=inline&height=370&originHeight=370&originWidth=360&size=0&status=done&width=360)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/android_develop_art_explore.png)<br />本系列文章也提供了一些经典的书籍资源<br />[http://pan.baidu.com/share/link?shareid=1026404461&uk=3444638282](http://pan.baidu.com/share/link?shareid=1026404461&uk=3444638282)<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590280796-8b085805-3c2a-4225-bb53-2885081059cb.png#align=left&display=inline&height=478&originHeight=629&originWidth=982&size=0&status=done&width=746)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/android_book.png)<br />好了，以上就是全部的基础、工具与书籍，如果你还没有下载Android源码，现在我们就去下载吧。
-<a name="07bf2d5e"></a>
-## [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#%E5%9B%9B-%E6%BA%90%E7%A0%81%E7%AF%87)四 源码篇
-<a name="64a49db5"></a>
-### [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#41-%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD)4.1 源码下载
-官方地址：[https://source.android.com/index.html](https://source.android.com/index.html)<br />清华大学开源软件镜像站：[https://mirror.tuna.tsinghua.edu.cn/help/AOSP/](https://mirror.tuna.tsinghua.edu.cn/help/AOSP/)<br />**源码版本**<br />[android-7.1.1_r1](https://source.android.com/source/build-numbers.html#source-code-tags-and-builds)<br />**电脑环境**<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590280694-b2650ebc-bb48-496a-93b5-9255f838d958.png#align=left&display=inline&height=423&originHeight=354&originWidth=586&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/mac_os.png)
-<a name="186c9653"></a>
-#### [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#1-%E5%88%9B%E5%BB%BA%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99%E7%A3%81%E7%9B%98)1 创建区分大小写磁盘
-👉 注：Android源码考虑存储和编译至少需要200G以上空间，磁盘需要区别大小写，Mac一般空间有限，建议买一个移动硬盘存放源码。<br />打开磁盘工具<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590279963-35ee591b-c7fe-4a55-965a-d535418b13a3.png#align=left&display=inline&height=383&originHeight=815&originWidth=1491&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/disk_tool_01.png)<br />创建空白映像<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590280695-8dd7eee9-71bf-4270-bb14-4198432908a9.png#align=left&display=inline&height=252&originHeight=481&originWidth=1336&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/disk_tool_02.png)<br />设置区分大小写<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590280403-e310136e-4b20-4154-97e3-c58fdf68810b.png#align=left&display=inline&height=523&originHeight=354&originWidth=474&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/disk_tool_03.png)<br />注意！注意！创建区分大小写磁盘很重要，如果你不想下了一天的源码，结果编译的时候报这个错误。<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590282390-5d1c1188-7b2e-47b8-8c2f-fd5e5e7273da.png#align=left&display=inline&height=165&originHeight=164&originWidth=695&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/case_insensitive_error.png)<br />不要问我为什么有这个报错的图片，都是泪，我在Windows下划分的ExFat格式的移动硬盘，天真的我以为它是区分大小写的。😷<br />搞不清自己磁盘格式的同学，可以用diskutil info 命令看一下，只有有case-sensitive字样的才是区分大小写的磁盘，其他的都是耍流氓。😤<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590281870-70095a1b-5186-4f09-a034-bdc3df1f4f9e.png#align=left&display=inline&height=545&originHeight=979&originWidth=1258&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/case_sensitive.png)
-<a name="e21dbc5e"></a>
-#### [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#2-%E4%B8%8B%E8%BD%BDrepo%E5%B7%A5%E5%85%B7)2 下载repo工具
-```
-mkdir ~/bin
-PATH=~/bin:$PATH
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-chmod a+x ~/bin/repo
-```
-如果你没有翻墙，可以使用清华大学的repo镜像：[https://mirrors.tuna.tsinghua.edu.cn/help/git-repo/](https://mirrors.tuna.tsinghua.edu.cn/help/git-repo/)<br />下载完成后将bin/repo打开，将里面的REPO_URL改成清华大学的镜像：
-```
-https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
-```
-[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590280003-4da16928-a72e-4ac5-b375-a5107c4d77a5.png#align=left&display=inline&height=446&originHeight=777&originWidth=1220&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/repo_download_1.png)
-<a name="f47f1f87"></a>
-#### [](https://github.com/BeesX/BeesAndroid/blob/master/doc/%E5%AF%BC%E8%AF%BB.md#3-%E4%B8%8B%E8%BD%BD%E6%BA%90%E7%A0%81)3 下载源码
-1 建立工作目录
-```
-mkdir WORKING_DIRECTORY
-cd WORKING_DIRECTORY
-```
-```
-$ git config --global user.text "Your Name"
-$ git config --global user.email "you@example.com"
-```
-2 初始化仓库
-```
-repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest
-```
-如果需要某个特定的Android版本，可以在后面指定版本号。<br />Android系统各版本号：[https://source.android.com/source/build-numbers.html#source-code-tags-and-builds](https://source.android.com/source/build-numbers.html#source-code-tags-and-builds)
-```
-repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-7.1.1_r28
-```
-注：更多源码版本可以参见[https://source.android.com/source/build-numbers](https://source.android.com/source/build-numbers)<br />3 下载源码<br />同步源码树，开始下载源码，如果后续下载中断，也可以重复执行这个命令。
-```
-repo sync
-```
-源码的下载会经常中断，我们可以写一个脚本自动repo sync，保存成repo.sh，放到WORKING_DIRECTORY目录下
-```
-#!/bin/bash   
-#FileName  jkYishon.sh  
-PATH=~/bin:$PATH   
-repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-7.1.1_r28
-repo sync   
-while [ $? = 1 ]; do   
-echo "================sync failed, re-sync again ====="   
-sleep 3   
-repo sync   
-done
-```
-配置可执行权限，运行即可。
-```
-chmod 777 repo.sh
-./repo.sh
-```
-开始下载<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590280798-88de6c7a-23a6-4460-bf8e-1f5cbb484646.png#align=left&display=inline&height=635&originHeight=911&originWidth=1005&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/repo_download_2.png)<br />下载完成<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590280044-90ba5601-d7a4-4eba-ac85-9e5734fc01b7.png#align=left&display=inline&height=541&originHeight=452&originWidth=585&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/repo_download_3.png)<br />源码目录<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590281879-ac5f1db4-76f5-483e-a6f1-c8d946301ca3.png#align=left&display=inline&height=577&originHeight=1158&originWidth=1406&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/repo_download_4.png)<br />我下载的是android-7.1.1_r28版本的源码，一共160G左右，😤光源码都这么大，真是个浩大的工程。<br />3 将源码导入Android Studio<br />源码下载完成以后，你可以使用我上面推荐Understand来导入阅读源码，它是一种类似于Windows平台上的SourceInsight的工具。但是我们如果希望能够调试源码，则就 需要将源码导入到Android Studio中。<br />① 进入源码目录，运行命令
-```
-$ source build/envsetup.sh
-```
-[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590281695-b7eb33d4-d5d4-4f6f-89dd-76aa270ebc24.png#align=left&display=inline&height=281&originHeight=271&originWidth=675&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/import_to_as_1.png)<br />② 运行命令，生成android.ipr文件
-```
-$ make idegen && development/tools/idegen/idegen.sh
-```
-在运行这个命令的时候，可能会报错。<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590281335-2bb3f033-9f98-4456-bfc8-d4dea3a98227.png#align=left&display=inline&height=92&originHeight=158&originWidth=1200&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/import_to_as_2.png)<br />解决方案：打开build/core/combo/mac_version.mk
-```
-# mac_sdk_versions_supported :=  10.8 10.9 10.10 10.11
-mac_sdk_versions_supported :=  10.12
-```
-注意：部分版本代码中指定支持的 mac 版本的文件位置已发生了改变，以 android-9.0.0_r3 版本为例，需要打开 /build/soong/cc/config/x86_darwin_host.go
-```
-darwinSupportedSdkVersions = []string{
-	"10.10",
-	"10.11",
-	"10.12",
-	"10.13",
-	"10.14", //添加版本号
-}
-```
-然后就可以运行成功了，成功以后会在源码目录下生成android.ipr文件。<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590281615-b3f52516-803a-459d-a9ec-ef7f7cac9b49.png#align=left&display=inline&height=403&originHeight=1308&originWidth=2270&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/import_to_as_4.png)<br />③ 导入Android Studio<br />接下来我们就要导入源码，但是源码的体积很大，如果全部导入会比较卡，我们可以排除一些代码。例如我只想研究framework里的代码，我们 可以在android.iml了添加以下内容。
-```
-<excludeFolder url="file://$MODULE_DIR$/.repo" />
-<excludeFolder url="file://$MODULE_DIR$/abi" />
-<excludeFolder url="file://$MODULE_DIR$/art" />
-<excludeFolder url="file://$MODULE_DIR$/bionic" />
-<excludeFolder url="file://$MODULE_DIR$/bootable" />
-<excludeFolder url="file://$MODULE_DIR$/build" />
-<excludeFolder url="file://$MODULE_DIR$/cts" />
-<excludeFolder url="file://$MODULE_DIR$/dalvik" />
-<excludeFolder url="file://$MODULE_DIR$/developers" />
-<excludeFolder url="file://$MODULE_DIR$/development" />
-<excludeFolder url="file://$MODULE_DIR$/device" />
-<excludeFolder url="file://$MODULE_DIR$/docs" />
-<excludeFolder url="file://$MODULE_DIR$/external" />
-<excludeFolder url="file://$MODULE_DIR$/hardware" />
-<excludeFolder url="file://$MODULE_DIR$/libcore" />
-<excludeFolder url="file://$MODULE_DIR$/libnativehelper" />
-<excludeFolder url="file://$MODULE_DIR$/ndk" />
-<excludeFolder url="file://$MODULE_DIR$/out" />
-<excludeFolder url="file://$MODULE_DIR$/packages" />
-<excludeFolder url="file://$MODULE_DIR$/pdk" />
-<excludeFolder url="file://$MODULE_DIR$/prebuilt" />
-<excludeFolder url="file://$MODULE_DIR$/prebuilts" />
-<excludeFolder url="file://$MODULE_DIR$/sdk" />
-<excludeFolder url="file://$MODULE_DIR$/system" />
-<excludeFolder url="file://$MODULE_DIR$/tools" />
-```
-这样几分钟就导入成功了。<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551590280481-149e1d13-884e-4de2-b7ed-505ce41453ff.png#align=left&display=inline&height=679&originHeight=1094&originWidth=1128&size=0&status=done&width=700)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/import_to_as_5.png)<br />好了，以上便是我们开始分析Android源码所需的全部准备工作，这个系列的文章已经开始有几个月了，Android显示框架的相关内容已经完成，其他的也在进行中，具体可以 关注[BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目。
+👉 注：每篇文章有三种状态：编辑中、校对中和已完成。请阅读已完成状态的文章。
+<a name="25eaa2da"></a>
+## [](https://github.com/BeesX/BeesAndroid/blob/c853ac17efaf355064ded9f157ab9980bce6a086/README.md#%E5%8E%9F%E7%90%86%E7%AF%87)原理篇
+<a name="1b4593e9"></a>
+### [](https://github.com/BeesX/BeesAndroid/blob/c853ac17efaf355064ded9f157ab9980bce6a086/README.md#android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82)Android应用框架层
+**Android视图系统**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android视图系统：Android视图系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 已完成 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android视图系统：Android应用窗口Window](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%BA%94%E7%94%A8%E7%AA%97%E5%8F%A3Window.md) | 已完成 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android视图系统：Android应用视图View](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%BA%94%E7%94%A8%E8%A7%86%E5%9B%BEView.md) | 已完成 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android视图系统：Android应用视图组ViewGroup](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%BA%94%E7%94%A8%E8%A7%86%E5%9B%BE%E7%BB%84ViewGroup.md) | 编辑中 |  |  |
+| [Android视图系统：Android帧布局控件FrameLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%B8%A7%E5%B8%83%E5%B1%80%E6%8E%A7%E4%BB%B6FrameLayout.md) | 编辑中 |  |  |
+| [Android视图系统：Android线性布局控件LinearLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E7%BA%BF%E6%80%A7%E5%B8%83%E5%B1%80%E6%8E%A7%E4%BB%B6LinearLayout.md) | 编辑中 |  |  |
+| [Android视图系统：Android相对布局控件RelativeLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E7%9B%B8%E5%AF%B9%E5%B8%83%E5%B1%80%E6%8E%A7%E4%BB%B6RelativeLayout.md) | 编辑中 |  |  |
+| [Android视图系统：Android协调布局控件CoordinatorLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%8D%8F%E8%B0%83%E5%B8%83%E5%B1%80%E6%8E%A7%E4%BB%B6CoordinatorLayout.md) | 编辑中 |  |  |
+| [Android视图系统：Android下拉刷新控件SwipeRefreshLayout](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0%E6%8E%A7%E4%BB%B6SwipeRefreshLayout.md) | 编辑中 |  |  |
+| [Android视图系统：Android滑动控件ViewPager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E6%BB%91%E5%8A%A8%E6%8E%A7%E4%BB%B6ViewPager.md) | 编辑中 |  |  |
+| [Android视图系统：Android滚动控件ScrollView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E6%BB%9A%E5%8A%A8%E6%8E%A7%E4%BB%B6ScrollView.md) | 编辑中 |  |  |
+| [Android视图系统：Android列表控件RecyclerView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%88%97%E8%A1%A8%E6%8E%A7%E4%BB%B6RecyclerView.md) | 编辑中 |  |  |
+| [Android视图系统：Android进度条控件ProgressBar](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E8%BF%9B%E5%BA%A6%E6%9D%A1%E6%8E%A7%E4%BB%B6ProgressBar.md) | 编辑中 |  |  |
+| [Android视图系统：Android文字控件TextView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E6%96%87%E5%AD%97%E6%8E%A7%E4%BB%B6TextView.md) | 编辑中 |  |  |
+| [Android视图系统：Android编辑框控件EditText](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E7%BC%96%E8%BE%91%E6%A1%86%E6%8E%A7%E4%BB%B6EditText.md) | 编辑中 |  |  |
+| [Android视图系统：Android图片控件ImageView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%9B%BE%E7%89%87%E6%8E%A7%E4%BB%B6ImageView.md) | 编辑中 |  |  |
+| [Android视图系统：Android对话框控件Dialog](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%AF%B9%E8%AF%9D%E6%A1%86%E6%8E%A7%E4%BB%B6Dialog.md) | 编辑中 |  |  |
+| [Android视图系统：Android弹出窗口控件PopupWindow](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%BC%B9%E5%87%BA%E7%AA%97%E5%8F%A3%E6%8E%A7%E4%BB%B6PopupWindow.md) | 编辑中 |  |  |
+| [Android视图系统：Android浏览器控件WebView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F/Android%E8%A7%86%E5%9B%BE%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8E%A7%E4%BB%B6WebView.md) | 编辑中 |  |  |
+
+**Android组件系统**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android组件系统：Android组件系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+| [Android组件系统：Android组件注册表AndroidManifest](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E7%BB%84%E4%BB%B6%E6%B3%A8%E5%86%8C%E8%A1%A8AndroidManifest.md) | 编辑中 |  |  |
+| [Android组件系统：Android应用上下文Context](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%BA%94%E7%94%A8%E4%B8%8A%E4%B8%8B%E6%96%87Context.md) | 编辑中 |  |  |
+| [Android组件系统：Android视图容器Activity](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E8%A7%86%E5%9B%BE%E5%AE%B9%E5%99%A8Activity.md) | 编辑中 |  |  |
+| [Android组件系统：Android视图片段Fragment](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E8%A7%86%E5%9B%BE%E7%89%87%E6%AE%B5Fragment.md) | 编辑中 |  |  |
+| [Android组件系统：Android后台服务Service](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1Service.md) | 编辑中 |  |  |
+| [Android组件系统：Android数据提供者ContentProvider](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E6%95%B0%E6%8D%AE%E6%8F%90%E4%BE%9B%E8%80%85ContentProvider.md) | 校对中 | [wusp](https://github.com/wusp) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android组件系统：Android广播接收者BroadcastReceiver](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F/Android%E7%BB%84%E4%BB%B6%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%B9%BF%E6%92%AD%E6%8E%A5%E6%94%B6%E8%80%85BroadcastReceiver.md) | 编辑中 |  |  |
+
+**Android资源系统**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android资源系统：Android资源系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%B5%84%E6%BA%90%E7%B3%BB%E7%BB%9F/Android%E5%8C%85%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E8%B5%84%E6%BA%90%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+| [Android资源系统：应用资源Resources](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%B5%84%E6%BA%90%E7%B3%BB%E7%BB%9F/Android%E5%8C%85%E7%B3%BB%E7%BB%9F%EF%BC%9A%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90Resources.md) | 编辑中 |  |  |
+| [Android资源系统：资源管理器AssetManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E8%B5%84%E6%BA%90%E7%B3%BB%E7%BB%9F/Android%E5%8C%85%E7%B3%BB%E7%BB%9F%EF%BC%9A%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8AssetManager.md) | 编辑中 |  |  |
+
+**Android包系统**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android包系统：Android包系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%8C%85%E7%B3%BB%E7%BB%9F/Android%E5%8C%85%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E8%B5%84%E6%BA%90%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+| [Android包系统：APK解析器PackageParser](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%8C%85%E7%B3%BB%E7%BB%9F/Android%E5%8C%85%E7%B3%BB%E7%BB%9F%EF%BC%9AAPK%E8%A7%A3%E6%9E%90%E5%99%A8PackageParser.md) | 编辑中 |  |  |
+| [Android包系统：APK的打包流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%8C%85%E7%B3%BB%E7%BB%9F/Android%E5%8C%85%E7%B3%BB%E7%BB%9F%EF%BC%9AAPK%E7%9A%84%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B.md) | 编辑中 |  |  |
+| [Android包系统：APK的安装流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%8C%85%E7%B3%BB%E7%BB%9F/Android%E5%8C%85%E7%B3%BB%E7%BB%9F%EF%BC%9AAPK%E7%9A%84%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B.md) | 编辑中 |  |  |
+| [Android包系统：APK的加载流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%8C%85%E7%B3%BB%E7%BB%9F/Android%E5%8C%85%E7%B3%BB%E7%BB%9F%EF%BC%9AAPK%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B.md) | 编辑中 |  |  |
+
+**Android应用通信系统**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android应用通信系统：Android应用通信系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%BA%94%E7%94%A8%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/Android%E5%BA%94%E7%94%A8%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%BA%94%E7%94%A8%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+| [Android应用通信系统：线程通信的桥梁Handler](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%BA%94%E7%94%A8%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/Android%E5%BA%94%E7%94%A8%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9A%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%9A%84%E6%A1%A5%E6%A2%81Handler.md) | 编辑中 |  |  |
+| [Android应用通信系统：局域广播LocalBroadcastReceiver](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%BA%94%E7%94%A8%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/Android%E5%BA%94%E7%94%A8%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9A%E5%B1%80%E5%9F%9F%E5%B9%BF%E6%92%ADLocalBroadcastReceiver.md) | 编辑中 |  |  |
+
+**Android动画系统**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android动画系统：Android动画系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/Android%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+| [Android动画系统：Android补间动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/Android%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E8%A1%A5%E9%97%B4%E5%8A%A8%E7%94%BB.md) | 编辑中 |  |  |
+| [Android动画系统：Android帧动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/Android%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%B8%A7%E5%8A%A8%E7%94%BB.md) | 编辑中 |  |  |
+| [Android动画系统：Android属性动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/Android%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB.md) | 编辑中 |  |  |
+
+**Android多媒体系统**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android多媒体系统：Android多媒体系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+| [Android多媒体系统：实时预览与播放SurfaceView、GLSurfaceVIew、TextureView与SurfaceTexture](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F%EF%BC%9A%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88%E4%B8%8E%E6%92%AD%E6%94%BESurfaceView%E3%80%81GLSurfaceVIew%E3%80%81TextureView%E4%B8%8ESurfaceTexture.md) | 编辑中 |  |  |
+| [Android多媒体系统：视频播放VideoView](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F%EF%BC%9A%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BEVideoView.md) | 编辑中 |  |  |
+| [Android多媒体系统：相机Camera](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F%EF%BC%9A%E7%9B%B8%E6%9C%BACamera.md) | 编辑中 |  |  |
+| [Android多媒体系统：相机Camera2](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F%EF%BC%9A%E7%9B%B8%E6%9C%BACamera2.md) | 编辑中 |  |  |
+| [Android多媒体系统：音视频解码MediaCodec](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F%EF%BC%9A%E9%9F%B3%E8%A7%86%E9%A2%91%E8%A7%A3%E7%A0%81MediaCodec.md) | 编辑中 |  |  |
+
+**Android数据库系统**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android数据库系统：Android数据库系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/Android%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+| [Android数据库系统：数据库SQLiteDatabase](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/Android%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93SQLiteDatabase.md) | 编辑中 |  |  |
+| [Android数据库系统：数据库连接SQLiteConnection](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/Android%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5SQLiteConnection.md) | 编辑中 |  |  |
+| [Android数据库系统：数据库会话SQLiteSession](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/Android%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%9A%E8%AF%9DSQLiteSession.md) | 编辑中 |  |  |
+| [Android数据库系统：数据库语句转换SQLiteProgram](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/Android%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%AD%E5%8F%A5%E8%BD%AC%E6%8D%A2SQLiteProgram.md) | 编辑中 |  |  |
+| [Android数据库系统：数据库游标Cursor](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Android%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/Android%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B8%B8%E6%A0%87Cursor.md) | 编辑中 |  |  |
+
+<a name="0ec0b0a6"></a>
+### [](https://github.com/BeesX/BeesAndroid/blob/c853ac17efaf355064ded9f157ab9980bce6a086/README.md#java%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82)Java系统框架层
+**Android组件管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android组件管理服务：Android组件管理服务概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Java%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1/Android%E7%BB%84%E4%BB%B6%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%EF%BC%9AAndroid%E7%BB%84%E4%BB%B6%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+| [Android组件管理服务：组件管理服务ActivityManagerService](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Java%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1/Android%E7%BB%84%E4%BB%B6%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%EF%BC%9A%E7%BB%84%E4%BB%B6%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1ActivityManagerService.md) | 编辑中 |  |  |
+| [Android组件管理服务：应用主线程ActivityThread](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Java%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%BB%84%E4%BB%B6%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1/Android%E7%BB%84%E4%BB%B6%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%EF%BC%9AAndroid%E7%BB%84%E4%BB%B6%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+
+**Android窗口管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android窗口管理服务：Android窗口管理服务概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Java%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1/Android%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%EF%BC%9AAndroid%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+| [Android窗口管理服务：窗口管理服务WindowManagerService](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Java%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1/Android%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%EF%BC%9A%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1WindowManagerService.md) | 编辑中 |  |  |
+| [Android窗口管理服务：窗口启动、显示与切换](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Java%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1/Android%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%EF%BC%9A%E7%AA%97%E5%8F%A3%E5%90%AF%E5%8A%A8%E3%80%81%E6%98%BE%E7%A4%BA%E4%B8%8E%E5%88%87%E6%8D%A2.md) | 编辑中 |  |  |
+| [Android窗口管理服务：窗口大小与位置计算](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Java%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1/Android%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%EF%BC%9A%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%B8%8E%E4%BD%8D%E7%BD%AE%E8%AE%A1%E7%AE%97.md) | 编辑中 |  |  |
+| [Android窗口管理服务：窗口动画](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/Java%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/Android%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1/Android%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%EF%BC%9A%E7%AA%97%E5%8F%A3%E5%8A%A8%E7%94%BB.md) | 编辑中 |  |  |
+
+**Android图形绘制服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android图形绘制服务：Android图形绘制服务概述 |  |  |  |
+| Android图形绘制服务：SurfaceFlinger |  |  |  |
+| Android图形绘制服务：Android布局解析器LayoutInflater |  |  |  |
+
+**Android包管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android视图系统：Android视图系统概述 |  |  |  |
+| Android窗口管理服务：PackageServiceManager |  |  |  |
+
+**Android反馈管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android反馈管理服务：Android反馈管理服务概述 |  |  |  |
+| Android反馈管理服务：AccessibilityManagerService |  |  |  |
+
+**Android壁纸管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android壁纸管理服务：Android壁纸管理服务概述 |  |  |  |
+| Android壁纸管理服务：WallpaperManagerService |  |  |  |
+
+**Android搜索管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android搜索管理服务：Android搜索管理服务概述 |  |  |  |
+| Android搜索管理服务：SearchManagerService |  |  |  |
+
+**Android通知管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android搜索管理服务：Android搜索管理服务概述 |  |  |  |
+| Android通知管理服务：NotificationManagerService |  |  |  |
+
+**Android定位管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android定位管理服务：Android定位管理服务概述 |  |  |  |
+| Android定位管理服务：LocationManagerService |  |  |  |
+
+**Android输入法管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android视图系统：Android视图系统概述 |  |  |  |
+| Android输入法管理服务：InputMethodManagerService |  |  |  |
+
+**Android电源管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android电源管理服务：Android电源管理服务概述 |  |  |  |
+| Android电源管理服务：PowerManagerService |  |  |  |
+
+**Android闹钟管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android电源管理服务：Android电源管理服务概述 |  |  |  |
+| Android闹钟管理服务：AlarmManagerService |  |  |  |
+
+**Android网络管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android网络管理服务：Android网络管理服务概述 |  |  |  |
+| Android网络管理服务：ConnectivityService |  |  |  |
+
+**Android账户管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android账户管理服务：Android账户管理服务概述 |  |  |  |
+| Android账户管理服务：AccountManagerService |  |  |  |
+
+**Android设备存储管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android设备存储管理服务：Android设备存储管理服务概述 |  |  |  |
+| Android设备存储管理服务：DeviceStorageMonitorService |  |  |  |
+
+**Android备份管理服务**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android备份管理服务：Android备份管理服务概述 |  |  |  |
+| Android备份管理服务：BackupManagerService |  |  |  |
+
+<a name="4a47097d"></a>
+### [](https://github.com/BeesX/BeesAndroid/blob/c853ac17efaf355064ded9f157ab9980bce6a086/README.md#c%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82)C++系统框架层
+**Binder进程通信系统**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Binder进程通信系统：Binder进程通信系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E5%B1%82/Binder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/Binder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9ABinder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+| [Binder进程通信系统：服务管理ServiceManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E5%B1%82/Binder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/Binder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9A%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86ServiceManager.md) | 编辑中 |  |  |
+| [Binder进程通信系统：Binder线程池](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E5%B1%82/Binder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/Binder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9ABinder%E7%BA%BF%E7%A8%8B%E6%B1%A0.md) | 编辑中 |  |  |
+| [Binder进程通信系统：Binder驱动](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E5%B1%82/Binder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/Binder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9ABinder%E9%A9%B1%E5%8A%A8.md) | 编辑中 |  |  |
+
+**Socket进程通信系统**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Socket进程通信系统：Socket进程通信系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E5%B1%82/Socket%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/Socket%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9ASocket%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+
+**Java虚拟机**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Java虚拟机：Java虚拟机概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B1%82/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AJava%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A6%82%E8%BF%B0.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Java虚拟机：类加载机制](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B1%82/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9A%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6.md) | 已完成 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Java虚拟机：自动内存管理机制](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B1%82/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AJVM%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A6%82%E8%BF%B0%E6%A6%82%E8%BF%B0.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Java虚拟机：垃圾收集器与内存分配策略](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B1%82/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9A%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E4%B8%8E%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+
+**ART虚拟机**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [ART虚拟机：ART虚拟机概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B1%82/ART%E8%99%9A%E6%8B%9F%E6%9C%BA/ART%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AART%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A6%82%E8%BF%B0.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [ART虚拟机：OAT文件的加载流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B1%82/ART%E8%99%9A%E6%8B%9F%E6%9C%BA/ART%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9AOAT%E6%96%87%E4%BB%B6%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [ART虚拟机：类与方法的查找流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B1%82/ART%E8%99%9A%E6%8B%9F%E6%9C%BA/ART%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9A%E7%B1%BB%E4%B8%8E%E6%96%B9%E6%B3%95%E7%9A%84%E6%9F%A5%E6%89%BE%E6%B5%81%E7%A8%8B.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [ART虚拟机：机器指令的查找流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B1%82/ART%E8%99%9A%E6%8B%9F%E6%9C%BA/ART%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9A%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E7%9A%84%E6%9F%A5%E6%89%BE%E6%B5%81%E7%A8%8B.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [ART虚拟机：垃圾收集](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B1%82/ART%E8%99%9A%E6%8B%9F%E6%9C%BA/ART%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9A%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+
+<a name="fe8277ee"></a>
+### [](https://github.com/BeesX/BeesAndroid/blob/c853ac17efaf355064ded9f157ab9980bce6a086/README.md#linux%E5%86%85%E6%A0%B8%E5%B1%82)Linux内核层
+**Android进程系统**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android进程系统：Android进程系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E5%86%85%E6%A0%B8%E5%B1%82/Android%E8%BF%9B%E7%A8%8B%E7%B3%BB%E7%BB%9F/Android%E8%BF%9B%E7%A8%8B%E7%B3%BB%E7%BB%9F%EF%BC%9AAndroid%E8%BF%9B%E7%A8%8B%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+| [Android进程系统：进程的创建、启动与调度流程](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E5%86%85%E6%A0%B8%E5%B1%82/Android%E8%BF%9B%E7%A8%8B%E7%B3%BB%E7%BB%9F/Android%E8%BF%9B%E7%A8%8B%E7%B3%BB%E7%BB%9F%EF%BC%9A%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA%E3%80%81%E5%90%AF%E5%8A%A8%E4%B8%8E%E8%B0%83%E5%BA%A6%E6%B5%81%E7%A8%8B.md) | 编辑中 |  |  |
+| [Android进程系统：线程与线程池](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E5%86%85%E6%A0%B8%E5%B1%82/Android%E8%BF%9B%E7%A8%8B%E7%B3%BB%E7%BB%9F/Android%E8%BF%9B%E7%A8%8B%E7%B3%BB%E7%BB%9F%EF%BC%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E6%B1%A0.md) | 编辑中 |  |  |
+| [Android进程系统：AIDL](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E5%86%85%E6%A0%B8%E5%B1%82/Android%E8%BF%9B%E7%A8%8B%E7%B3%BB%E7%BB%9F/Android%E8%BF%9B%E7%A8%8B%E7%B3%BB%E7%BB%9F%EF%BC%9AAIDL.md) | 编辑中 |  |  |
+
+**Android内存系统**
+
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| Android内存系统：Android内存系统 |  |  |  |
+| Android内存系统：内存管理系统 |  |  |  |
+| Android内存系统：Ashmem匿名共享内存系统 |  |  |  |
+
+<a name="d49cb8f5"></a>
+## [](https://github.com/BeesX/BeesAndroid/blob/c853ac17efaf355064ded9f157ab9980bce6a086/README.md#%E5%AE%9E%E8%B7%B5%E7%AF%87)实践篇
+<a name="dadc7b53"></a>
+### [](https://github.com/BeesX/BeesAndroid/blob/c853ac17efaf355064ded9f157ab9980bce6a086/README.md#%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91)界面开发
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android界面开发：View自定义概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91/Android%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91%EF%BC%9AView%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
+| [Android界面开发：View自定义布局篇](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91/Android%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91%EF%BC%9AView%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%83%E5%B1%80%E7%AF%87.md) | 编辑中 |  |  |
+| [Android界面开发：View自定义绘制篇](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91/Android%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91%EF%BC%9AView%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%98%E5%88%B6%E7%AF%87.md) | 编辑中 |  |  |
+| [Android界面开发：View自定义交互篇](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91/Android%E7%95%8C%E9%9D%A2%E5%BC%80%E5%8F%91%EF%BC%9AView%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%A4%E4%BA%92%E7%AF%87.md) | 编辑中 |  |  |
+
+<a name="927d6ee9"></a>
+### [](https://github.com/BeesX/BeesAndroid/blob/c853ac17efaf355064ded9f157ab9980bce6a086/README.md#%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%80%E5%8F%91)多媒体开发
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android多媒体开发：Bitmap实践指南](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%80%E5%8F%91/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%80%E5%8F%91%EF%BC%9ABitmap%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android多媒体开发：Camera实践指南](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%80%E5%8F%91/Android%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%80%E5%8F%91%EF%BC%9ACamera%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+
+<a name="54f56c57"></a>
+### [](https://github.com/BeesX/BeesAndroid/blob/c853ac17efaf355064ded9f157ab9980bce6a086/README.md#%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B)网络编程
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android网络编程：基础理论](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Android%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA.md) | 已完成 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+
+<a name="e5c6c3f0"></a>
+### [](https://github.com/BeesX/BeesAndroid/blob/c853ac17efaf355064ded9f157ab9980bce6a086/README.md#%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B)混合编程
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android混合编程：基本用法](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/Android%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B%EF%BC%9A%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95.md) | 已完成 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android混合编程：原生通信](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/Android%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B%EF%BC%9A%E5%8E%9F%E7%94%9F%E9%80%9A%E4%BF%A1.md) | 已完成 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android混合编程：性能优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B/Android%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B%EF%BC%9A%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md) | 已完成 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+
+<a name="01344e39"></a>
+### [](https://github.com/BeesX/BeesAndroid/blob/c853ac17efaf355064ded9f157ab9980bce6a086/README.md#android%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96)Android应用优化
+| 文章 | 文章状态 | 作者 | 校对 |
+| --- | --- | --- | --- |
+| [Android应用优化：优化概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96/Android%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96%EF%BC%9A%E4%BC%98%E5%8C%96%E6%A6%82%E8%BF%B0.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android应用优化：启动优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96/Android%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96%EF%BC%9A%E5%90%AF%E5%8A%A8%E4%BC%98%E5%8C%96.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android应用优化：界面优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96/Android%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96%EF%BC%9A%E7%95%8C%E9%9D%A2%E4%BC%98%E5%8C%96.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android应用优化：内存优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96/Android%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96%EF%BC%9A%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android应用优化：图像优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96/Android%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96%EF%BC%9A%E5%9B%BE%E5%83%8F%E4%BC%98%E5%8C%96.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android应用优化：网络优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96/Android%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96%EF%BC%9A%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android应用优化：并发优化](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96/Android%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96%EF%BC%9A%E5%B9%B6%E5%8F%91%E4%BC%98%E5%8C%96.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+| [Android应用优化：优化工具](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%AE%9E%E8%B7%B5%E7%AF%87/%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96/Android%E5%BA%94%E7%94%A8%E4%BC%98%E5%8C%96%EF%BC%9A%E4%BC%98%E5%8C%96%E5%B7%A5%E5%85%B7.md) | 编辑中 | [郭孝星](https://github.com/guoxiaoxing) | [郭孝星](https://github.com/guoxiaoxing) |
+
+> 欢迎关注我们的微信公众号，新文章会第一 时间发布到掘金博客与微信公众平台，我们也有自己的交流群，下方是QQ交流群，微信群已满，可以加我微信 allenwells 邀请入群。
+
+微信公众平台 [![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551591115089-fbbd29b8-b48c-45e2-9b2c-bfbf713e115a.png#align=left&display=inline&height=300&originHeight=258&originWidth=258&size=0&status=done&width=300)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/wechat.png)<br />QQ交流群<br />[![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551591113479-ef171928-61b7-47cf-b77e-2a31dc6e18d1.png#align=left&display=inline&height=411&originHeight=740&originWidth=540&size=0&status=done&width=300)](https://github.com/BeesAndroid/BeesAndroid/raw/master/art/qq_2.png)
