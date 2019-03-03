@@ -1,9 +1,11 @@
-# 导读
+# BeesAndroid
 
 <a name="a7d80080"></a>
 ## 功能介绍
+
 [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591113511-42045739-0c92-4100-a450-87fcae03f7d3.svg#align=left&display=inline&height=20&originHeight=20&originWidth=134&size=0&status=done&width=134)](https://jitpack.io/#BeesAndroid/BeesAndroid) [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591112173-5f54de88-7384-46dc-bf16-900862ffd51f.svg#align=left&display=inline&height=20&originHeight=20&originWidth=60&size=0&status=done&width=60)](https://jitpack.io/#BeesAndroid/BeesAndroid) [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591112118-36ef7b09-590f-4d9a-b14c-3c5c11df63ba.svg#align=left&display=inline&height=20&originHeight=20&originWidth=68&size=0&status=done&width=68)](https://jitpack.io/#BeesAndroid/BeesAndroid) [![](https://cdn.nlark.com/yuque/0/2019/svg/279116/1551591111611-d3912ef7-1020-43ba-849c-41022a21a5c1.svg#align=left&display=inline&height=20&originHeight=20&originWidth=134&size=0&status=done&width=134)](https://jitpack.io/#BeesAndroid/BeesAndroid)<br />关于BeesX开源技术小组
-> Bees（蜜蜂），取义蜜蜂精神，取义求实、合作与奉献，这也是BeesX开源技术小组的宗旨，求真务实，合作奉献。本小组当前有两大技术方向：Android系统原理分析与实践、跨端技术原理分析与实践，欢a迎感兴趣的同学参与进来。
+
+> Bees（蜜蜂），取义蜜蜂精神求实、合作与奉献，也即BeesX开源技术小组的宗旨，求真务实，合作奉献，本小组旨在通过提供一系列的工具、方法与文档，帮助更多的无线开发工程师理解和掌握无线开发技术。
 
 我们第一个团体项目BeesAndroid也于2018年3月6日同步上线，该项目的前身是[android-open-source-project-analysis](https://github.com/guoxiaoxing/android-open-source-project-analysis)，这个项目提供了一系列的Android系统源码分析文章，收 到了良好的反馈。<br />但是一个人的力量是有限的，因此将其推成团体项目BeesAndroid，项目采用GPL协议，在保护作者知识产权的基础上，最大化的做到开源与开放，如果有什么问题和意见欢迎提交issue，也欢迎大家参与 到本项目中来。
 > BeesAndroid项目旨在通过提供一系列的工具与方法，降低阅读系统源码的门槛，帮助更多的Android工程师理解Andriod系统，掌握Android系统。
