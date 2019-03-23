@@ -4,11 +4,8 @@
 ## 功能介绍
 
 [![License](https://img.shields.io/github/issues/BeesX/BeesAndroid.svg)](https://jitpack.io/#BeesX/BeesAndroid)
-
 [![Stars](https://img.shields.io/github/stars/BeesX/BeesAndroid.svg)](https://jitpack.io/#BeesX/BeesAndroid)
-
 [![Stars](https://img.shields.io/github/forks/BeesX/BeesAndroid.svg)](https://jitpack.io/#BeesX/BeesAndroid)
-
 [![Forks](https://img.shields.io/github/issues/BeesX/BeesAndroid.svg)](https://jitpack.io/#BeesX/BeesAndroid)
 
 
