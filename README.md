@@ -9,6 +9,7 @@
 [![Stars](https://img.shields.io/github/forks/BeesX/BeesAndroid.svg)](https://jitpack.io/#BeesX/BeesAndroid)
 [![Forks](https://img.shields.io/github/issues/BeesX/BeesAndroid.svg)](https://jitpack.io/#BeesX/BeesAndroid)
 
+
 关于BeesX开源技术小组
 
 
@@ -52,7 +53,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 - [Wiki](https://github.com/BeesAndroid/BeesAndroid/wiki)
 
-👉 注：每篇文章有三种状态：编辑中、校对中和已完成。请阅读已完成状态的文章。
+👉 注：每篇文章有三种状态：编辑中、校对中和已完成。请阅读已完成状态的文章。变更日志会记录每次文章变动的内容。
 
 <a name="25eaa2da"></a>
 ## 原理篇
@@ -63,11 +64,11 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android视图系统**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
-| [Android视图系统：Android视图系统概述](https://www.yuque.com/beesx/beesandroid/bx3aos) | 已完成 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
-| [Android视图系统：Android应用窗口Window](https://www.yuque.com/beesx/beesandroid/zcqcbu) | 已完成 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
-| [Android视图系统：Android应用视图View](https://www.yuque.com/beesx/beesandroid/tgmglv) | 已完成 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
+| [Android视图系统：Android视图系统概述](https://www.yuque.com/beesx/beesandroid/bx3aos) | 已完成 | [苏策](https://github.com/sucese) |  |
+| [Android视图系统：Android应用窗口Window](https://www.yuque.com/beesx/beesandroid/zcqcbu) | 已完成 | [苏策](https://github.com/sucese) |  |
+| [Android视图系统：Android应用视图View](https://www.yuque.com/beesx/beesandroid/tgmglv) | 已完成 | [苏策](https://github.com/sucese) |  |
 | Android视图系统：Android应用视图组ViewGroup | 编辑中 |  |  |
 | Android视图系统：Android帧布局控件FrameLayout | 编辑中 |  |  |
 | Android视图系统：Android线性布局控件LinearLayout | 编辑中 |  |  |
@@ -88,21 +89,21 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android组件系统**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android组件系统：Android组件系统概述 | 编辑中 |  |  |
 | Android组件系统：Android组件注册表AndroidManifest | 编辑中 |  |  |
-| [Android组件系统：Android应用上下文Context](https://www.yuque.com/beesx/beesandroid/sfzs75) | 已完成 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
-| [Android组件系统：Android视图容器Activity](https://www.yuque.com/beesx/beesandroid/abtzmx) | 已完成 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
-| [Android组件系统：Android视图片段Fragment](https://www.yuque.com/beesx/beesandroid/endz1b) | 已完成 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
-| [Android组件系统：Android后台服务Service](https://www.yuque.com/beesx/beesandroid/gvd3l9) | 已完成 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
-| [Android组件系统：Android数据提供者ContentProvider](https://www.yuque.com/beesx/beesandroid/vbped6) | 已完成 | [wusp](https://github.com/wusp) | [苏策](https://github.com/sucese) |
-| [Android组件系统：Android广播接收者BroadcastReceiver](https://www.yuque.com/beesx/beesandroid/ahbetr) | 已完成 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
+| [Android组件系统：Android应用上下文Context](https://www.yuque.com/beesx/beesandroid/sfzs75) | 已完成 | [苏策](https://github.com/sucese) |  |
+| [Android组件系统：Android视图容器Activity](https://www.yuque.com/beesx/beesandroid/abtzmx) | 已完成 | [苏策](https://github.com/sucese) |  |
+| [Android组件系统：Android视图片段Fragment](https://www.yuque.com/beesx/beesandroid/endz1b) | 已完成 | [苏策](https://github.com/sucese) |  |
+| [Android组件系统：Android后台服务Service](https://www.yuque.com/beesx/beesandroid/gvd3l9) | 已完成 | [苏策](https://github.com/sucese) |  |
+| [Android组件系统：Android数据提供者ContentProvider](https://www.yuque.com/beesx/beesandroid/vbped6) | 已完成 | [wusp](https://github.com/wusp) |  |
+| [Android组件系统：Android广播接收者BroadcastReceiver](https://www.yuque.com/beesx/beesandroid/ahbetr) | 已完成 | [苏策](https://github.com/sucese) |  |
 
 
 **Android资源系统**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android资源系统：Android资源系统概述 | 编辑中 |  |  |
 | Android资源系统：应用资源Resources | 编辑中 |  |  |
@@ -111,7 +112,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android包系统**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android包系统：Android包系统概述 | 编辑中 |  |  |
 | Android包系统：APK解析器PackageParser | 编辑中 |  |  |
@@ -122,7 +123,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android应用通信系统**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android应用通信系统：Android应用通信系统概述 | 编辑中 |  |  |
 | [Android应用通信系统：线程通信的桥梁Handler](https://www.yuque.com/beesx/beesandroid/ewlw6g) | 编辑中 |  |  |
@@ -131,7 +132,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android动画系统**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android动画系统：Android动画系统概述 | 编辑中 |  |  |
 | Android动画系统：Android补间动画 | 编辑中 |  |  |
@@ -141,7 +142,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android多媒体系统**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android多媒体系统：Android多媒体系统概述 | 编辑中 |  |  |
 | Android多媒体系统：实时预览与播放SurfaceView、GLSurfaceVIew、TextureView与SurfaceTexture | 编辑中 |  |  |
@@ -153,7 +154,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android数据库系统**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android数据库系统：Android数据库系统概述 | 编辑中 |  |  |
 | Android数据库系统：数据库SQLiteDatabase | 编辑中 |  |  |
@@ -168,27 +169,27 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android组件管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android组件管理服务：Android组件管理服务概述 | 编辑中 |  |  |
-| [Android组件管理服务：组件管理服务ActivityManagerService](https://www.yuque.com/beesx/beesandroid/pi7qpx) | 编辑中 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
+| [Android组件管理服务：组件管理服务ActivityManagerService](https://www.yuque.com/beesx/beesandroid/pi7qpx) | 编辑中 | [苏策](https://github.com/sucese) |  |
 | Android组件管理服务：应用主线程ActivityThread | 编辑中 |  |  |
 
 
 **Android窗口管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android窗口管理服务：Android窗口管理服务概述 | 编辑中 |  |  |
-| [Android窗口管理服务：窗口管理服务WindowManagerService](https://www.yuque.com/beesx/beesandroid/lsokoe) | 已完成 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
+| [Android窗口管理服务：窗口管理服务WindowManagerService](https://www.yuque.com/beesx/beesandroid/lsokoe) | 已完成 | [苏策](https://github.com/sucese) |  |
 | Android窗口管理服务：窗口启动、显示与切换 | 编辑中 |  |  |
-| [Android窗口管理服务：窗口大小与位置计算](https://www.yuque.com/beesx/beesandroid/mix281) | 已完成 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
+| [Android窗口管理服务：窗口大小与位置计算](https://www.yuque.com/beesx/beesandroid/mix281) | 已完成 | [苏策](https://github.com/sucese) |  |
 | Android窗口管理服务：窗口动画 | 编辑中 |  |  |
 
 
 **Android图形绘制服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android图形绘制服务：Android图形绘制服务概述 |  |  |  |
 | Android图形绘制服务：SurfaceFlinger |  |  |  |
@@ -197,7 +198,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android包管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android视图系统：Android视图系统概述 |  |  |  |
 | Android窗口管理服务：PackageServiceManager |  |  |  |
@@ -205,7 +206,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android反馈管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android反馈管理服务：Android反馈管理服务概述 |  |  |  |
 | Android反馈管理服务：AccessibilityManagerService |  |  |  |
@@ -213,7 +214,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android壁纸管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android壁纸管理服务：Android壁纸管理服务概述 |  |  |  |
 | Android壁纸管理服务：WallpaperManagerService |  |  |  |
@@ -221,7 +222,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android搜索管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android搜索管理服务：Android搜索管理服务概述 |  |  |  |
 | Android搜索管理服务：SearchManagerService |  |  |  |
@@ -229,7 +230,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android通知管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android搜索管理服务：Android搜索管理服务概述 |  |  |  |
 | Android通知管理服务：NotificationManagerService |  |  |  |
@@ -237,7 +238,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android定位管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android定位管理服务：Android定位管理服务概述 |  |  |  |
 | Android定位管理服务：LocationManagerService |  |  |  |
@@ -245,7 +246,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android输入法管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android视图系统：Android视图系统概述 |  |  |  |
 | Android输入法管理服务：InputMethodManagerService |  |  |  |
@@ -253,7 +254,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android电源管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android电源管理服务：Android电源管理服务概述 |  |  |  |
 | Android电源管理服务：PowerManagerService |  |  |  |
@@ -261,7 +262,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android闹钟管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android电源管理服务：Android电源管理服务概述 |  |  |  |
 | Android闹钟管理服务：AlarmManagerService |  |  |  |
@@ -269,7 +270,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android网络管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android网络管理服务：Android网络管理服务概述 |  |  |  |
 | Android网络管理服务：ConnectivityService |  |  |  |
@@ -277,7 +278,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android账户管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android账户管理服务：Android账户管理服务概述 |  |  |  |
 | Android账户管理服务：AccountManagerService |  |  |  |
@@ -285,7 +286,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android设备存储管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android设备存储管理服务：Android设备存储管理服务概述 |  |  |  |
 | Android设备存储管理服务：DeviceStorageMonitorService |  |  |  |
@@ -293,7 +294,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Android备份管理服务**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Android备份管理服务：Android备份管理服务概述 |  |  |  |
 | Android备份管理服务：BackupManagerService |  |  |  |
@@ -306,7 +307,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Binder进程通信系统**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | [Binder进程通信系统：Binder进程通信系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E5%B1%82/Binder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/Binder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9ABinder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
 | [Binder进程通信系统：服务管理ServiceManager](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E5%B1%82/Binder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/Binder%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9A%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86ServiceManager.md) | 编辑中 |  |  |
@@ -316,13 +317,13 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 **Socket进程通信系统**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | [Socket进程通信系统：Socket进程通信系统概述](https://github.com/BeesAndroid/BeesAndroid/blob/master/doc/%E5%8E%9F%E7%90%86%E7%AF%87/C++%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6%E5%B1%82/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E5%B1%82/Socket%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/Socket%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%EF%BC%9ASocket%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0.md) | 编辑中 |  |  |
 
 **Java虚拟机**
 
-| 文章 | 文章状态 | 作者 | 校对 |
+| 文章 | 文章状态 | 作者 | 变更日志 |
 | --- | --- | --- | --- |
 | Java虚拟机：Java虚拟机概述 | 编辑中 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
 | [Java虚拟机：类加载机制](https://www.yuque.com/beesx/beesandroid/ru5dzx) | 已完成 | [苏策](https://github.com/sucese) | [苏策](https://github.com/sucese) |
