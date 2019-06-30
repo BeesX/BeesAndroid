@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Android\\Project\\BeesAndroid\\demo\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+            "outputFile": "/Users/guoxiaoxing/Android/BeesAndroid/demo/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\4a96a3e1fbd38b3c6b5cd03f8a178d8e\\res\\values-v14\\values-v14.xml",
+                    "source": "/Users/guoxiaoxing/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/3d7b3091eb070846699727d10bacd929/res/values-v14/values-v14.xml",
                     "from": {
                         "startLines": "2,7,8,9,15",
                         "startColumns": "4,4,4,4,4",

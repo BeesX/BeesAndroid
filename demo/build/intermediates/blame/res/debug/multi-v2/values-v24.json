@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Android\\Project\\BeesAndroid\\demo\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "/Users/guoxiaoxing/Android/BeesAndroid/demo/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\4a96a3e1fbd38b3c6b5cd03f8a178d8e\\res\\values-v24\\values-v24.xml",
+                    "source": "/Users/guoxiaoxing/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/3d7b3091eb070846699727d10bacd929/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\deba42313bc72ab7cad30705efaa275c\\res\\values-v24\\values-v24.xml",
+                    "source": "/Users/guoxiaoxing/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/af69bc79c54d21e57f312ea499d74929/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
