@@ -38,7 +38,7 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 
 - [导读](https://www.yuque.com/beesx/beesandroid/uufhxo)
 
-<br />你也可以先阅读关于Android系统的概述，让你有Android系统的设计有个整体的把握。<br />
+你也可以先阅读关于Android系统的概述，让你有Android系统的设计有个整体的把握。
 
 - [Android系统设计概述](https://www.yuque.com/beesx/beesandroid/lk9rug)
 - [Android系统设计原则与设计模式](https://www.yuque.com/beesx/beesandroid/vxai8u)
