@@ -127,5 +127,4 @@
 
 <br />
 <br />欢迎关注我们<br />
-<br />![image.png](https://cdn.nlark.com/yuque/0/2019/png/279116/1551701953269-7532e5fc-1d67-4659-ba67-fe92ef3b2d3f.png#align=left&display=inline&height=800&name=image.png&originHeight=800&originWidth=2800&size=452660&status=done&width=2800#align=left&display=inline&height=800&margin=%5Bobject%20Object%5D&originHeight=800&originWidth=2800&status=done&style=none&width=2800)
-
+<br />![](https://cdn.nlark.com/yuque/0/2019/png/279116/1551701953269-7532e5fc-1d67-4659-ba67-fe92ef3b2d3f.png?x-oss-process=image%2Fresize%2Cw_1466#align=left&display=inline&height=800&name=image.png&originHeight=800&originWidth=2800&size=452660&status=done&width=2800)
