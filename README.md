@@ -16,7 +16,7 @@ BeesAndroid项目于2018年3月6日同步上线，该项目的前身是[android-
 > [BeesAndroid](https://github.com/BeesX/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读系统源码的门槛，帮助更多的Android工程师理解Andriod系统，掌握Android系统。
 
 - [掘金博客](https://juejin.im/user/5886d699128fe1006c455fb6)
-- [在线书籍](https://www.yuque.com/beesx/beesandroid/ezqfhg)
+- [在线书籍](https://www.yuque.com/beesx/beesandroid/px0ka4)
 
 **代码版本**
 
