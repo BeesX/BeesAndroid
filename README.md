@@ -56,6 +56,15 @@ Android是一个庞大的系统，Android Framework只是对系统的一个封�
 - [Android系统设计概述](https://www.yuque.com/beesx/beesandroid/lk9rug)
 - [Android系统与设计模式](https://www.yuque.com/beesx/beesandroid/vxai8u)
 
+### 串讲
+
+#### 渲染机制
+
+- [像素点旅行记Android篇](https://www.yuque.com/beesx/beesandroid/qh7ohm)
+- [像素点旅行记WebView篇](https://www.yuque.com/beesx/beesandroid/yqrpg3)
+- [像素点旅行记小程序篇](https://www.yuque.com/beesx/beesandroid/lhdb28)
+- [像素点旅行记Flutter篇](https://www.yuque.com/beesx/beesandroid/qr16m0)
+
 ### Android系统简介
 
 - [Android系统简介](https://www.yuque.com/beesx/beesandroid/pq4y3r)
