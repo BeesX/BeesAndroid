@@ -13,7 +13,9 @@
 
 BeesAndroid项目于2018年3月6日同步上线，该项目的前身是[android-open-source-project-analysis](https://github.com/guoxiaoxing/android-open-source-project-analysis)，这个项目提供了一系列的Android系统源码分析文章，收到了良好的反馈。但是一个人的力量是有限的，因此将其推成团体项目BeesAndroid，项目采用GPL协议，在保护作者知识产权的基础上，最大化的做到开源与开放，如果有什么问题和意见欢迎提交issue，也欢迎大家参与到本项目中来。
 
-> [BeesAndroid](https://github.com/BeesX/BeesAndroid)项目旨在通过提供一系列的工具与方法，降低阅读系统源码的门槛，帮助更多的Android工程师理解Andriod系统，掌握Android系统。
+**关于BeesAndroid项目**<br />
+
+> [BeesAndroid](https://github.com/BeesAndroid/BeesAndroid)项目提供了一系列的工具、理论分析与方法论，旨在降低Android系统源码的阅读门槛，让读者更好的理解Android系统的设计与实现。第一次阅览本系列文章，请参见[导读](https://www.yuque.com/beesx/beesandroid/uufhxo)，更多文章请参见[文章目录](https://github.com/BeesX/BeesAndroid)。
 
 - [掘金博客](https://juejin.im/user/5886d699128fe1006c455fb6)
 - [在线书籍](https://www.yuque.com/beesx/beesandroid/px0ka4)
